@@ -1,0 +1,695 @@
+International Journal of Hospitality Management 133 (2026) 104397
+Contents lists available at ScienceDirect
+International Journal of Hospitality Management
+journal homepage: www.elsevier.com/locate/ijhm
+Aspect-based sentiment analysis through zero-shot text classification and
+impact-asymmetry analysis
+Wooseok Kwon
+College of Hospitality and Tourism Management, Sejong University, 209 Neungdong-ro, Gwangjin-gu, Seoul 05006, South Korea
+A R T I C L E I N F O A B S T R A C T
+Keywords: This study proposes innovative methods integrating aspect-based sentiment analysis (ABSA) using zero-shot text
+Aspect-based sentiment analysis classification (ZSTC) into the impact-asymmetry analysis. Although ABSA is essential to enrich a thorough un-
+Zero-shot learning derstanding of customer behavior, applying it to hospitality and tourism management is challenging because
+Large language model
+matching sentiment valence with an aspect category is complicated, and annotated datasets are scarce. The ZSTC
+Kano model
+suggested by this study leverages pre-trained large language models and addresses these challenges in hospitality
+Impact-asymmetry analysis
+and tourism management contexts. Furthermore, impact-asymmetry analysis based on the Kano model in-
+User-generated content
+vestigates the asymmetric relationships between the identified aspects and customer satisfaction. It classifies
+them into satisfiers, dissatisfiers, or hybrids and prioritizes them to support managerial decision-making. A case
+study analyzing TripAdvisor reviews during the COVID-19 pandemic is provided to demonstrate the usefulness of
+the proposed methodology. This study’s findings offer theoretical and practical contributions to the academic
+and business sectors.
+1. Introduction sentiment will not be of much help. Even if they are aware of the factors
+of interest, without insights into customer perceptions of each factor,
+Digitalized textual data has proliferated with the advent of the they would be uncertain about where to prioritize their efforts. In this
+internet. Companies analyze user-generated content on social media or regard, certain online review sites, such as TripAdvisor, present star
+online review sites as a new source of understanding the perceptions and ratings for pre-defined aspects. However, these aspects are constrained,
+attitudes of customers (Dwivedi et al., 2021). Fast-growing natural and the ratings provided by reviewers are often sparse (Luo and Tang,
+language processing (NLP) skills have facilitated this work. Among NLP 2019).
+tasks, sentiment analysis (SA), or opinion mining, is widely used in this Hence, aspect-based sentiment analysis (ABSA) has continuously
+kind of analysis. SA has advantages over conventional star ratings given attracted researchers’ interest. ABSA is a fine-grained model of SA that
+along with online reviews. As a tool for understanding customer provides sentiment information regarding specific features of products
+behavior, star ratings are often biased, failing to reflect the complexity of and services considered as an aspect (Schouten et al., 2018; Tubishat
+customers’ experiential perceptions and emotions on products or ser- et al., 2018). By shifting the focus from an entire document to specific
+vices (Al-Natour and Turetken, 2020). As noted by Gaspar et al. (2016), aspects, ABSA captures segmented sentiments depending on the various
+not only positive but also negative emotions can be expressed in a re- aspects of products or services (Zhang et al., 2023). In the context of
+view, though a rating is high. As such, star ratings alone restrict a deeper hospitality and tourism, online reviews provide enriched information on
+understanding of customers’ minds. customers’ perceptions and attitudes regarding their experiences.
+SA can be conducted at a review, sentence, or aspect level (Yadav However, hospitality services present unique analytical challenges due
+and Roychoudhury, 2019). Despite its usefulness for managerial to their multidimensional nature. ABSA specifically addresses these
+decision-making, an aggregated sentiment value that presents a single challenges by enabling the exploration of relationships between
+representative sentiment at a review level has limitations in enhancing different service aspects, which can theoretically contribute to hospi-
+the understanding of customer behavior because it does not contain rich tality management research. This approach allows hospitality managers
+and compound information. Moreover, if managers want to know what to gain a more nuanced understanding of customer evaluations of
+and how much they need to improve in customer service, the aggregated diverse factors and make prioritized improvement decisions based on
+E-mail address: wkwon@sejong.ac.kr.
+https://doi.org/10.1016/j.ijhm.2025.104397
+Received 30 November 2024; Received in revised form 16 June 2025; Accepted 19 July 2025
+Available online 5 September 2025
+0278-4319/© 2025 Published by Elsevier Ltd.
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+their relative impact on satisfaction. machine learning, or deep learning-based approach. The
+However, whereas discussion about ABSA led by computational dictionary-based approach employs a pre-defined dictionary or lexicon,
+linguistics has mainly focused on enhancing the accuracy of sentiment such as SentiWordNet (Baccianella et al., 2010), with a pair of words and
+classification, few studies have explored the adaptation of ABSA to a sentiment scores. Machine learning and deep learning-based approaches
+hospitality and tourism management context. Indeed, ABSA focused on generally use annotated data and establish a classifier through super-
+the methodology itself is less helpful in uncovering why and how vised learning, which can then be used to assess the sentiment of a given
+problems latent in sentiments based on aspects (Kar and Dwivedi, 2020). document (Jeong et al., 2019).
+Moreover, ABSA requires a large volume of pre-annotated datasets since Recently, attention to ABSA has grown because customers’ affection
+it has been considered a classification problem in machine learning. for a product or a service is often based on a specific feature rather than
+Regarding the dataset with annotated labels of aspects, studies have an overall assessment (Venugopalan and Gupta, 2022). The aspect ele-
+relied on the limited availability of the aspect-sentiment-labeled dataset, ments consist of an aspect term and an aspect category (Zhang et al.,
+such as SemEval-2016 (Pontiki et al., 2016), mainly in the laptop or 2023). While capturing aspect terms in the text is straightforward, they
+restaurant domain. It becomes problematic when researchers or man- are often too intricate and detailed for direct use. In contrast, the aspect
+agers apply ABSA to other domains where the labeled dataset does not category, being more concise, topical, thematic, and perceptual, is more
+exist. For instance, new phenomena such as COVID-19 that do not have advantageous for exploring ABSA problems. Consequently, identifying
+labeled samples, where the annotation is laborious and challenging aspect categories derived from explicit aspect terms becomes critical for
+(Pourpanah et al., 2023), cannot be investigated by this approach. fulfilling the goals of ABSA. For instance, given the sentence “The room
+Therefore, this study attempts to bridge a critical research gap by with a sofa bed came with no pillows.,” determining “room amenities”
+advancing ABSA and combining it with a theoretical framework in the from the fine-grained aspect terms, such as “sofa bed” and “pillow” as an
+hospitality management. Unlike computational research that has pri- aspect of this sentence is demanding but more effective. As noted, one of
+marily focused on technical accuracy improvements, this work ad- the critical issues of the ABSA is that annotated data is limited, which
+dresses the specific challenges faced by hospitality researchers and means there is the least standard foundation to which the identification
+practitioners: the need to analyze customer sentiment without extensive of aspects refers.
+labeled datasets, and the requirement to transform this analysis into In the unsupervised learning approach, this issue is not problematic
+actionable service improvement priorities. It specifically addresses the because it does not need annotated data for label reference. Instead,
+following research questions. categories are determined from text. For instance, topics generated by
+topic modeling techniques, such as LDA, can be treated as aspects of
+• RQ1. How can aspect-based sentiment polarities be effectively reviews. Then, keywords aligned with each topic are used to assess
+detected from online reviews in the hospitality and tourism field different aspects present in the text when they match the words used.
+“when annotated data are limited”? Luo and Tang (2019)followed this approach and evaluated sentiment
+• RQ2. How can aspect categories and sentiment valence be utilized polarity by linking terms with external sentiment lexicons. The disad-
+more effectively for further quantitative analysis? vantages of this approach lie in the fact that aspects are constrained to
+topics generated by LDA, which hinders conducting SA based on a more
+For the RQ2, this study induces the Kano model (Kano et al., 1984) comprehensive range of aspects. Moreover, this approach is unavailable
+that notes the different features of products have asymmetric effects on for a small number of reviews due to the limitation of the LDA technique.
+customer satisfaction. It proposes three categories classifying those On the other hand, Yadav and Roychoudhury (2019) and Hu et al.
+features: attractive, must-be, and one-dimensional quality features (2021) captured the nouns that most frequently occur, using POS
+(Bigorra et al., 2019). Attractive features are related to excitement by tagging, and treated them as aspects. In this case, the aspects become
+fulfilling expectations, must-be features are related to mere customer granular, and another process for applying those aspect terms to aspect
+dissatisfaction by not fulfilling expectations, and one-dimensional fea- categories is necessary.
+tures can be related to both. The Kano model enables a more in-depth The supervised learning approach assumes that annotated data with
+perspective on the complex relationships between the outcomes of labels are available. This classification requires a training process with a
+ABSA and customer satisfaction, which contributes to a better under- well-annotated dataset, which is an obstacle to ABSA. For instance, Li
+standing of customer behavior as well as decision-making. et al. (2023)employed BERT to perform ABSA in a restaurant context.
+Maintaining this perspective, this study proposes a framework Although BERT is generally more reliable than the previous
+encompassing ABSA using zero-shot learning and an asymmetric anal- lexicon-based methods, it is designed for fine-tuned tasks and requires a
+ysis of the aspect categories toward satisfaction. Zero-shot learning sufficient size of labeled datasets to perform effectively (Widmann and
+classifies instances into labels that have not been trained previously, Wich, 2023). At least, despite being pre-trained, BERT cannot be applied
+which has the potential for classification tasks in NLP (Yin et al., 2019). to other contexts or used to investigate certain new aspects arising from
+In this study, a novel approach identifies the aspect category and the novel research questions.
+sentiment valence without the term-category pair or any annotated
+label. Furthermore, compared to the conventional linear relationship 2.2. Zero-shot text classification (ZSTC) based on natural language
+analysis, asymmetric analysis unveils dynamic relationships of identi- inference
+fied aspects toward satisfaction. Details are explained in the proposed
+methodology section, and a case study adapts the proposed framework Zero-shot learning originated from computer vision to classify new
+to online hotel reviews under the COVID-19 pandemic in which labeled images into classes that are not trained (Lampert et al., 2014). Later, it
+samples are rare. has been increasingly used in NLP tasks, such as language translation,
+entity extraction, classification of new semantic classes, and relation
+2. Related work extraction (Wang et al., 2019). Zero-shot text classification (ZSTC) refers
+to classifying text into candidate classes using zero-shot learning to
+2.1. Research on the aspect-based sentiment analysis (ABSA) predict labels that are not included in the training set. Whereas common
+machine learning or deep learning struggles with a shortage of training
+Sentiment analysis (SA) refers to evaluating the emotional tone in samples, ZSTC can deal with emerging classes that have not appeared in
+written text to comprehend the affective states expressed in the content previous datasets (Chen et al., 2021). ZSTC can classify multiple aspects
+(Raman et al., 2022). Generally, SA identifies the sentiment polarity in that may be contained even within a single sentence. For example, Yin
+the text at a document, sentence, or aspect level, using a dictionary, et al. (2019) identified ‘topic,’ ‘emotion,’ and ‘situation’ aspects,
+2
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+respectively, included in one sentence. conventional Kano model, which relies on customer survey data, recent
+Early ZSTC attempted to train a large corpus of sentences using a studies (e.g., Bi et al., 2020; Bigorra et al., 2019) actively take advantage
+single neural network and transfer a developed model into a new dataset of online textual reviews to capture product features aligned with
+to predict unseen classes (Pushp and Srivastava, 2018). However, the customer satisfaction.
+recent development of pre-trained large language models (LLMs) has Meanwhile, the Kano model has been extended by integrating
+substantially improved the performance of ABSA problems by not only various impact-asymmetry (IA) analysis methods. For instance, penalty-
+introducing enhanced embeddings but also providing feasible solutions reward contrast analysis (Brandt, 1987) has been employed in exam-
+for diverse downstream ABSA tasks (Zhang et al., 2023). While LLMs are ining the nonlinear impact of aspects on overall satisfaction (Mikuli´c and
+pre-trained language models that can be used in many different types of Prebeˇzac, 2008). The penalty-reward contrast analysis uses a multiple
+downstream tasks, they are generally fine-tuned for the tasks. Accord- regression equation, where overall satisfaction plays a role as a depen-
+ingly, gaps exist between pre-trained and fine-tuned models from the dent variable, using penalty or reward factors of features as independent
+transfer learning perspectives (Han et al., 2022). Moreover, in the ZSTC variables. This approach identifies the non-linearity of aspects by dis-
+problem, transferring knowledge from seen to unseen classes can be tinguishing penalty factors from negative factors and can categorize
+challenging because shared patterns or characteristics between these aspects among the features in the Kano model (Picolo and Tontini,
+classes are scarce (Ye et al., 2020). Hence, a semantic tool should help 2018). However, the generic penalty-reward contrast analysis does not
+bridge pre-trained knowledge and classified categories to improve the reveal the prioritized significance of those aspects.
+classification quality beyond generalization. Additionally, the method of importance-performance analysis
+Among many attempts to mitigate the gaps, prompt-based ap- (Martilla and James, 1977), which was developed as a distinctive
+proaches in using LLMs have recently attracted attention. This approach analytical approach, is frequently combined with the Kano model (Hu
+originated from the task of natural language inference (NLI) (Dagan et al., 2022; Picolo and Tontini, 2018). For example, the different im-
+et al., 2006) that aims to predict the relationship between two sentences, portances of aspects were measured by the coefficients of aspects in the
+such as entailment, contradiction, or neutral (Sainz and Rigau, 2021). regression equation (Bi et al., 2020; Xiao, 2021). This combination aids
+For example, ZSTC can be improved by providing appropriate prompts in closely examining the priorities of various aspects to enhance,
+using a next-sentence prediction model (Zhao et al., 2022). With the considering their asymmetric effects on overall satisfaction. It is worth
+advancement of LLMs, prompt engineering-based approaches have been noting that three factors in the Kano model have varied in their names,
+continuously progressing. Despite significant progress in ZSTC in depending on the different perspectives, though the core concept re-
+computational linguistics, including developments in prompt engineer- mains consistent. For example, attractive, one-dimensional, must-be
+ing, the field of hospitality and tourism management still lags behind in features in the Kano model are called excitement, performance, and
+incorporating this technology into its research. basic factors, respectively in Bi et al. (2020), while delighters, satisfiers,
+Moreover, it is crucial to distinguish LLMs used for ZSTC approaches hybrids, dissatisfiers, and frustrators were referred to from the
+from recent generative LLMs (e.g., ChatGPT). Most generative LLMs are perspective of customer satisfaction (Lee et al., 2020).
+fundamentally designed for text generation through autoregressive ar-
+chitectures optimized for next-token prediction (Brown et al., 2020). In 3. Proposed methodology
+contrast, ZSTC methodology requires NLI capabilities that evaluate
+entailment relationships between premises and hypotheses—a struc- Based on reviewing the literature and finding the limitations of the
+tured logical reasoning task distinct from text generation (Yin et al., present ABSA research mentioned above, this study offers a methodol-
+2019). NLI-based models are specifically trained to compute entailment ogy incorporating ABSA using ZSTC into Kano-model-based IA analysis.
+probabilities for systematic classification. They produce deterministic Fig. 1describes the entire process of the analysis conducted in this study.
+outputs essential for reproducible academic research, which generative
+models cannot guarantee due to their stochastic nature.
+3.1. Data preparation
+2.3. KANO model and impact-asymmetry (IA) analysis
+During the web scraping process, because it is impractical to selec-
+Recent works have criticized the assumption that various customer tively harvest user-generated content of specific interest from social
+factors have linear relationships with customer satisfaction (Bi et al., media sites, researchers typically gather a broad range of reviews
+2019). Particularly, Kano et al. (1984) extend Herzberg’s (1968) initially. This study applied Word2vec (Mikolov et al., 2013) to identify
+two-factor theory and propose a model consisting of three factors particularly focused reviews for a case study, as described later in the
+impacting customer satisfaction differently, such as attractive, case study section.
+one-dimensional, and must-be quality features. Attractive quality fea- In conventional NLP research, texts are normally broken into se-
+tures relate to delight or excitement to customers. When they are absent mantic unit elements. However, this task (so-called tokenization) is not
+or not fulfilled, it does not lead to customer dissatisfaction because necessary in the proposed methods because ZSTC using pre-trained
+customers do not have high expectations of them. However, if they are LLMs works on a contextual basis and does not need any further fine-
+well offered to customers, it greatly impacts positive customer satis- tuning. Likewise, the proposed model does not require text pre-
+faction. One-dimensional quality features refer to features with a con- processing, such as lowercasing, removing stop words, and stemming
+ventional linear relation with customer satisfaction. When they are or lemmatization, leaving text as it is. Instead, constructing auxiliary
+absent or not fulfilled as expected, customers will be dissatisfied, but if sentences is recommended to increase the clarity of each sentence
+they are fulfilled, customers will be satisfied. On the contrary, must-be containing pronouns (Murtadha et al., 2022). Dealing with the sentence,
+quality features do not influence customer satisfaction, even though the demonstrative pronoun can be replaced by named entities (Chauhan
+they are performed well. However, their poor performance leads to et al., 2022). By doing so, aspects and sentiments implied in each sen-
+customer dissatisfaction. tence can be revealed in the context. For instance, sentences, “My sister
+This perspective, despite adjustment and variation, has been applied lives in Houston. She is quite happy in that city.” are modified to “My sister
+to various works, such as quality function development (Liu et al., lives in Houston. My sister is quite happy in Houston.” using the ‘Neu-
+2022), attribute performance in hotel services (Bi et al., 2020), selecting ralCoref’ and ‘spaCy’ libraries in Python. After the auxiliary sentences
+improvement options for multichannel retailers (Baier and Rese, 2020), are constructed, each sentence is split and kept separately to obtain
+or security perceptions on smartphones (Xiao, 2021). Unlike the ABSA polarities based on the sentence.
+3
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+Fig. 1. The proposed methodology.
+3.2. Aspect-based sentiment analysis (ABSA) using zero-shot text “The sentiment of this sentence is {}.”, is used, which is called “prompt
+classification (ZSTC) decomposition” (Liu et al., 2023). As a result, each sentence generates an
+‘aspect’ and ‘sentiment’ pair based on the prediction probability.
+Annotated data are largely unavailable in most domains. Pre-trained Among various LLMs for ZSTC exist, this study selected the three
+zero-shot learning LLMs available on the Hugging Face platform (http most reliable LLMs on the Hugging Face platform: BART (Lewis et al.,
+s://huggingface.co/) can assign labels to unannotated text using any 2020), DeBERTa (He et al., 2021), and RoBERTa (Liu et al., 2019). BART
+user-defined categories, which can be applied for aspect categorization, has auto-regressive decoders and is designed to detect fine-grained as-
+emotion detection, relation extraction, and more kinds of classification pects from untrained and unlabeled datasets. Both DeBERTa (Deco-
+problems (Yin et al., 2019). As ABSA has two distinctive classification ding-enhanced BERT with Disentangled Attention) and RoBERTa (A
+problems (i.e., aspect classification and sentiment classification), re- Robustly Optimized BERT Pretraining Approach) are enhanced versions
+searchers can design different candidate sets of classes for an aspect and of BERT, benefiting from training larger and more diverse datasets and
+a sentiment, respectively. Then, ZSTC is conducted with an optimized training methods and parameters. These three models are
+instruction-tuned pipeline consisting of hypothesis and candidate op- known for their ability to predict unseen classes effectively. However,
+tions to improve performance based on the NLI task (Wei et al., 2022). BERT was not used in this study because its architecture is based on
+Specifically, the study takes advantage of a textual entailment approach fine-tuning with pre-annotated datasets and underperforms in the NLI
+in which a hypothesis is formulated by entailing the aspect class or task. Then, an ensemble method based on majority voting was used to
+sentiment valence in a template based on the assumption that a sentence obtain better outcomes, where the class that acquires two or more votes
+serves as a premise (Gera et al., 2022). is chosen.
+Suppose that given a review consisting of a sequence of sentences S
+={s1 , s2 , …, sn }and a list of candidate aspects A ={a1 ,a2 ,…,an }, the
+model is required to label each pair {(s,a): (s∈S,a∈A)}. In other 3.3. impact-asymmetry (IA) analysis
+words, given any s as a premise, a hypothesis is developed from a
+template incorporating candidate classes. This hypothesis is given as a It is essential to exercise caution in using the predicted probability of
+form of a cloze prompt, such as “The subject of this sentence is {}” so a class as a direct indicator of the feature’s degree because the proba-
+that the potential classes with a probability distribution for the empty bilities of candidate classes compete to be summed into one (Holtzman
+field can be predicted based on the pre-trained LLMs. To address two et al., 2022). Thus, this study uses the frequency of sentiment corre-
+classification problems corresponding to each sentence, it is better to use sponding with the aspect identified within the sentences of reviews. The
+different sub-prompts than one prompt holding two hypotheses because counted frequency is assumed to be the sentimental intensity of each
+predicting different types of classes at the same time is challenging (Liu aspect in reviews. Next, the study adopts a penalty-reward contrast
+et al., 2023). Accordingly, as shown in Table 1, a separate sub-prompt, approach in which positive and negative performances of each aspect
+toward overall satisfaction are separately considered to analyze the
+asymmetric effects of aspects (Mikuli´c and Prebeˇzac, 2011). Hence, the
+Table 1 negative sentiment associated with each aspect acts as a penalty, while
+The example of textual entailment for aspect classification.
+the positive sentiment functions as a reward. Then, the penalty and
+Premise (sentence) Task Hypothesis reward scores are obtained by coefficients derived from multivariate
+Template The most- regression analysis, shown in the equation below.
+likely class ∑A (cid:0) )
+“My room was one of the Aspect The subject of facilitates Satisfaction= β 0 + β 1a χ pa +β 2a χ na +CV+e ,
+‘Wellness’ rooms and classification this sentence is a=1
+offered some great {}.
+features such as an air Sentiment The sentiment positive where β is the constant, and given that an aspect a∈A, χ and χ are
+0 pa na
+purifier and water quality classification of this sentence the positive and negative sentiments of the aspect a,respectively, β
+and a serene setting.” is {}. and β are the coefficients associated with those sentiments of th 1 e a
+2a
+4
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+aspect a, CV is a control variable, and e is an error. Satisfaction is content regarding COVID-19. Orlando possesses the most significant
+measured by user ratings. number of hotels. However, Las Vegas stands out as having many re-
+Based on Bi et al. (2020), using the penalty and reward scores, the views per hotel, both for all and COVID-19-related reviews. It suggests
+following equation calculates the IA score for each aspect. that the city’s hotels are popular, and visitors are more inclined to leave
+reviews. Houston, while having a significant number of hotels, has a low
+|β |(cid:0) |β |
+IAa =
+|β
+1a
+|+|β
+2a
+|
+average of reviews per hotel and a low average of COVID-19 reviews per
+1a 2a hotel. Washington DC has the highest ratio of COVID-19-related reviews
+The IA score should range from (cid:0) 1 to 1 based on the formula above. (10.7%), indicating that a larger portion of its hotel reviews are related
+When the score is close to 1, the aspect is considered a perfect satisfier, to COVID-19 concerns or experiences than any other city. Surprisingly,
+indicating that satisfaction only exists when the performance of this New York has the lowest number of hotels with COVID-19 reviews and
+aspect meets expectations. When the score approaches (cid:0) 1, the aspect is the lowest ratio of COVID-19 reviews (3.7%) despite being a major city.
+identified as a perfect dissatisfier. It suggests that dissatisfaction occurs
+solely when the performance of this aspect fails to meet expectations.
+4.2. Aspect-based sentiment analysis (ABSA) using zero-shot text
+The thresholds for the IA score follow the suggestions of Lee et al.
+classification (ZSTC)
+(2020). Specifically, if IAa >0.8, the aspect is classified as a delighter (an
+extreme satisfier); if 0.2 <IAa ≤0.8, the aspect is classified as a sat-
+Since the proposed method in this study addresses the ABSA at the
+isfier; if (cid:0) 0.2 <IAa ≤0.2, the aspect is classified as a hybrid; if (cid:0)
+sentence level, it is necessary to split a review into individual sentences.
+0.8 <IAa ≤0.2, the aspect is classified as a dissatisfier; if IAa <(cid:0) 0.8,
+However, the creation of auxiliary sentences should be done before this
+the aspect is classified as a frustrator (an extreme dissatisfier).
+splitting process to ensure that the referred named entities are not lost.
+Following this procedure, from a total of 4080 reviews, 45,295 senten-
+4. Case study
+ces, each completed with auxiliary sentence construction, were
+identified.
+4.1. Data preparation
+Given that no pre-defined labels exist in ZSTC, this study carefully
+selected hospitality-specific aspect categories based on Lai and Hitchcock
+Since the study conducts customers’ ABSA using ZSTC methods, it
+(2016)dimensions of satisfaction sources in hotel service. The 11 candidate
+selected online reviews in the context of COVID-19 as a case study
+aspects (facilities, staff, location, food, price, cleanliness, design features,
+source because they may contain previously unseen events. A custom-
+technologies, entertainment, safety, and general) were specifically chosen to
+ized web scraping program built on Python (version 3.9) was used to
+collect reviews on TripAdvisor, one of the largest social media platforms
+Table 3
+where individuals share their service experiences. Data collection was
+The result of robust regression analysis and impact-asymmetry analysis.
+slowly processed for four months, from July 2020 to October 2020, to
+avoid straining the web server. The web scraper initially gathered the Variable Estimate Aspect IA score Factor
+names of hotels from the eight leading cities. These cities were chosen facilities_pos 1.409*** (0.122) Facilities (cid:0) 0.268 dissatisfiers
+according to the number of hotels they have, as reported by Statista (htt facilities_neg (cid:0) 2.442*** (0.110) ​ ​ ​
+staff_pos 2.142*** (0.146) Staff (cid:0) 0.147 hybrids
+ps://www.statista.com/statistics/459791/number-hotel-rooms-us-citi
+staff_neg (cid:0) 2.881*** (0.200) ​ ​ ​
+es/). Following this, the scraper collected reviews for each of these ho- location_pos 1.423*** (0.137) Location (cid:0) 0.116 hybrids
+tels, and ‘hotel name,’ ‘address,’ ‘reviewer id,’ ‘reviewer location,’ location_neg (cid:0) 1.797*** (0.163) ​ ​ ​
+‘rating,’ ‘review title,’ and ‘review text’ items were captured and stored food_pos 0.430* (0.197) Food (cid:0) 0.319 dissatisfiers
+in the database system. food_neg (cid:0) 0.833*** (0.242) ​ ​ ​
+price_pos 1.386*** (0.359) Price (cid:0) 0.345 dissatisfiers
+Since the burst of COVID-19 was first reported in December 2019, price_neg (cid:0) 2.846*** (0.211) ​ ​ ​
+reviews posted after January 2020 were only considered. Among them, cleanliness_pos 2.414*** (0.266) Cleanliness (cid:0) 0.076 hybrids
+of particular interest are reviews explicitly mentioning the primary cleanliness_neg (cid:0) 2.810*** (0.305) ​ ​ ​
+term, ‘COVID-19.’ Additionally, a word embedding technique (i.e., design_pos 1.200*** (0.242) Design 0.878 delighters
+design_neg (cid:0) 0.078(0.516) ​ ​ ​
+Word2vec) was used to identify seed words semantically related to
+technologies_pos (cid:0) 0.226(0.883) Technologies (cid:0) 0.737 dissatisfiers
+‘COVID-19’ based on the cosine similarity score. Finally, reviews con- technologies_neg (cid:0) 1.495* (0.804) ​ ​ ​
+taining those seed words (i.e., ‘covid,’ ‘coronavirus,’ ‘virus,’ ‘pandemic,’ entertainment_pos 0.793*** (0.304) Entertainment (cid:0) 0.302 dissatisfiers
+‘epidemic,’ ‘ncov,’ ‘quarantine,’ or ‘lockdown’) were selected for the entertainment_neg (cid:0) 1.481** (0.617) ​ ​ ​
+analysis. A descriptive result of reviews used in this case study is shown safety_pos 2.470*** (0.284) Safety 0.444 satisfiers
+safety_neg (cid:0) 0.952*** (0.268) ​ ​ ​
+in Table 2.
+During the period, 52,707 reviews from 1819 hotels were initially Notes: N=4080; *p<0.1; **p<0.05; ***p<0.01; The number of sentences is
+collected, and 4080 reviews from 991 hotels were considered to hold a control variable; IA score =Impact-asymmetry score.
+Table 2
+The descriptive summary of the focal data.
+Location All reviews COVID-19 related reviews
+No of hotels No of reviews (1) Review per hotel No of hotels No of reviews (2) Review per hotel Ratio
+(2) / (1)
+Orlando 327 11200 34.3 226 966 4.3 8.6%
+LA 320 4693 14.7 138 456 3.3 9.7%
+Houston 320 3162 9.9 115 210 1.8 6.6%
+Las Vegas 201 16170 80.4 132 1190 9.0 7.4%
+New York 181 6424 35.5 84 236 2.8 3.7%
+Chicago 171 4394 25.7 114 350 3.1 8.0%
+Dallas 151 2674 17.7 84 246 2.9 9.2%
+Washington DC 148 3990 27.0 98 426 4.3 10.7%
+Total 1819 52707 29.0 991 4080 4.1 7.7%
+5
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+capture the key dimensions of hotel experiences. As described in Table 3, a 4.3. impact-asymmetry (IA) analysis
+hypothesis template using three LLMs (i.e., BART, DeBERTa, and RoBERTa)
+predicted the most-likely class of an aspect with distributed probabilities. To In this study’s multivariate regression analysis, a breach of multi-
+maximize the accuracy, this study used models having a large size of pa- variate normality (HZ statistic = 21.42, p<.001) was observed, as
+rameters, that is, ‘facebook/bart-large-mnli’ for BART, ‘MoritzLaur- indicated by the Henze–Zirkler (HZ) test (Henze and Zirkler, 1990).
+er/DeBERTa-v3-large-mnli-fever-anli-ling-wanli’ for DeBERTa, and Moreover, the studentized Breusch–Pagan test (Koenker, 1981) showed
+‘roberta-large-mnli’ for RoBERTa, respectively on the Hugging Face plat- heteroscedasticity in the OLS regression model (BP statistic (4080, 21)
+form. All these ZSTC procedures were conducted using PyTorch v2.0 (htt =453.19, p<.001). To address the violation of these assumptions, this
+ps://pytorch.org/). Then, the predicted class that received the majority study conducted a robust regression analysis (Huber and Ronchetti,
+vote from the three LLMs was designated as the final class. In case all three 2009). As displayed in Table 3, the results show that all variables are
+models predicted different classes, one with the highest probability score statistically significant except for ‘design_neg’ and ‘technology_pos.’
+was selected. Regarding the classification of sentiment valence, one of three Further, this study calculated the IA scores of aspects using the formula
+sentiment labels (i.e., positive, negative, and neutral) was allocated for each described above. Based on the established criteria, five aspects (e.g.,
+sentence in the same way as the majority voting of aspect classification. facilities, food, price, technologies, and entertainment) were categorized
+In the subsequent step, as demonstrated in Fig. 2, this study con- as dissatisfiers, three aspects (e.g., staff, location, and cleanliness) were
+verted the aspect-sentiment pair set of each sentence into quantitative identified as hybrids, and design and safety were classified as delighters
+values at the review level based on their frequency of occurrence. Since and satisfiers, respectively.
+each sentence within a review contains a unique aspect-sentiment pair Then, the study designed the impact level-asymmetry map, as shown
+set and a review is composed of multiple sentences, the study restruc- in Fig. 4. This approach facilitates the identification of more or less
+tured the sentence records into a wide format, including the aspect- relevant aspects of customer satisfaction and improvement priorities
+sentiment pairs as independent variables. The count of each pair set (Mikuli´c and Prebeˇzac, 2008). For instance, ‘technologies’ is a dissat-
+was tallied whenever it appeared, augmenting the corresponding vari- isfier that must be adequately provided to prevent dissatisfaction.
+able’s value and thereby intensifying the sentiment. Through this pro- However, its strength of impact on customer satisfaction is feeble. In
+cess, the study quantified the overall sentiment intensity for all aspects contrast, ‘facilities’ is also dissatisfier, but given its medium impact, it
+within a review. should have higher priority. Delighters and satisfiers are positioned on
+This study generated a correlation map to ensure that LLMs judge the upper side, and ‘design’ and ‘safety’ fall into this category, respec-
+aspects’ sentimental polarities appropriately. As shown in Fig. 3, all the tively. They currently exceed customer expectations but have a low or
+variables of positive sentiments are positively related to ratings (colored moderate impact, implying a good performance but less necessity for
+in blue). In contrast, all the variables of negative sentiments are nega- immediate improvement than other aspects. For hybrids, all the aspects
+tively related to ratings (colored in red), which supports an assumption have medium to high impact levels with moderate asymmetry,
+that the result of ZSTC is reliable. Moreover, the number of sentences in contributing to both satisfaction and dissatisfaction.
+a review was added as a control variable because the appearance fre-
+quency of aspects and sentiments is impacted by the number of sen-
+tences used in a review. The correlation map reveals that the number of 4.4. Robustness checks
+sentences is negatively related to ratings, which is consistent with pre-
+vious studies demonstrating that the length of a review is negatively 4.4.1. Robustness check with human annotations
+related to ratings (Ghasemaghaei et al., 2018). In a scenario where ZSTC does not presume any annotated dataset,
+model performance evaluation is not naturally available, and no ground-
+Fig. 2. The restructured form of the dataset. a1 and a2 denote the first and the second aspects.
+6
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+Fig. 3. The correlation map.
+Fig. 4. The impact level-asymmetry map.
+truth classification can be predicted with proven accuracy (Basile et al., Cohen’s kappa coefficients (Cohen, 1960) with manual annotations
+2021). This study, therefore, had the dataset manually annotated to across 11 aspect categories and three sentiment categories. Cohen’s
+compare labels with the results predicted by the ZSTC for the robustness kappa is known as a robust measure for the degree to which shows the
+check. First, the researcher randomly sampled 1% of 45,295 sentences performance of classification (Kirilenko et al., 2018), and management
+using a stratified sampling method because the numbers of predicted and marketing studies have employed it to evaluate the reliability of
+aspects were not equally balanced. Thus, 453 sentences were distributed rater or annotation results (e.g., Hulland et al., 2018; Mirtalaie and
+to three graduate students, who then annotated their aspects and sen- Hussain, 2020; Wu et al., 2020). As shown in Table 4, aggregated values
+timents. If any of two or more manual annotations were equal, it was from multiple human annotators yield higher Cohen’s kappa coefficients
+finally confirmed as the final label. If none of the three was equal (i.e., 67 (0.40 for the aspect and 0.64 for the sentiment, emphasized in bold in
+cases in the aspect and 20 cases in the sentiment), the researcher the table) with ZSTC than those from any other individual annotators,
+selected one among the candidates. suggesting that the ZSTC is efficient because it means that ZSTC captures
+The reliability of ZSTC results was assessed by the comparison of a more collective human judgment. Furthermore, the findings indicate
+7
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+Table 4 classification accuracy (0.8166 vs. 0.7701), despite relying on no
+Cohen’s kappa and consistency between human annotations and ZSTC. labeled training data. The F1 scores reveal a more nuanced performance
+Annotation Cohen’s κ Consistency profile. The method demonstrates competitive result in aspect classifi-
+cation (0.5488 vs 0.6746) and sentiment classification (0.6307 vs
+Aspect Sentiment Aspect Sentiment
+0.7677). It should be noted that the fine-tuned BERT is used solely as a
+HA1 0.27 [0.22, 0.32] 0.48 [0.41, 0.55] 37.97% 70.64% reference point and is not directly comparable to the ZSTC ensemble
+HA2 0.35 [0.29, 0.40] 0.62 [0.56, 0.67] 45.47% 75.94%
+method proposed in this study, since it requires extensive labeled data
+HA3 0.36 [0.30, 0.41] 0.50 [0.45, 0.56] 44.81% 67.99%
+HA-all 0.40 [0.34, 0.45] 0.64 [0.58, 0.69] 49.45% 77.92% for training, which is precisely the limitation the study seeks to
+overcome.
+Notes: N=453. HA1, HA2, and HA3 denote human annotators who manually
+Importantly, when compared to traditional approaches commonly
+labeled classes. HA-all denotes the combination of all human annotators. The
+used by researchers, the method shows substantial improvements.
+numbers in a bracket are the lowest and the highest coefficients in the 95%
+Relative to VADER, it illustrates 23.8% increase in sentiment classifi-
+confidence interval.
+cation accuracy (0.8166 vs. 0.6597) and 19.9% gain in F1 score (0.6307
+that the reliability of the aspect is nearly moderate (κ > 0.4), while vs 0.5261), while also providing aspect classification capabilities that
+sentiment demonstrates substantial (κ > 0.6) inter-reliability (Landis conventional lexicon-based tools entirely lack.
+and Koch, 1977). The consistency between ZSTC and human-annotated
+results has the same pattern as Cohen’s kappa, yielding the highest 5. Discussion
+consistency for the aggregated value.
+Natural language processing has become ubiquitous in social science
+journals. The recent advancement of LLMs in computer science has
+4.4.2. Robustness check with training dataset
+shown great potential but less affected hospitality and tourism man-
+To further validate the proposed method and address the need for
+agement literature. As shown in Fig. 1, this study proposes an over-
+comprehensive model comparisons, this study applied the method to the
+arching framework applying ZSTC to ABSA, which leads to IA analysis to
+standard training dataset (SemEval2014) available on Kaggle (htt
+enrich an understanding of aspects’ linear or nonlinear effects on
+ps://www.kaggle.com) and compared it with traditional ABSA ap-
+customer satisfaction. The entire process aligns with how to gain in-
+proaches. Although this dataset is acquired and labeled in a restaurant
+sights into the specific aspects and their roles in customer satisfaction by
+domain, there is no comparable training dataset for the hotel domain,
+presenting customer-generated texts into pre-trained LLMs without a
+making it challenging to apply traditional machine-learning approaches
+pre-labeled dataset. A case study adapting proposed methods produces
+to ABSA for hotel reviews. This study chose the five most frequent aspect
+effective results, which evoke subsequent theoretical and practical
+categories from the SemEval2014 training dataset, excluding a miscel-
+discussions.
+laneous category, because the dataset entails almost 1300 labels, with
+duplicates like ‘price’ and ‘prices.’ After this selection, a total of 867
+labeled records with aspect categories such as ‘food,’ ‘service,’ ‘ambi- 5.1. Theoretical implications
+ence,’ ‘price,’ and ‘place’ were used as the secondary source for
+robustness validation. With the rapid increase of textual content on social media, how to
+While BERT was designed initially for pre-training and is not ideally leverage these online texts encompassing a range of customer percep-
+suited for NLI, it was included as a baseline model to evaluate ZSTC in a tions and attitudes on products and services has become very important.
+scenario in which no-domain specific annotated data is available. Specifically, rather than referring to aggregated evaluation, delving into
+Additionally, this study included a fine-tuned BERT model as a reference positive or negative sentiments of various aspects can capture multiple
+point to demonstrate the performance ceiling achievable with super- dimensions. In this regard, ABSA has recently attracted academic
+vised learning approaches that have access to labeled training data. To attention since analyzing sentiment polarity at a document level may
+provide more comprehensive comparison with traditional approaches, lead to an insufficient understanding. However, the use of ABSA has
+the study included VADER, a widely-used lexicon-based SA technique been limited in management literature. It requires solutions to address
+that represents conventional approaches in the field. However, as issues to be effective: identifying aspects and detecting sentiment
+VADER is primarily a SA tool without built-in aspect classification ca- valence matched with the identified aspects, particularly when labeled
+pabilities, it could only be evaluated on sentiment classification tasks. data are not available
+The performance of the proposed model was assessed for both aspect This study proposes state-of-the-art methods based on the ZSTC that
+and sentiment classification, with comprehensive evaluation metrics address these issues, with significant implications for hospitality man-
+including accuracy, precision, recall, and F1-score, as presented in agement theories. First, by using pre-trained LLMs, this approach clas-
+Table 5. sifies aspects at a sentence level and determines sentiment polarity for
+As expected, BERT without fine-tuning performed poorly across both the identified aspect without requiring hospitality-specific training data.
+tasks, demonstrating the necessity of alternative approaches. Remark- This methodological innovation directly addresses a persistent barrier to
+ably, the proposed ZSTC ensemble model achieved performance com- advanced customer analytics in the hospitality research, thus enabling
+parable to the supervised fine-tuned BERT model in aspect classification more sophisticated investigation of service quality dimensions and their
+accuracy (0.6471 vs. 0.6724) and outperformed it in sentiment impact on satisfaction. This approach effectively overcomes the ABSA’s
+Table 5
+The performance comparison between BERT, VADER, and the proposed model using ZSTC.
+Model Aspect Sentiment
+Accuracy Precision Recall F1 Accuracy Precision Recall F1
+BERT (a baseline) 0.0346 0.0709 0.0297 0.0371 ​ 0.1373 0.2045 0.2697 0.1374
+BERT (fine-tuned) 0.6724 0.6802 0.6724 0.6746 ​ 0.7701 0.7666 0.7701 0.7677
+VADER SA N/A N/A N/A N/A ​ 0.6597 0.5625 0.5311 0.5261
+Proposed ensemble model 0.6471 0.5728 0.5695 0.5488 ​ 0.8166 0.6655 0.6345 0.6307
+Note: The fine-tuned BERT model was trained on 80% of the dataset (training set), and its performance was evaluated on the remaining 20% (validation set). It should
+be noted that the fine-tuned BERT model is feasible only when a pre-trained dataset with same category labels exists.
+8
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+challenge of recognizing a sentiment polarity that aligns with the where there is no information on customer preferences for the product.
+specified aspect. Since ZSTC can extract sentiments of attributes in virtually any product
+Second, it does not need to rely on lexicons as an outward reference, similar to the planned product, those identified sentiments corre-
+even when labeled data is unavailable. Third, since it uses LLMs that sponding to the targeted attributes can be mapped into the components
+employ contextual embedding, the result of ZSTC can recognize the as references for the new product.
+distinct meanings of the polysemous words, ensuring higher accuracy. Most studies concentrate on the aspects of ameliorating customer
+This method applies to various domains and circumstances because it satisfaction. However, those aspects are not linearly related to customer
+allows researchers to establish any classes of their interests. Specifically, satisfaction. Dissatisfiers are only related to dissatisfaction when cus-
+it can investigate conceptually innovative features for emerging phe- tomers’ expectations are not met, while satisfiers are only related to
+nomena like COVID-19, as done in the case study presented here. satisfaction when customers’ expectations are met. Despite the suc-
+Furthermore, it can interpret complicated and multidimensional facets cessful identification of aspects using ABSA, finding out how they are
+of concepts implied in a document, which has excellent potential for related to an accumulated satisfaction is demanding (Chang et al.,
+extending social science research. Furthermore, to enhance trustwor- 2022). The case study based on the proposed methods shows how to
+thiness, this study conducts two robustness checks, which compare the classify identified aspects into dissatisfiers, satisfiers, and hybrids.
+result generated by an ensemble model of three LLMs with human an- Furthermore, a map showing the impact level and asymmetry highlights
+notations (the first robustness check), and with pre-classified aspects the priorities of different aspects and can aid in enhancing companies’
+and sentiments (the second robustness check). decision-making processes.
+Although this study primarily focuses on proposing an innovative Thus, ABSA using ZSTC enables companies to understand customer
+methodology for ABSA, its theoretical contribution to the literature is perceptions without intensive human labor. Even the voices of customer
+substantial. As noted by Mehraliyev et al. (2022), sentiment holds the calls can be transformed into a textual format so that the proposed
+potential to advance beyond regression analysis. Particularly in ABSA methods in this study can be employed. Moreover, firms that hesitate to
+research, while Li et al. (2023)investigated the importance of aspects for invest in the analysis of customer sentiments at a granular level do not
+restaurant survival in their ABSA research, few studies have examined need to suffer from expenses since the methods are flexible in future
+the dynamic role of each aspect in shaping customer satisfaction. This changes or class expansions. It assists companies in enhancing their
+study applied the proposed method within the framework of the Kano decision-making processes, thereby maintaining a competitive edge.
+model and incorporates impact-asymmetry analysis to explore asym-
+metric relationships with satisfaction. As aspects can be considered as 5.3. Limitations and future research
+factors in textual data, the capability of identifying sentiment levels
+associated with an individual aspect enables researchers to test hy- This study proposed state-of-the-art methods, and a case study
+potheses through identified aspects and sentiments across vast volumes demonstrated their feasibility. However, it has limitations that may
+of texts. guide future research directions. First, NLI based on LLM is subject to
+The proposed methodological framework represents a fundamen- potential biases rooted in the collection of datasets on which the model
+tally different paradigm from generative LLM approaches for several is trained. Even models trained on vast datasets contain inherent biases
+practical and technical reasons. Processing large-scale hospitality re- related to factors such as race, gender, and nationality. Additionally,
+view datasets (such as 45,295 sentences in this paper) requires efficient each model draws from different data sources, meaning that the per-
+batch processing capabilities that our ensemble ZSTC approach provides formance of LLMs can vary depending on the application domain. This
+through vectorized operations. Generative LLMs operate through indi- study employed an ensemble model that integrates three advanced
+vidual prompt-response interactions requiring separate API calls for models to mitigate potential biases associated with any individual model
+each classification task. They create cost inefficiencies and process and achieve more consistent results. As this is a critical research area in
+bottlenecks unsuitable for research-scale analysis. Furthermore, the in- computational linguistics, researchers in hospitality and tourism should
+tegrated analytical framework that combines ensemble ZSTC with IA closely monitor the progress of LLM techniques. In this regard, the
+analysis addresses the persistent challenge of conducting ABSA without innovation of LLMs is ongoing, which will further enhance the overall
+domain-specific annotated datasets, while establishing a replicable quality of NLI.
+methodology that transcends individual model architectures. Second, one of the advantages of ZSTC is that the researcher can
+freely define classes in advance. However, as the number of classes
+5.2. Practical implications grows, classification accuracy will decrease. Unfortunately, the opti-
+mized number of classes is unknown. As the optimized number of topics
+At a document level, sentiment analysis is insufficient to understand is unknown in topic modeling, it is an overall problem with unsuper-
+customers comprehensively. Although a firm can gain some insights into vised learning. However, there is a need to continue research on
+the aggregated results of the analysis, it cannot often find where to go improving and finding an adequate number of classes in line with the
+with those results. If it captures customers’ sentiment polarity at an development of NLP using LLMs. Furthermore, from a prompt engi-
+aspect level, it can have a better chance to satisfy their expectations. neering perspective, future research could adopt the development of
+Hence, ABSA is critical to having a competitive advantage from a firm’s more effective prompts or the use of ensemble prompt methods, which is
+perspective. ABSA is valuable for in-depth understanding even when the an active area of discussion in current NLP research.
+customers’ quantitative score (e.g., a rating) is unavailable. However, as Third, in the case study, this study only focused on reviews related to
+mentioned above, ABSA has some disadvantages for ease of use. Most COVID-19, excluding other data, such as reviews before 2020, for the
+companies, for example, do not have the resources to adapt up-to-date comparison as it was beyond the scope of this study. It will be mean-
+ABSA methods that generally require a large dataset. ingful to compare changes in the sentiment polarity in aspects and their
+The proposed methods in this study are easy to follow and provide impact levels over different periods in the future. Moreover, the pro-
+alternative solutions. By taking advantage of pre-trained LLMs, ZSTC posed methods can be applied to other contexts where datasets with
+does not need to build any complicated model. Besides, it does not need annotation do not exist. Integrating the ZSTC and the Kano model can
+human annotation or data training work, which are burdensome for transform qualitative evaluations of aspects into quantitative features
+most companies. Therefore, it can flexibly ensure the sentiment polarity for empirical research. Using this study as an example, future research
+for any new aspect and reflect a change in business environments, which can expand upon these findings by comparing results based on different
+previously required constructing and training a new dataset. In this re- conditions, such as the grades or locations of hotels. Researchers could
+gard, the proposed methods contribute to new product development apply the proposed methods to different contexts of their interests.
+9
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+6. Conclusion Bigorra, A.M., Isaksson, O., Karlberg, M., 2019. Aspect-based Kano categorization. Int. J.
+Inf. Manag. 46, 163–172. https://doi.org/10.1016/j.ijinfomgt.2018.11.004.
+Brandt, R.D., 1987. A procedure for identifying value-enhancing service components
+In the hospitality and tourism context, ABSA presents particular using customer satisfaction survey data. In: Surprenant, C.F. (Ed.), Add Value to
+value as service experiences are inherently multidimensional. Tradi- Your Service: The Key to Success. American Marketing Association, Chicago, IL,
+tional hospitality research has relied on structured surveys to capture pp. 61–64.
+Brown, T.B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A.,
+these dimensions, whereas user-generated content can offer richer, un-
+Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G.,
+prompted insights. However, hospitality researchers face unique chal- Henighan, T., Child, R., Ramesh, A., Ziegler, D.M., Wu, J., Winter, C., Amodei, D.,
+lenges in applying ABSA: (1) the diverse and evolving nature of service 2020. Language models are few-shot learners. ArXiv. https://doi.org/10.48550/
+arxiv.2005.14165.
+attributes that vary across property types and service levels, (2) the lack
+Chang, Y.C., Ku, C.H., Nguyen, D.D.Le, 2022. Predicting aspect-based sentiment using
+of hospitality-specific labeled datasets for training supervised models, deep learning and information visualization: the impact of COVID-19 on the airline
+and (3) the need to connect sentiment analysis with service management industry. Inf. Manag 59, 103587. https://doi.org/10.1016/j.im.2021.103587.
+Chauhan, G.S., Meena, Y.K., Gopalani, D., Nahta, R., 2022. A mixed unsupervised
+frameworks that can guide operational improvements.
+method for aspect extraction using BERT. Multimed. Tools Appl. https://doi.org/
+This study addresses these hospitality-focused challenges by pro- 10.1007/s11042-022-13023-7.
+posing an innovative methodology that integrates ABSA using ZSTC Chen, J., Geng, Y., Chen, Z., Horrocks, I., Pan, J.Z., Chen, H., 2021. Knowledge-aware
+zero-shot learning: survey and perspective. arXiv.
+with impact-asymmetry analysis based on the Kano model. This
+Cohen, J., 1960. A coefficient of agreement for nominal scales. Educ. Psychol. Meas. 20,
+approach eliminates the need for domain-specific training data or 37–46. https://doi.org/10.1177/001316446002000104.
+extensive annotation processes, while directly identifying aspect cate- Dagan, I., Glickman, O., Magnini, B., 2006. The PASCAL recognising textual entailment
+gories based on pre-defined targets. This methodological innovation challenge. Lect. Notes Comput. Sci. (Incl. Subser. Lect. Notes Artif. Intell. Lect. Notes
+Bioinforma. ) 3944 LNAI 177–190. https://doi.org/10.1007/11736790_9.
+transforms qualitative customer feedback into quantitative variables Dwivedi, Y.K., Ismagilova, E., Hughes, D.L., Carlson, J., Filieri, R., Jacobson, J., Jain, V.,
+that support theory-based decision-making. Karjaluoto, H., Kefi, H., Krishen, A.S., Kumar, V., Rahman, M.M., Raman, R.,
+The theoretical contribution lies in advancing our understanding of Rauschnabel, P.A., Rowley, J., Salo, J., Tran, G.A., Wang, Y., 2021. Setting the future
+of digital and social media marketing research: Perspectives and research
+how different service aspects asymmetrically influence customer satis- propositions. Int. J. Inf. Manag. 59, 1–37. https://doi.org/10.1016/j.
+faction in hospitality settings, filling a significant gap in ABSA research ijinfomgt.2020.102168.
+using LLMs within hospitality contexts. The methodological framework Gaspar, R., Pedro, C., Panagiotopoulos, P., Seibt, B., 2016. Beyond positive or negative:
+Qualitative sentiment analysis of social media reactions to unexpected stressful
+provides empirical support for non-linear relationships between service events. Comput. Hum. Behav. 56, 179–191. https://doi.org/10.1016/j.
+dimensions and overall satisfaction, which contributes to theory build- chb.2015.11.040.
+ing in hospitality management. For practical application, this frame- Gera, A., Halfon, A., Shnarch, E., Perlitz, Y., Ein-Dor, L., Slonim, N., 2022. Zero-shot text
+classification with self-training. arXiv.
+work enables hotel managers to strategically interpret which service
+Ghasemaghaei, M., Eslami, S.P., Deal, K., Hassanein, K., 2018. Reviews’ length and
+elements require immediate attention to prevent dissatisfaction (e.g., sentiment as correlates of online reviews’ ratings. Internet Res. 28, 544–563. https://
+facilities and price in the case study) versus which elements drive doi.org/10.1108/IntR-12-2016-0394.
+Han, X., Zhao, W., Ding, N., Liu, Z., Sun, M., 2022. PTR: prompt tuning with rules for text
+exceptional satisfaction when executed well (e.g., safety and design
+classification. AI Open 3, 182–192. https://doi.org/10.1016/j.aiopen.2022.11.003.
+features). By classifying aspects as satisfiers, dissatisfiers, or hybrids, He, P., Liu, X., Gao, J., Chen, W., 2021. Deberta: decoding-enhanced bert with
+managers can prioritize service improvements effectively. This nuanced disentangled attention. ICLR 2021 9th Int. Conf. Learn. Represent.
+understanding is particularly valuable in resource-constrained Henze, N., Zirkler, B., 1990. A class of invariant consistent tests for multivariate
+normality. Commun. Stat. Theory Methods 19, 3595–3617. https://doi.org/
+environments. 10.1080/03610929008830400.
+Herzberg, F., 1968. One more time: How do you motivate employees? Harv. Bus. Rev.
+53, 62.
+CRediT authorship contribution statement
+Holtzman, A., West, P., Shwartz, V., Choi, Y., Zettlemoyer, L., 2022. Surface Form
+Competition: Why the Highest Probability Answer Isn’t Always Right. EMNLP 2021 -
+Wooseok Kwon: Writing – review & editing, Writing – original 2021 Conf. Empir. Methods Nat. Lang. Process. Proc, pp. 7038–7051. https://doi.
+org/10.18653/v1/2021.emnlp-main.564.
+draft, Visualization, Validation, Supervision, Software, Resources, Hu, K.C., Chia, K.C., Lu, M., Liang, Y.L., 2022. Using importance–performance analysis,
+Project administration, Methodology, Investigation, Formal analysis, goal difficulty and the Kano model to prioritize improvements in the quality of home
+Data curation, Conceptualization. delivery logistics services. Int. J. Logist. Manag 33, 477–498. https://doi.org/
+10.1108/IJLM-12-2020-0491.
+Hu, F., Teichert, T., Deng, S., Liu, Y., Zhou, G., 2021. Dealing with pandemics: an
+investigation of the effects of COVID-19 on customers’ evaluations of hospitality
+Declaration of Competing Interest services. Tour. Manag. 85, 1–14. https://doi.org/10.1016/j.tourman.2021.104320.
+Huber, P.J., Ronchetti, E.M., 2009. ed. Robust Statistics, 2nd ed. John Wiley & Sons,
+Hoboken, NJ.
+The authors declare that they have no known competing financial
+Hulland, J., Baumgartner, H., Smith, K.M., 2018. Marketing survey research best
+interests or personal relationships that could have appeared to influence practices: evidence and recommendations from a review of JAMS articles. J. Acad.
+the work reported in this paper. Mark. Sci. 46, 92–108. https://doi.org/10.1007/s11747-017-0532-y.
+Jeong, B., Yoon, J., Lee, J.M., 2019. Social media mining for product planning: a product
+opportunity mining approach based on topic modeling and sentiment analysis. Int. J.
+References Inf. Manag. 48, 280–290. https://doi.org/10.1016/j.ijinfomgt.2017.09.009.
+Kano, N., Seraku, N., Takahashi, F., Tsuji, S., 1984. Attractive quality and must-be
+quality. J. Jpn. Soc. Qual. Control 14, 147–156.
+Al-Natour, S., Turetken, O., 2020. A comparative assessment of sentiment analysis and Kar, A.K., Dwivedi, Y.K., 2020. Theory building with big data-driven research – moving
+star ratings for consumer reviews. Int. J. Inf. Manag. 54, 102132. https://doi.org/ away from the “What” towards the “Why. Int. J. Inf. Manag. 54, 102205. https://doi.
+10.1016/j.ijinfomgt.2020.102132.
+org/10.1016/j.ijinfomgt.2020.102205.
+Baccianella, S., Esuli, A., Sebastiani, F., 2010. SENTIWORDNET 3.0: an enhanced lexical
+Kirilenko, A.P., Stepchenkova, S.O., Kim, H., Li, X. (Robert), 2018. Automated sentiment
+r R e e s s o o u u r r c . e E f v o a r l . s e L n r. t i 2 m 0 e 1 n 0 t 0 an 2 a 2 ly 0 s 0 i – s 2 a 2 n 0 d 4 o . pinion mining. Proc. 7th Int. Conf. Lang. analysis in tourism: comparison of approaches. J. Travel Res. 57, 1012–1025.
+https://doi.org/10.1177/0047287517729757.
+Baier, D., Rese, A., 2020. How to increase multichannel shopping satisfaction? An
+Koenker, R., 1981. A note on studentizing a test for heteroscedasticity. J. Econ. 17,
+adapted Kano based stage-gate approach to select new technologies. J. Retail. 107–112. https://doi.org/10.1016/0304-4076(81)90062-2.
+Consum. Serv. 56, 102172. https://doi.org/10.1016/j.jretconser.2020.102172.
+Basile, A., P´erez-Torro´, G., Franco-Salvador, M., 2021. Probabilistic ensembles of Zero- Lai, I.K.W., Hitchcock, M., 2016. A comparison of service quality attributes for stand-
+alone and resort-based luxury hotels in Macau: 3-dimensional importance-
+a L n an d g f . e P w r - o s c h e o s t s . l e R a A rn N in LP g m 12 o 8 d – e 1 ls 3 7 fo . r h e tt m ps o : t / i / o d n o c i. l o a r s g si / fi 1 c 0 a . t 2 io 6 n 6 . 1 I 5 n / t 9 . 7 C 8 o - n 9 f 5 . 4 R -4 ec 5 e 2 n -0 t 7 A 2 d - v 4 . _ 0 N 1 a 6 t . . performance analysis. Tour. Manag 55, 139–159. https://doi.org/10.1016/j.
+tourman.2016.01.007.
+Bi, J.W., Liu, Y., Fan, Z.P., Cambria, E., 2019. Modelling customer satisfaction from
+Lampert, C.H., Nickisch, H., Harmeling, S., 2014. Attribute-based classification for zero-
+online reviews using ensemble neural network and effect-based Kano model. Int. J.
+Prod. Res. 57, 7068–7088. https://doi.org/10.1080/00207543.2019.1574989. s 4 h 5 o 3 t – v 4 i 6 s 5 u . a h l t o t b p j s e :/ c / t d c o a i t . e o g r o g r / i 1 z 0 at .1 io 1 n 0 . 9 a / . T I P E A E M E I T .2 ra 0 n 1 s 3 . .1 P 4 a 0 tt . ern Anal. Mach. Intell. 36,
+Bi, J., Liu, Y., Fan, Z., Zhang, J., 2020. Exploring asymmetric effects of attribute
+Landis, J.R., Koch, G.G., 1977. The measurement of observer agreement for categorical
+performance on customer satisfaction in the hotel industry. Tour. Manag. 77,
+data. Biometrics 33, 159. https://doi.org/10.2307/2529310.
+104006. https://doi.org/10.1016/j.tourman.2019.104006.
+10
+W. Kwon I n t e r n a t i o n a l J o u r n a l o f H o s p i t a l i t y M a n a g e m e n t 133 (2026) 104397
+Lee, J., Fakfare, P., Han, H., 2020. Honeymoon tourism: exploring must-be, hybrid and Pushp, P.K., Srivastava, M.M., Train once, test anywhere: Zero-shot learning for text
+value-added quality attributes. Tour. Manag. 76, 103958. https://doi.org/10.1016/ classification. arXiv 1–6, 2018.
+j.tourman.2019.103958. Raman, R., Aljafari, R., Venkatesh, V., Richardson, V., 2022. Mixed-methods research in
+Lewis, M., Liu, Y., Goyal, N., Ghazvininejad, M., Mohamed, A., Levy, O., Stoyanov, V., the age of analytics, an exemplar leveraging sentiments from news articles to predict
+Zettlemoyer, L., 2020. BART: denoising sequence-to-sequence pre-training for firm performance. Int. J. Inf. Manag. 64. https://doi.org/10.1016/j.
+natural language generation, translation, and comprehension. Proc. Annu. Meet. ijinfomgt.2021.102451.
+Assoc. Comput. Linguist 7871–7880. https://doi.org/10.18653/v1/2020.acl- Sainz, O., Rigau, G., 2021. Ask2Transformers: zero-shot domain labelling with pre-
+main.703. trained language models. GWC 2021 Proc. 11th Glob. Wordnet Conf. 44, 52.
+Li, H., Yu, B.X.B., Li, G., Gao, H., 2023. Restaurant survival prediction using customer- Schouten, K., van der Weijde, O., Frasincar, F., Dekker, R., 2018. Supervised and
+generated content: an aspect-based sentiment analysis of online reviews. Tour. unsupervised aspect category detection for sentiment analysis with co-occurrence
+Manag 96, 104707. https://doi.org/10.1016/j.tourman.2022.104707. data. IEEE Trans. Cyber 48, 1263–1275. https://doi.org/10.1109/
+Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., Levy, O., Lewis, M., TCYB.2017.2688801.
+Zettlemoyer, L., Stoyanov, V., 2019. RoBERTa: a robustly optimized BERT Tubishat, M., Idris, N., Abushariah, M.A.M., 2018. Implicit aspect extraction in sentiment
+pretraining approach. Comput. Sci. analysis: review, taxonomy, oppportunities, and open challenges. Inf. Process.
+Liu, P., Yuan, W., Fu, J., Jiang, Z., Hayashi, H., Neubig, G., 2023. Pre-train, prompt, and Manag. 54, 545–563. https://doi.org/10.1016/j.ipm.2018.03.008.
+predict: a systematic survey of prompting methods in natural language processing. Venugopalan, M., Gupta, D., 2022. An enhanced guided LDA model augmented with
+ACM Comput. Surv. 55. https://doi.org/10.1145/3560815. BERT based semantic strength for aspect term extraction in sentiment analysis.
+Liu, P., Zhang, K., Dong, X., Wang, P., 2022. A big data-kano and SNA-CRP based QFD Knowl. Based Syst. 246. https://doi.org/10.1016/j.knosys.2022.108668.
+model: application to product design under Chinese new e-commerce model (PP,). Wang, W., Zheng, V.W., Yu, H., Miao, C., 2019. A survey of zero-shot learning: settings,
+IEEE Trans. Eng. Manag 1–15. https://doi.org/10.1109/TEM.2022.3227094. methods, and applications. ACM Trans. Intell. Syst. Technol. 10, 1–37. https://doi.
+Luo, Y., Tang, R. (Liang), 2019. Understanding hidden dimensions in textual reviews on org/10.1145/3293318.
+Airbnb: An application of modified latent aspect rating analysis (LARA). Int. J. Hosp. Wei, J., Bosma, M., Zhao, V.Y., Guu, K., Yu, A.W., Lester, B., Du, N., Dai, A.M., Le, Q.V.,
+Manag. 80, 144–154. https://doi.org/10.1016/j.ijhm.2019.02.008. 2022. Finetuned language models are zero-shot learners. arXiv Prepr. arXiv:2109,
+Martilla, J.A., James, J.C., 1977. Importance-performance analysis. J. Mark. 41, 77–79. 1–46.
+Mehraliyev, F., Chan, I.C.C., Kirilenko, A.P., 2022. Sentiment analysis in hospitality and Widmann, T., Wich, M., 2023. Creating and comparing dictionary, word embedding, and
+tourism: a thematic and methodological review. Int. J. Contemp. Hosp. Manag. 34, transformer-based models to measure discrete emotions in german political text.
+46–77. https://doi.org/10.1108/IJCHM-02-2021-0132. Polit. Anal. 31, 626–641. https://doi.org/10.1017/pan.2022.15.
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G., Dean, J., 2013. Distributed Wu, P., Li, X., Shen, S., He, D., 2020. Social media opinion summarization using emotion
+representations ofwords and phrases and their compositionality. Adv. Neural Inf. cognition and convolutional neural networks. Int. J. Inf. Manag. 51. https://doi.org/
+Process. Syst. 1–9. 10.1016/j.ijinfomgt.2019.07.004.
+Mikuli´c, J., Prebeˇzac, D., 2008. Prioritizing improvement of service attributes using Xiao, Q., 2021. Understanding the asymmetric perceptions of smartphone security from
+impact range-performance analysis and impact-asymmetry analysis. Manag. Serv. security feature perspective: a comparative study. Telemat. Inform. 58, 101535.
+Qual. 18, 559–576. https://doi.org/10.1108/09604520810920068. https://doi.org/10.1016/j.tele.2020.101535.
+Mikuli´c, J., Prebeˇzac, D., 2011. A critical review of techniques for classifying quality Yadav, M.L., Roychoudhury, B., 2019. Effect of trip mode on opinion about hotel aspects:
+attributes in the Kano model. Manag. Serv. Qual. 21, 46–66. https://doi.org/ a social media analysis approach. Int. J. Hosp. Manag 80, 155–165. https://doi.org/
+10.1108/09604521111100243. 10.1016/j.ijhm.2019.02.002.
+Mirtalaie, M.A., Hussain, O.K., 2020. Sentiment aggregation of targeted features by Ye, Z., Geng, Y., Chen, Jiaoyan, Xu, X., Zheng, S., Wang, F., Chen, Jingmin, Zhang, J.,
+capturing their dependencies: making sense from customer reviews. Int. J. Inf. Chen, H., 2020. Zero-shot text classification via reinforced self-training. Proc. Annu.
+Manag. 53. https://doi.org/10.1016/j.ijinfomgt.2020.102097. Meet. Assoc. Comput. Linguist 3014–3024. https://doi.org/10.18653/v1/2020.acl-
+Murtadha, A., Pan, S., Wen, B., Su, J., Zhang, W., Liu, Y., 2022. BERT-ASC: Auxiliary- main.272.
+Sentence Construction for Implicit Aspect Learning in Sentiment Analysis. Yin, W., Hay, J., Roth, D., 2019. Benchmarking zero-shot text classification: Datasets,
+Picolo, J.D., Tontini, G., 2018. Integrating methods for the prioritization of innovations evaluation and entailment approach. EMNLP-IJCNLP 2019 - 2019 Conf. Empir.
+and improvements in services. J. Serv. Mark. 32, 820–834. https://doi.org/10.1108/ Methods Nat. Lang. Process. 9th Int. Jt. Conf. Nat. Lang. Process. Proc. Conf.,
+JSM-12-2015-0383. pp. 3914–3923. https://doi.org/10.18653/v1/d19-1404
+Pontiki, M., Galanis, D., Papageorgiou, H., Androutsopoulos, I., Manandhar, S., Al- Zhang, W., Li, X., Deng, Y., Bing, L., Lam, W., 2023. A survey on aspect-based sentiment
+Smadi, M., Al-Ayyoub, M., Zhao, Y., Qin, B., De Clercq, O., Hoste, V., Apidianaki, M., analysis: tasks, methods, and challenges. IEEE Trans. Knowl. Data Eng. 35,
+Tannier, X., Loukachevitch, N., Kotelnikov, E., Bel, N., Jim´enez-Zafra, María, 11019–11038. https://doi.org/10.1109/TKDE.2022.3230975.
+Eryig˘it, S., 2016. SemEval-2016 task 5: aspect based sentiment analysis. G 19–30. Zhao, X., Ouyang, S., Yu, Z., Wu, M., Li, L., 2022. Pre-trained language modes can be
+Pourpanah, F., Abdar, M., Luo, Y., Zhou, X., Wang, R., Lim, C.P., Wang, X., Wu, Q.M.J., fully zero-shot learners. arXiv 1–16.
+2023. A review of generalized zero-shot learning methods. IEEE Trans. Pattern Anal.
+Mach. Intell. 45 (4), 4051–4070. https://doi.org/10.1109/TPAMI.2022.3191696.
+11

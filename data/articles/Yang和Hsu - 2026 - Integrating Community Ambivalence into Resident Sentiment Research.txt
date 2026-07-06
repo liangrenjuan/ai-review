@@ -1,0 +1,1644 @@
+This is the Pre-Published Version.
+This is the accepted version of the publication Yang, T., & Hsu, C. H. C. (2026). Integrating Community Ambivalence into Resident Sentiment
+Research. Journal of Travel Research, 65(2), 311-334. Copyright © 2025 The Author(s). DOI: 10.1177/00472875251366433.
+Integrating community ambivalence into resident sentiment
+research
+Abstract. Resident sentiment and its ambivalence play important roles in maintaining the
+social sustainability of tourism development. The recent phenomenon of resident-tourist
+conflicts in some destinations clearly indicates problematic levels of resident sentiment and
+often reflects certain degrees of community ambivalence. Investigating resident sentiment in
+synthesis with community-level ambivalence can provide a nuanced understanding of the
+diversity of resident sentiments. This study conducts a systematic review of relevant literature,
+constructs a conceptual framework of community ambivalence, and analyzes the ambivalence
+dynamics. Drawing on social identity theory and social influence theory, community
+ambivalence formation and transformation processes are discussed. A set of propositions is
+developed to guide future research. When community dynamics are properly understood and
+directed, government agencies and businesses can better manage destinations and devise
+effective strategies to pursue healthy host-guest relationships and facilitate socially sustainable
+tourism development.
+Keywords: Resident sentiment; Community ambivalence; Ambivalence dynamics; Social
+identity theory; Social influence theory
+1. Introduction
+Although most residents are not directly involved in the tourism industry, as important
+members of the host community, residents are considered vital to tourism development (Chen
+et al., 2020; Hsu & Chen, 2019; Uchinaka et al., 2019). Therefore, how residents perceive,
+evaluate, and attribute interactions with tourists warrants investigation (Hsu & Chen, 2019).
+Resident sentiment can serve as an indicator of sustainable tourism development (Cheung &
+Li, 2019; Ribeiro et al., 2018) and destination decline (Diedrich & García-Buades, 2009); thus,
+it is an issue that has often been examined in tourism research.
+The complexity of the mechanism for generating resident sentiment makes it vary
+among individuals (Chen et al., 2021; Hao et al., 2020; Kim et al., 2020). In real life, there is
+often a diversity of sentiments within the community (Pavlić et al., 2020). Having multiple
+sentiments concurrently in a group can lead to extreme behaviors and uncontrollable social
+consequences (Rothman et al., 2017). Therefore, relying only on the overall sentiment of
+residents (i.e., the average sentiment of the community) while ignoring the diversity of voices
+1
+within a destination is detrimental to tourism development and an indication of the immaturity
+of academic inquiries.
+Sentiment represents “an acquired and relatively permanent major neuropsychic
+disposition to react emotionally, cognitively, and conatively toward a certain object (or
+situation) in a certain stable fashion” (Cattell, 1940, p. 16). Compared to attitude, sentiment is
+more encompassing and lasting, thus, it has more ability to predict resident behaviors (Chen et
+al., 2021). Hsu et al. (2016) conceptualized resident sentiment as “local residents’ overall
+perceptions, views, and emotional dispositions underlying their responses to tourism
+development” (p. 1), in which attitude is the transient part. Fu et al. (2019) and Hao et al. (2020)
+proposed methods for analyzing residents’ sentiments based on news data, expanding the data
+sources of sentiment analysis in tourism research. Chen et al. (2021) further revealed the
+constituent dimensions of Hong Kong residents’ sentiments, including cognitive and affective
+attitudes toward tourists, identification with tourists, sense of superiority, and feeling of relative
+deprivation. Existing research includes mainly empirical studies assessing individual sentiment
+or the overall sentiment of residents, with little attention paid to the complexity of sentiment
+diversity among residents. Further, empirical studies on resident sentiment are location-specific.
+While they contribute to tourism knowledge, conceptualizing the phenomenon and developing
+a cross-destination conceptual framework could benefit the academic community by proposing
+a tourism-specific theoretical perspective.
+Ambivalence, describing a state in which people hold different sentiments or attitudes
+at the same time (Li et al., 2024a; van Harreveld et al., 2015), has a strong capacity to portray
+the heterogeneity of residents’ sentiments. Group-level ambivalence arises from interaction
+and is manifested by the simultaneous presence of opposite or contradictory feelings within a
+group (Pradies & Pratt, 2010). In tourism, ambivalence among residents has gradually gained
+attention (Chen et al., 2025; Ma et al., 2024). However, most existing studies are location-
+specific, focusing on attitude and evaluation, and have yet to conceptualize ambivalence
+concerning resident sentiment. Because residents within a community share a solid social
+identity and have a strong social influence on each other (Chen et al., 2025), resident sentiment
+ambivalence has a complex and dynamic nature, which may lead to unpredictable social
+conflicts (Rothman et al., 2017). Considering the importance of resident sentiment, this paper
+aims to conceptualize and understand sentiment ambivalence at the destination community
+level. The research objectives are as follows.
+ Thoroughly review the literature on resident sentiment and resident ambivalence.
+2
+ Conceptualize community ambivalence and construct a conceptual framework of
+community ambivalence formation and transformation.
+ Analyze the ambivalence dynamics.
+ Suggest propositions for future research.
+The formation of social groups hinges on the social identity of individuals, which
+defines the self-concept by distinguishing between ingroups and outgroups (Tajfel & Turner,
+1979). Social identity theory proposes that social groups provide norms, values, and affective
+connections to their members, who locate the group and gain a positive social identity by
+conducting beneficial comparisons with the outgroups (Brown, 2000). Thus, residents’
+sentiments toward tourists revolve around their social identity. Because sentiments are
+individualized psychological states influenced by many factors, including values and beliefs,
+ambivalence on a group level is likely to exist (Pradies & Pratt, 2010). Therefore, the social
+identity theory’s ability to explain intergroup relations underpins the formation of ambivalence
+in a community. In addition, group-level ambivalence could be shaped by interactions (Merton,
+1976), with social influence being an important mechanism for its transformation. Given the
+frequency of interactions among residents, strong social influence among members makes
+sentiments susceptible to change, thus altering the state of ambivalence in the community.
+Therefore, the social influence theory, which explains how people adjust their behaviors and
+attitudes to adapt to the needs of the social environment (Kelman, 1953), can be used to support
+the conceptualization of the transformation of ambivalence.
+A new concept, community ambivalence, is proposed in the study. It describes a state
+in which members are not ambivalent in their own right, but not all members of the community
+share the same sentiment toward tourists, which leads to the existence of different sentiments
+within a destination. Intra-individual ambivalence can also be encompassed within this concept
+because sentiments expressed typically represent the individual’s overall disposition after
+reconciling conflicting sentiments (Chen et al., 2019; Ma et al., 2024). Based on social identity
+theory and social influence theory, community ambivalence is conceptualized as two processes:
+community ambivalence formation and community ambivalence transformation. This
+conceptualization offers a nuanced understanding of resident sentiment activation and change.
+Thus, the study refines the group-level ambivalence formation and transformation mechanism
+and expands the sentiment and ambivalence research in tourism.
+2. Methodology
+3
+This paper aims to conceptualize community ambivalence and construct its formation and
+transformation framework. Qualitative and quantitative methodologies can both contribute to
+knowledge, but are rooted in location-based empirical data analysis. Beyond contexts, concepts
+describe complex ideas, which are formed through discarding uncommon characteristics in
+individual observations and aggregating common characteristics across all observations (Xin
+et al., 2013). To achieve our research objectives, conceptual analysis is more suitable than
+quantitative or qualitative analysis because it helps answer holistic questions by constructing a
+conceptual framework. Although conceptual research received less attention than quantitative
+or qualitative research in tourism, Xin et al. (2013) advocated that conceptual research should
+have an independent methodology from quantitative and qualitative research. Thus, following
+the theory-building approach (Meredith, 1993), this study constructs a conceptual framework
+to illustrate the formation and transformation of community ambivalence. A conceptual
+framework is “a collection of two or more interrelated propositions which explain an event,
+provide understanding, or suggest testable hypotheses” (Meredith, 1993, p. 7).
+To establish the conceptual framework, the research flow as shown in Figure 1 is
+followed. Guided by the typology of themes in conceptual research (Xin et al., 2013), the
+methodology consists of five steps: (1) seeking theoretically and practically valuable topics, (2)
+searching for relevant literature, (3) reviewing literature and identifying knowledge gaps, (4)
+proposing the new concept, and (5) constructing the conceptual framework. The research flow
+encompasses most of the themes identified by Xin et al. (2013) and fits the logic of problem-
+solving in research and practice. Therefore, the relevance and rigor of the methodology can be
+ensured.
+[Insert Figure 1.]
+2.1 Seeking theoretically and practically valuable topics
+Considering the vital role of residents, their sentiment can serve as an indicator of sustainable
+tourism development (Cheung & Li, 2019; Ribeiro et al., 2018), and thus has received
+considerable attention in recent years. Sentiment is a form of human subjectivity that can vary
+from individual to individual and over time (Munezero et al., 2014). Understanding how
+resident sentiment varies across members of the local community is important, as it offers
+insights for tourism policies and positioning and can deepen resident sentiment research. This
+paper, thus, focuses on the phenomenon of diverse resident sentiment, named as community
+ambivalence.
+4
+To conceptualize community ambivalence, it is necessary to first differentiate between
+resident sentiment and other subjectivity terms. Sentiment is a widely researched but
+ambiguously defined concept in various disciplines, therefore, the standard dictionary would
+be a suitable source to compare the differences among terms commonly used in various studies.
+Based on Munezero et al. (2014), Merriam-Webster online dictionary is used as a reference for
+selected terms (Table 1).
+Table 1 Definitions of subjectivity terms on Merriam-Webster online dictionary (2025)
+Subjectivity
+Definition Synonym
+Term
+a set of observable manifestations of an experienced emotion; the conscious Feeling,
+Affect
+emotion that occurs in reaction to a thought or experience. Emotion
+a conscious mental reaction (such as anger or fear) subjectively experienced
+as strong feeling usually directed toward a specific object and typically Feeling,
+Emotion
+accompanied by physiological and behavioral changes in the body; a state Sentiment
+of feeling; the affective aspect of consciousness.
+Emotion,
+Sentiment refined feeling; an idea colored by emotion.
+Feeling
+a mental position with regard to a fact or state; a feeling or emotion toward Feeling,
+Attitude
+a fact or state. Emotion
+The definitions and synonyms presented in Table 1 show the similarity of these
+subjective terms. In everyday use, people do not seem to precisely differentiate them and use
+them interchangeably. However, academic research tends to go deeper to identify subtle
+differences among these terms (Munezero et al., 2014). In tourism research, attitude and
+sentiment are the closest concepts, yet the two are not distinguished conceptually in many
+studies (e.g., Hao et al., 2020; Kirilenko & Stepchenkova, 2017). Generally, attitude is
+measured to reflect people’s transient and concrete feelings, such as “I would like to…” (Zhang
+et al., 2025) and “I believe…” (Fennell & de Grosbois, 2024); sentiment, in turn, is often
+categorized as positive, negative, or neutral, and is used to reflect people’s holistic and enduring
+subjective feelings (e.g., Chen et al., 2021; Fu et al., 2019). Since Hsu et al. (2016)
+conceptualized resident sentiment as an encompassing construct to describe “local residents’
+overall perceptions, views, and emotional dispositions underlying their responses to tourism
+development” (p. 1), resident attitude is regarded as a transient part of resident sentiment. This
+containment relationship can be supported by psychological literature and empirical evidence.
+Cattell (1940) defined sentiment as “an acquired and relatively permanent major neuropsychic
+disposition” and attitude as “an acquired neuropsychic disposition…as part of the purposive
+plan of some larger sentiment or complex” (p. 16). Chen et al. (2021) measured resident
+5
+sentiment in five components (cognitive and affective attitudes, identification, sense of
+superiority, and feeling of relative deprivation) and validated them using survey data from
+1,000 Hong Kong residents. Adapted from Munezero et al. (2014), we differentiated these
+subjective terms, and the details are illustrated in Figure 2.
+[Insert Figure 2.]
+As shown in Figure 2, affect is people’s non-conscious response to external stimuli or
+physiological signals, and feelings/perceptions and emotions are expressions of affect.
+Sustained emotions are then developed into sentiment, which is encompassing and complex,
+with attitudes as its transient part. Combined with relevant information, opinions/judgments
+are personal interpretations of sentiments. Considering the encompassing and lasting nature of
+sentiment, resident sentiment could affect the overall support of the local community for
+tourism development (Chen et al., 2018), and is a better indicator of residents’ behavioral
+responses than attitude (Chen et al., 2021), thus it is critical for sustainable tourism
+development. In the meantime, residents may receive different external stimuli or have
+different expressions of affect, which leads to varying resident sentiments within the
+community. Understanding different sentiments within the local community has value for
+destinations to devise effective policies and strategies to properly manage development and
+can advance resident sentiment research.
+Some studies have examined the diversity of resident sentiments or attitudes. For
+example, Litvin et al. (2020) unveiled the diversity of tourist attitudes toward tourism and
+found that the differences depend on where they live; Lundberg (2017) found a significant
+difference in resident attitudes between permanent residents and second-home owners and
+utilized stakeholder theory to explain the variation. These studies reported mixed views of
+residents empirically and found the influencing factors of such divergence, however stopped
+short of conceptualizing the phenomenon. Conceptualizing resident sentiment ambivalence
+within the community can elevate the interpretation to a theoretical level and in a nuanced way.
+As sentiment includes both affective and cognitive attitudes (Chen et al., 2021), community
+ambivalence in this paper examines residents’ ambivalence from both affective and cognitive
+perspectives.
+2.2 Searching for Relevant Literature
+The Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA)
+approach (Page et al., 2021) is the evidence-based minimum set of items for reporting
+6
+systematic reviews and meta-analyses, presented in a flow diagram. PRISMA offers a
+standardized report process, thus improving the research quality and transparency. Since
+PRISMA makes the results more reliable and reader-friendly, it was adopted widely in tourism
+studies (Geremew et al., 2024; Lin et al., 2024), and guided our search for relevant literature.
+After defining the aim of the research, we developed a strategy to search for and select the
+literature, as illustrated in Figure 3.
+[Insert Figure 3.]
+We searched for literature in two categories (i.e., resident sentiment and resident
+ambivalence) on Web of Science and Scopus with the search terms {“resident sentiment” OR
+“local sentiment” OR “host sentiment”} for the first category and {“resident ambivalence” OR
+“local ambivalence” OR “host ambivalence”} for the second category. We retrieved the search
+terms for the two categories of literature separately in the title, abstract, and keywords, and
+restricted the scope to social sciences, management, and economics. Consequently, 4,049
+articles were identified, with 2,002 being duplicates. After filtering out the duplicates, we
+further excluded misfit articles, with the exclusion guidelines being: not in a tourism context
+(e.g., in linguistics and education) and not focusing on the local community (e.g., about tourist
+experience). Finally, 36 articles on resident sentiment and 20 articles on resident ambivalence
+were retained, with details shown in the appendix Table A1.
+Many studies on resident sentiment did not distinguish between the concepts of
+sentiment and attitude, and most resident ambivalence studies retrieved actually investigated
+resident attitude. Because attitude is part of the notion of sentiment, research on resident
+attitude can contribute to the examination and conceptualization of community ambivalence in
+sentiment. Thus, we included all the literature in Table A1 in our review.
+3. Literature Review and Theoretical Foundations
+3.1 Literature Review
+3.1.1 Resident Sentiment
+Sentiment as a subject has been studied extensively in different fields. Psychologists originally
+characterized sentiment as an enduring, complex, and organized system of dispositions that
+produces a certain emotion in a given situation. It is a psychological system that can be
+emotionally adapted to the ever-changing circumstances of its object and that corresponds to
+the duration of its object (Shand, 1922). Drawing on definitions of sentiment in social
+7
+psychology, Hsu et al. (2016) conceptualized resident sentiment as an encompassing construct
+to describe residents’ overall perceptions/views of and emotional dispositions.
+Existing research on resident sentiment consists of two main streams: methodological
+studies aiming to measure resident sentiment computationally and empirical studies analyzing
+resident sentiment in various contexts. The first stream is rooted in natural language processing
+techniques and the widespread use of big data (Alaei et al., 2019). Technically speaking,
+resident sentiment analytics is a positive and negative polarity dichotomy problem that relies
+on a pre-defined sentiment lexicon or a trained machine learning model (Fu et al., 2019). Gao
+et al. (2015) compared the performance of different open-source web services in the analysis
+of resident sentiments. Fu et al. (2019) proposed a method to classify resident sentiment from
+Chinese travel news texts and bridge the gap of previous research on sentiment analytics in
+tourism that did not emphasize predictive accuracy. On this foundation, Hao et al. (2020)
+further constructed a methodology for capturing dynamic resident sentiment from travel news
+texts.
+The second research stream aims to observe resident sentiments in various contexts and
+analyze their relationship with other variables of interest. These empirical studies contribute to
+the understanding of resident sentiment by adding context-based evidence. For example,
+communities around nature-based tourism destinations are widely focused contexts, including
+ski areas (Johnson et al., 1994), national parks and protected areas (Perren et al., 2025; Van
+Hooreweghe, 2016), islands (Akhmedov et al., 2022; Ribeiro et al., 2018; Shakeela & Weaver,
+2012), scuba diving locations (Scholtz & Saayman, 2018), coastal regions (Hanafiah et al.,
+2021), valleys (Mohammad Malik et al., 2024), and mountains (Gajdošíková, 2024). Some
+other studies focused on urban communities, such as small towns (Paradis, 2000), urban-rural
+fringes (Weaver & Lawton, 2001), and destinations developing casino (McCartney & In, 2016),
+cruise (McCaughey et al., 2018), sport event (Duignan et al., 2022; Kirilenko & Stepchenkova,
+2017; Scholtz, 2019), festival (Skoultsos et al., 2020), religious (P.J et al., 2020; Young et al.,
+2021), and heritage (Chauma & Ngwira, 2022; Foroughi et al., 2023) tourism. Resident
+sentiment toward tourism was found to be complex and ever-changing in these study contexts,
+with residents tending to hold positive sentiments before the expansion of tourism activities,
+while their sentiments became complicated as tourism develops (Johnson et al., 1994).
+In addition, prior research has shed light on resident sentiment’s relationship with other
+variables. For example, Chen et al. (2021) measured Hong Kong resident sentiments in five
+components (i.e., cognitive and affective attitudes toward tourists, identification with tourists,
+8
+sense of superiority, and feeling of relative deprivation), which were shown to influence
+residents’ support for tourism development and behavioral responses to tourists. Recently,
+overtourism has been recognized as a significant source of negative resident sentiments (Aston
+et al., 2023; Cheung & Li, 2019; Kirilenko et al., 2023) because it undermines their perceived
+control over tourism activities and tourists (Gössling et al., 2020), and increased community
+involvement can reduce such negative sentiments (Arıkan Saltık & Turgut, 2021). Negative
+sentiments may also come from crises and media coverage (Godovykh et al., 2021; Li et al.,
+2024b; Shakeela & Weaver, 2012). Positive resident sentiment, on the other hand, may come
+from the perceived social responsibility of businesses (Gursoy et al., 2019) and expected
+tourism sustainability (Ribeiro et al., 2018), in addition to satisfactory host-guest interactions
+(Li et al., 2024b). Positive resident sentiments are not only a sign of social sustainability but
+also offer tangible economic value as residents’ advocacy behaviors on social media could
+attract more tourists (Lever et al., 2021; Uchinaka et al., 2019).
+Traditionally, studies on resident sentiment tend to pertain to the population’s overall
+sentiment. Given the varied sentiments among members of a community, the overall resident
+sentiment lacks the ability to characterize sentimental divergences, thereby failing to meet the
+theoretical and practical needs of inquiring and facilitating sustainable host-guest relationships.
+Furthermore, most prior studies are location-rooted empirical studies, focusing on popular
+destinations such as Hong Kong (Chen et al., 2021; Cheung & Li, 2019; Hao et al., 2020) or
+the United States (Kirilenko et al., 2023; Perren et al., 2025). Although empirical research can
+contribute to knowledge by providing insights from measurements, constructs, or models in
+various contexts, research that can conceptualize observed phenomena and develop theories is
+also needed.
+3.1.2 Ambivalence among Residents
+Discussions about ambivalence started as early as Plato and Aristotle. The concept emphasizes
+the simultaneous existence of opposite attitudes or sentiments. Most of the psychology
+literature defines ambivalence as “a psychological state in which a person holds mixed feelings
+(positive and negative) toward some psychological object” (Gardner, 1987, p. 241). Several
+other definitions have been proposed, each with its own focus. For example, “simultaneously
+oppositional positive and negative orientations toward an object. Ambivalence includes
+cognition (‘I think about X’) and/or emotion (‘I feel about X’)” (Ashforth et al., 2014, p. 1454);
+“the simultaneous experience of opposing orientations toward an object or target, where
+‘orientation refers to the actor’s alignment or position with regard to the object’” (Rothman et
+9
+al., 2017, p. 35). Psychological ambivalence is also defined from an attitude perspective as co-
+existing of both positive and negative evaluations of a given object (Jost & Burgess, 2000; van
+Harreveld et al., 2015).
+Sociologists such as Merton (1976) have revealed how organizational structures,
+including roles and norms, comprise conflicting values and beliefs (i.e., sociological
+ambivalence). Therefore, sociological ambivalence does not refer to a state of psychological or
+sentimental ambivalence, but rather to society’s conflicting expectations. With this, the concept
+of ambivalence has been extended to the group level, where a group can be conceptualized as
+ambivalent when it is composed of actors who (1) are each ambivalent (holographic
+ambivalence) or (2) are not ambivalent in their own right, but whose thoughts or sentiments
+are in direct opposition to those of other actors, thus the group is defined as ambivalent
+(ideological ambivalence) (Pradies & Pratt, 2010). This study focuses on the latter because
+people tend to express consistent attitudes or sentiments after they have negotiated their
+ambivalent sentiments (Festinger, 1962). For example, Ma et al. (2024) uncovered that
+residents’ ambivalence would transform into different attitudes due to their different
+information processing strategies; and Chen et al. (2019) found that residents would express
+their overall attitudes toward tourism development even though they have ambivalent attitudes.
+Therefore, ideological ambivalence can be seen as a state that takes into account intra-
+individual ambivalence. In addition, resident sentiment toward tourists at the community level
+aggregates the overall sentiments and concerns the complex role of social structures, depicting
+how individual sentiments spring to group-level consequences.
+Existing tourism research on residents’ ambivalence is mainly empirical, and
+qualitative and quantitative methods are used to derive the ambivalent attitudes or evaluations
+in particular situations. In the cultural tourism context, residents are observed to be both
+dependent on tourism demand and concerned about the destruction of culture and tradition
+(Cho, 2020; Deblock, 2013; Ivanova & Buda, 2020; Joseph & Kavoori, 2001; Mbaiwa, 2011).
+Concerning festivals and exhibitions, residents have simultaneously positive and negative
+attitudes toward the impacts of tourism (Chen et al., 2019; Green, 2002; Melville, 2024), and
+ambivalent cognitions about their own identities (Garcia, 2016). Residents living near nature-
+based tourism sites perceive opportunities (e.g., economic gains) and threats (e.g., higher rents)
+concurrently (Goodson et al., 2024; Nygård & Uthardt, 2011; Tumusiime & Svarstad, 2011).
+Rural residents’ attitudes toward the future development of tourism and its impact on the
+environment are also ambivalent, and ambivalence changes as tourism develops (Bender &
+10
+Kerstetter, 2020; Huang et al., 2021; Ma et al., 2024). Furthermore, residents’ ambivalence is
+reflected in their attitudes toward specific ethnic groups (Nelson & Matthews, 2018; Woosnam
+et al., 2018), such as tourists of a certain nationality, and toward specific identity groups (Brollo
+& Celata, 2023; Villa, 2019), such as short-term migrants.
+Extant research on residents’ ambivalence focuses primarily on their ambivalent
+attitudes toward and support for tourism. Compared to attitude, sentiment is more lasting and
+encompassing and thus is a more powerful tool to predict resident behaviors (Chen et al., 2021).
+Theoretically, the examination of resident ambivalence of sentiment contributes to an in-depth
+understanding of resident sentiment and its role in shaping resident behaviors. Given the
+enduring nature of sentiment, public policies tailored to the residents’ sentiment ambivalence
+would be more effective by addressing concerns in the community. Furthermore, prior studies
+on resident ambivalence are mostly location-specific and observational. Although Chen et al.
+(2025) discussed the ambivalence of resident sentiment in a recent study, it was still confined
+to the context of border tourism in a Chinese city. Conceptualizing community ambivalence by
+integrating resident sentiment and ambivalence is of value because a holistically theorized
+framework synthesizing the results of multiple empirical studies is currently lacking.
+3.2 Theoretical Foundations of Community Ambivalence
+3.2.1 Social Identity Theory
+Social identity theory, developed by Tajfel and Turner (1979), explains how individuals derive
+part of their self-concept from their group membership, which is one of the most influential
+socio-psychological theories explaining intergroup relations (Chen et al., 2018). Tajfel and
+Turner (1986) proposed a differentiation between personal and social identities based on the
+distinction between interpersonal (where behaviors are largely influenced by individual
+variables) and group (where behaviors are largely determined by category-based processes)
+settings. Social identity theory focuses on the latter and aims to link social identity with group
+membership. The theory suggests that individuals locate the group to which they belong based
+on their social identity; and social groups provide the features that define the self-concept of
+members by providing normative values and affective connections associated with the
+membership (Tajfel & Turner, 1979).
+Social identity theory explores the phenomena of “ingroup” and “outgroup”, the
+underlying idea being that identities are constituted through a process of difference defined
+relatively or flexibly, depending on the activity in which an individual engages (Benwell &
+Stokoe, 2006). Individuals will endeavor to attain or maintain a positive social identity (and
+11
+thus enhance their self-esteem) that derives primarily from beneficial comparisons between the
+ingroup and the relevant outgroup (Brown, 2000).
+Resident and tourist are two typical social identities at tourist destinations; thus, social
+identity theory has been widely utilized in research on residents’ sentiments toward tourists
+(Chen et al., 2018, 2021, 2025). In addition, social identity theory contributed to examinations
+of residents’ attitudes toward tourism development (Lever et al., 2021; Ye et al., 2014). To
+maintain and pursue a favorable social identity, residents would separate themselves from
+tourists from the sentimental and behavioral perspectives. Due to the powerful explanatory
+capacity of this theory for the relationship between ingroups and outgroups, we draw on it to
+theorize the formation of ambivalence in a community.
+3.2.2 Social Influence Theory
+Social influence theory explains how individuals adjust their behaviors and attitudes to meet
+the demands of a social environment (Kelman, 1953). Social influence may occur due to some
+explicit requests, but can also result from individuals’ perceptions of what others might do or
+think. Kelman (1953) proposed three modes of social influence acceptance, namely,
+compliance, identification, and internalization. Compliance refers to a type of response to a
+request in which individuals agree with others apparently, but privately retain a different
+opinion (Cialdini & Goldstein, 2004). It occurs because individuals hope to achieve a favorable
+reaction from other individuals or a group. Identification refers to the circumstance where
+individuals are influenced by someone beloved or trusted. It occurs because individuals pursue
+to maintain a satisfying self-defining relationship with other individuals or a group.
+Internalization refers to the true acceptance of attitudes or behaviors both publicly and privately.
+It occurs because the content conveyed by the influence is intrinsically rewarding.
+Regardless of the means, social influence can change people’s attitudes and behaviors
+to varying degrees because (1) attitude is a societal outcome, which is conditioned by social
+customs, values, and norms, as well as a reflection of individual tendencies; (2) social influence
+affects different people to different extents; and (3) the degree to which people are receptive to
+influence depends on the impact, the characteristics of the influencing source, and the message
+being conveyed (Asch, 1961; Festinger, 1954). Meanwhile, studies suggest that social
+influence may not only lead individuals to become more similar to each other, but also trigger
+rejection of attitude change or even the pursuit of being more different (Hovland et al., 1957).
+In reality, social influence is sometimes denied, and individuals may be entrenched in their
+views on some issues and compromised on others (Flache et al., 2017).
+12
+Given that individuals attain self-esteem through social identity, residents are naturally
+influenced by other members of the community. With frequent direct and indirect interactions
+among residents, social influences are likely to play a role in changing their sentiments toward
+tourists. However, social influences may make the ingroup more similar or cause the
+emergence of sentiment diversity among ingroup members. Therefore, the social influence
+theory can underpin the construction of a mechanism for the transformation of community
+ambivalence in situations where multiple influences are considered.
+4. A Conceptual Framework of Community Ambivalence
+Resident sentiment and ambivalence are both research topics that have received much attention
+in tourism and sociology research, but these interconnected concepts have rarely been
+integrated. A holistic view of the formation and transformation of community ambivalence of
+sentiments toward tourists could facilitate the development of sustainable host-guest
+relationships and an understanding of resident sentiment dynamics. This section aims to
+establish a conceptual framework of community ambivalence and reveal its formation and
+transformation mechanism by leveraging social identity theory and social influence theory.
+Members within the community may differ in their sentiments toward tourists, leading to the
+formation of community ambivalence. Community ambivalence and community congruence
+may interconvert because of resident sentiment changes. Details are shown in Figure 4.
+[Insert Figure 4.]
+Figure 4 illustrates the conceptual framework of community ambivalence formation
+and transformation, the processes of which are based on social identity theory and social
+influence theory, respectively. The two theories are closely related. According to Cialdini and
+Goldstein (2004), a sense of belonging to a group derives from social identity and contributes
+to the likelihood that individuals will be socially influenced. Social identity is a source of
+residents’ personal self-esteem, and in order to maintain it, the identity boundaries between
+residents and tourists are clearly delineated, thus activating sentiments toward tourists; and
+under the influence of diverse factors, community ambivalence is ultimately formed. The
+psychological need to pursue social identity makes individuals vulnerable to the social
+influence from the majority group in the community, resulting in community ambivalence
+transformation. Therefore, social identity promotes social influence, and social influence
+enhances social identity, both of which together build the foundation of community
+ambivalence.
+13
+4.1 Community Ambivalence Formation
+The conceptual framework uses two steps to explain community ambivalence. The first step is
+community ambivalence formation. Social identity theory argues that social groups present
+identity features that define the self-concept of group members by providing normative values
+and affective connections associated with group membership (Tajfel & Turner, 1979). Based
+on the identity, the ingroup and outgroup are formed. People affiliate with different social
+groups based on social identities, and residents and tourists are the two most typical social
+groups in the tourism context. Influenced by society-level factors, residents’ sentiments toward
+tourists are activated. Social identity has been seen as a psychological attachment to a group;
+ingroup members may hold negative sentiment of others to maintain self-esteem, or positive
+sentiment if they treat themselves as in a more inclusive group with outgroup members (Chen
+et al., 2021). Thus, even though social identity activates and shapes the tone of resident
+sentiments toward tourists, individual-level factors, including both resident and tourist
+characteristics, will lead to different sentiments of each resident toward tourists, thus forming
+ambivalence at the community level.
+4.1.1 Resident Sentiment Activation
+Resident sentiment activation is an act describing how resident sentiment toward tourists is
+triggered from an inactive state. In constructing self-identity in the community, residents would
+deliberately reinforce their differences with outgroups (i.e., tourists), which would trigger
+perceptions and sentiments of the outgroups (Brown, 2000). Simultaneously, as residents
+incorporate their self-concept into the ingroup (Hogg et al., 1995), sentiment toward tourists
+would be activated. Given that it is a sentiment from one group to another, many society-level
+factors can influence the activation of residents’ sentiments toward tourists.
+First, social role is a critical factor influencing resident sentiment activation. People
+participate in everyday activities based on socially defined roles (e.g., mother, singer, teacher).
+Each role is a set of rights, obligations, expectations, norms, and behaviors that a person must
+face and fulfill (Biddle, 1986). Therefore, resident sentiment toward tourists is based on social
+status and other factors in a given situation, reflecting the social demands of that role.
+Sharing common values is another prominent driver of social identity formation;
+therefore, common values contribute to forming resident sentiments (Li et al., 2024b).
+Concerns about negative impacts on culture (McCaughey et al., 2018; Van Hooreweghe, 2016)
+and religion (Young et al., 2021), which are the cornerstone of a society’s common values,
+have been found to have an impact on residents’ sentiments toward tourism. In addition, events
+14
+(Duignan et al., 2022; Kirilenko & Stepchenkova, 2017) and tourism mascots (Xu et al., 2022)
+are typically carriers of shared values and are thought to inspire national sentiment, which in
+turn influences support for tourism.
+Meanwhile, resident sentiment is closely linked to the city’s overall economic and
+industrial level (Johnson et al., 1994; Scholtz, 2019), with residents more inclined to have
+positive attitudes toward tourism during a financial crisis (Hateftabar & Chapuis, 2020;
+Hateftabar & Rasoolimanesh, 2023). However, the relationship between the overall economy
+and resident sentiment toward tourism is dynamic and non-linear (Hao et al., 2020). Residents
+usually hold positive sentiment toward tourism at the early stage of development, and negative
+sentiments emerge as the industry expands (Johnson et al., 1994).
+Further, social exchange, one of the main perspectives explaining how residents
+perceive and react to tourism (Chen et al., 2020), suggests that individuals are rational and will
+initiate exchanges based on a subjective cost-benefit consideration (Emerson, 1976). Residents
+will develop a strong attachment when they are fully aware of the economic, social, and cultural
+developments brought about by tourism (Mohammad Malik et al., 2024), which may further
+influence their sentiments toward tourists (McCaughey et al., 2018). However, when the
+perceived cost on the societal level is too high, the overall sentiment of residents toward tourism
+deteriorates (Hanafiah et al., 2021; Paradis, 2000). For example, overtourism leads to a
+shortage of resources for residents, whose sentiments toward tourists become negative (Cheung
+& Li, 2019; Gössling et al., 2020).
+Furthermore, residents’ stereotypes of tourists have come under scrutiny in recent years,
+and they have been found to influence residents’ sentiments toward tourists (Chen & Hsu, 2021;
+Hsu & Chen, 2019). Hsu and Chen (2019) built a conceptual framework of the formation and
+development of tourist stereotypes using attribution theory and found that stereotypes are
+influenced by personal and contextual factors, and tourist stereotypes could influence residents’
+sentiments. Some other studies focused on the relationship between tourist stereotypes and
+resident emotions, which also supports the influence of stereotypes on resident sentiment, as
+emotion is a direct driver of sentiment (Munezero et al., 2014). For example, Tse and Tung
+(2022, 2025) connected the interrelationships among tourist stereotypes, resident emotions, and
+resident behaviors.
+Besides the above discussed items, more resident sentiment activation factors await
+empirical affirmation. For example, physical and mental states are important influences on
+people’s sentiment formation, as unhealthy physical conditions and mentalities limit the
+15
+activation of positive sentiments (Cannon, 1927; Shackman et al., 2009). Thus, Propositions 1-
+2 suggest these as triggers of resident sentiment activation.
+Proposition 1. Individuals’ physical conditions affect the activation of resident sentiments.
+Proposition 2. Individuals’ mental well-being, including factors such as the pace of life in
+society and daily stress level, as well as mentalities, affects the activation of resident sentiments.
+4.1.2 Resident Sentiment Diversity
+Social identity activates and shapes the tone of resident sentiments toward tourists. However,
+since residents attach to the community at different levels and many individual-level factors
+influence sentiment (Chen et al., 2021), not all residents share the same sentiment (Pavlić et
+al., 2020). Although intra-individual ambivalence may also occur, it would be negotiated and
+expressed as an overall sentiment (Chen et al., 2019; Ma et al., 2024). Thus, this study considers
+individual sentiment as individuals’ overall sentiment after digesting the intra-individual
+ambivalence. Differences among the individuals’ overall sentiments are formed by individual-
+level factors, including both resident and tourist characteristics.
+Residents’ perceived benefits influence their sentiments substantially (Ribeiro et al.,
+2018). For example, most residents are positive about tourism because of the benefits to their
+community, but younger populations and ethnic minorities may hold different sentiments due
+to varying perceptions of the benefits received (Kirilenko et al., 2023; Scholtz, 2019). The
+perceived economic, environmental, and socio-cultural benefits of tourism positively affect
+residents’ sentiments and supportive behaviors (McCaughey et al., 2018; Mohammad Malik et
+al., 2024). However, benefits may be perceived differently by people living in different areas,
+e.g., residents affected by congestion will have negative feelings (Weaver & Lawton, 2001).
+Resident involvement in tourism is another influencing factor. Gajdošíková (2024)
+found a large number of non-involved residents, and lacking community involvement is a
+critical source of negative sentiment (Chauma & Ngwira, 2022). Albeit the many reasons for
+low involvement, residents’ high willingness to involve in tourism could rectify negative
+impacts (Hanafiah et al., 2021). Thus, community-based tourism is seen as an effective means
+of avoiding anti-tourist sentiment (Arıkan Saltık & Turgut, 2021). Integration of tourism with
+the daily activities of residents can even have positive effects in both economic and sentiment
+realms (Gajdošíková, 2024; Johnson et al., 1994). However, the more involved a resident is
+does not mean the more positive their sentiments are, as misperceptions and miscommunication
+can breed negative sentiments (Scholtz & Saayman, 2018).
+16
+Belongingness reflects the subjective sense of “being a part of” to avoid alienation (Lee
+& Robbins, 1995), therefore is another factor that influences an individual’s sentiment toward
+an outgroup. Attachment, a construct of belongingness, is commonly leveraged to reveal
+resident sentiment (Paradis, 2000). When residents experience social and environmental
+changes from increased density caused by tourists, place attachment contributes to negative
+sentiment by influencing residents’ perceptions of lacking control over tourism and tourist
+activities (Gössling et al., 2020).
+Self-esteem is another important factor that affects sentiment. Specifically, Perren et al.
+(2024) identified the direct and positive influence of psychological, social, and economic
+empowerment on residents’ support for tourism, and empowerment describes how tourism can
+increase residents’ pride and self-esteem and make them feel unique and special. In addition,
+Chen et al. (2021) identified that residents’ sense of superiority mentality serves as an
+underlying dimension of resident sentiment. Sense of superiority refers to a psychological
+feeling or attitude that results from an individual’s self-esteem that they are superior to others
+in some way (e.g., ability, status, wealth).
+Resident sentiment is largely formed based on their direct and/or indirect interactions
+with tourists; therefore, tourist characteristics are also sources of resident sentiment diversity
+(Scholtz & Saayman, 2018). While overtourism can trigger negative sentiments among
+residents, these negativities do not stem from the presence of tourists (Gössling et al., 2020),
+but rather from their violation of social norms (Aston et al., 2023), as residents fear that the
+community cannot be burdened with these negative impacts (Paradis, 2000). Thus, the level of
+civilization expressed by tourists through behaviors and manners is an important factor
+influencing residents’ perceptions of tourists (Chen & Hsu, 2021). In addition, since residents
+expect economic gains from tourism, the consumption power of tourists has long been
+associated with resident sentiments (Chen & Hsu, 2021; Kim et al., 2020).
+Further, compatibility reflects tourists’ similarity with and friendliness toward residents.
+Social distance has been used to uncover the role of compatibility (Kim et al., 2020; Zhao &
+Xie, 2011), finding that residents have favorable relationships with tourists of the same
+nationality because of fewer cross-cultural conflicts (Sinkovics & Penz, 2009). Since people
+are prone to see positive outcomes from interaction with others who share similar beliefs,
+emotions, and behaviors (Li et al., 2024b), tourist compatibility can influence resident
+sentiments toward tourists. Furthermore, tourist responsibility, a set of discretionary decisions
+and actions taken by tourists to protect the well-being of a host community (Crilly et al., 2008),
+17
+is a critical factor leading to resident sentiment diversity. As overt behaviors can be important
+cues for people to generate impressions of others (Heider, 1958; Jones & Davis, 1965),
+responsible behaviors of tourists would trigger positive sentiments of residents.
+In addition to the tourist and resident characteristics summarized above, other factors
+may also influence resident sentiment diversity, awaiting testing in future empirical studies.
+For example, people’s basic psychological needs include autonomy (i.e., desire to be causal
+agents of one’s own life) and competence (i.e., seek to control the outcome and experience
+mastery) (Zhang et al., 2019); thus, residents with high autonomy and perceived control would
+be more self-motivated to interact with tourists, and being more positive (or negative) in
+sentiment. Further, residents having limited contact with tourists are less likely to develop
+personally meaningful sentiments because they may rely more on news coverage, which has a
+significant effect on resident sentiments and may lead to sentiment convergence (Godovykh et
+al., 2021; Hao et al., 2020). Hence, tourism offerings (and types of tourists attracted) that limit
+resident-tourist interactions would hinder resident sentiment diversity. For example, cruise
+tourism usually limits the interaction of tourists with members of the local community because
+the visit duration at ports of call is limited. Thus, Propositions 3- 4 are proposed.
+Proposition 3. Residents’ autonomy, competence, and perceived control over tourism
+activities affect their sentiment toward tourists and tourism development.
+Proposition 4. Tourism offerings and the types of tourists attracted impact resident sentiment
+through the nature of resident-tourist interaction.
+4.1.3 Community Ambivalence
+Following the definition of Pradies and Pratt (2010, p. 1), community ambivalence occurs when
+“groups embody opposing or contradictory thoughts and feelings”. That is, community
+ambivalence arises from diverse resident sentiments. Pradies and Pratt (2010) argued that
+interactions are critical to group-level ambivalence, which can arise from interactions between
+individuals or between subgroups within a larger group. Consequently, different levels of
+community ambivalence can be formed.
+Figure 5 illustrates two scenarios of community ambivalence, Positive Predicament and
+Heightened Anxiety. Positive Predicament describes the situation where the community is
+ambivalent in sentiments toward tourists, while the overall sentiment is positive. Heightened
+Anxiety presents the situation when the community is also ambivalent in sentiments toward
+tourists, but the overall sentiment is negative. Although both scenarios indicate community
+18
+ambivalence, differences in the overall sentiment can lead to very different social climates,
+making it necessary to consider both community ambivalence and sentiment simultaneously.
+[Insert Figure 5.]
+Amsterdam, Netherlands is a good example of Positive Predicament, which
+demonstrates the rigor of the proposed concept. It has long been recognized as one of the top
+tourist destinations in Europe. Although tourism contributes to the local economy, the limited
+space in the city and the increasing tourist volume cause high pressure on the city (Travel and
+Tour World, 2025), thus leading to community ambivalence. Consequently, the community of
+Amsterdam is in a predicament, as one resident said, “I like it here, but I won’t stay here all
+my life, partly due to the tourists. They generally behave well – it’s not that they are rowdies –
+but they don’t know the rules of the city” (Gerritsma & Vork, 2017, p. 92).
+Overtourism has become a key factor leading to residents’ negative sentiments toward
+tourists in many destinations. For example, with only 55,000 residents, Venice, Italy attracted
+more than 5 million tourists in 2023 (Statista, 2024a), driving up traffic congestion and housing
+rents. The island was not designed to host so many people, thus most residents do not want to
+mingle with tourists (Spotted by Locals, 2020). However, the tourist flow benefits some
+residents by boosting the development of cultural and artistic events, traditional markets, and
+locally designed offerings (Georgiou, 2023). Thus, as tourism creates employment
+opportunities and promotes local artisans and designers, those involved in these fields are likely
+to have positive sentiments toward tourists. Consequently, the majority of negative sentiments
+keep the community in a state of Heightened Anxiety.
+Community ambivalence may influence individuals’ cognitions and behaviors, thus
+leading to some specific responses of residents toward tourists. Here we discuss several types
+of responses with respective conditions for their generation, and these responses may not occur
+at the same time. First, individual-level ambivalence has always been associated with amplified
+responses toward outgroups. The ambivalent attitudes may raise psychological discomfort, and
+more extreme judgment and behavior are needed to reduce this discomfort (Maio et al., 2001;
+Rothman et al., 2017). At the community level, although individuals themselves are not
+originally ambivalent, discomfort may arise under the social influence when individuals detect
+differences between the sentiments of their ingroup members and of their own. This discomfort
+comes from the individual’s quest to conform to the community’s position. As a result,
+individuals attempt to reduce discomfort through individually amplified responses.
+19
+In contrast to amplified responses, community ambivalence may also lead to vacillation
+(Rothman et al., 2017). The community experiences vacillation due to its inability to develop
+unified sentiments or behaviors toward the outgroup. In this case, the community has the
+potential to take on either of the two poles of sentiment but is unable to make a unified choice.
+On this basis, increased tolerance will occur as a result of long-standing and simultaneous
+conflicting sentiments and cognitions (Rothman et al., 2017). Increasing information search
+and discussion may contribute to members’ acceptance of the ingroup’s affective and cognitive
+complexity (Rothman & Wiesenfeld, 2007).
+Concerning the impact of community ambivalence on responses to tourists, more
+outcomes need to be empirically validated. The social cost of voicing an opinion online is lower
+compared to face-to-face communication, so people are now more accustomed to
+communicating on social media (Uchinaka et al., 2019). Similarly, social media has become a
+popular platform for interaction between tourists and residents (Lever et al., 2021). When
+community ambivalence arises, community members may view expressing their sentiments
+toward tourists online as a way to avoid direct intra-community sentiment clashes. Additionally,
+lasting community ambivalence can make the community even more polarized. Thus,
+Propositions 5-6 are offered.
+Proposition 5. Community ambivalence enhances the tendency of residents to express their
+sentiments online rather than face-to-face with fellow residents or tourists.
+Proposition 6. Prolonged community ambivalence triggers negative sentiments and amplified
+responses toward tourists among residents.
+4.2 Community Ambivalence Transformation
+The process of community ambivalence transformation is proposed based on social influence
+theory. Residents’ sentiments may change under the influence of individual- and society-level
+factors, thus making community ambivalence transform accordingly. Community ambivalence
+may be enhanced or maintained, which means the resident community continues to be in a state
+of ambivalence. Community ambivalence may also diminish or even dissolve, thus bringing
+the resident community to the state of congruence.
+4.2.1 Resident Sentiment Change
+Changes in sentiments occur from time to time in response to external stimuli (Hao et al., 2020).
+Social influence theory, originally proposed by Kelman (1953), is a framework for explaining
+changes in people’s attitudes or behaviors to adapt to the demands of the social environment.
+Individuals are socially influenced because they are convinced by compelling arguments
+20
+(Myers, 1982), want to be similar to others (Akers et al., 1979), are unsure of a decision and
+follow the advice of others (Bikhchandani et al., 1992), or perceive social pressure to conform
+to social norms (Festinger et al., 1950; Wood, 2000). Thus, residents’ sentiments toward
+tourists are influenced by the interaction between the two groups, as well as by the society- and
+individual-level factors, as shown in Figure 6.
+[Insert Figure 6.]
+In addition to updating their disposition from interactions with tourists, resident
+characteristics are also important in influencing their sentiment toward tourists. Individual
+coherence is a form of attitude and ability that reflects whether an individual is open to
+sentiment change. Research has shown that group members who are more confident in their
+judgments are more likely to influence others, rather than be influenced by others, regardless
+of the accuracy of their actual task (Zarnoth & Sniezek, 1997). Also, such attitudes and abilities
+are thought to be determinants of people’s sentiment change by influencing their information
+processing (Wood, 2000). When people are both motivated and capable of processing
+information independently, attitudes are based on a more thoughtful and systematic assessment
+of relevant information; when people are less motivated or less able, attitude judgments are
+based on the accessibility of the source, information, or situation and are assessed through
+shortcut processing strategies (Hsu & Chen, 2019; Wood, 2000). For example, people may
+simply choose to agree with the majority position or the position of someone they know well.
+Societal influences also contribute to residents’ sentiment changes. Individuals always
+try to become involved and effective group members by understanding the group view,
+followed by adopting the ingroup position (Haslam et al., 1996). Residents could be persuaded
+by ingroup members’ views because of their need to reinforce their group identity (Wood,
+2000). Thus, resident sentiments toward tourists could be influenced by the opinions of other
+ingroup members. Baron et al. (1996) reported that highly motivated participants of their study
+rely on their own evaluation, except when information is present for too short a period to
+determine the correct answer; at that point, they appear to employ a heuristic strategy that relies
+on the judgments of others. In contrast, moderately motivated participants use a similar
+heuristic strategy; that is, they rely on others’ estimation regardless of whether they can
+determine the correct answer themselves (Baron et al., 1996). Thus, highly motivated residents
+tend to form their sentiments toward tourists through their intergroup interactions with tourists,
+21
+whereas other residents are more likely to rely on ingroup assimilation to form their sentiments
+toward tourists.
+Furthermore, social events and social freedom may influence sentiment change. Due to
+the role of media propaganda in orienting residents’ sentiments (Gössling et al., 2020), some
+breaking social news may affect residents’ sentiments (Shakeela & Weaver, 2012). For
+example, positive COVID-19 cases and news coverage directly affected residents’ sentiments
+toward tourism and tourists (Godovykh et al., 2021). Meanwhile, social freedom, defined as
+“with respect to a holder of power, a respondent is free to do X or not-X” (Oppenheim, 2004,
+p. 176), is a factor that can influence sentiment change. Residents’ sentiments toward tourists
+are rooted in the social structure, and in sociology, such sentiments are conceptualized as
+macro-social mentalities that pervade the whole society over time (Chen et al., 2021). Thus,
+the extent to which the social climate can accommodate changing and different sentiments from
+the mainstream affects the likelihood of sentiment change among residents.
+Different communities may show different sentiments toward the same tourism activity,
+with age, city size, and industrial development all having an impact (Scholtz, 2019). For
+instance, the young population groups and racial minorities in Florida hold negative sentiment
+toward tourism, while most other people have highly positive sentiment toward tourism
+development (Kirilenko et al., 2023). Thus, factors related to the structure of the community
+are considered as aspects influencing resident sentiment change, because they may form social
+influence within the community. In addition, people who have a high-level community
+attachment participate more in local activities, such as shopping or patronizing restaurants
+(Paradis, 2000). Since these individuals have more opportunities to engage with tourists, their
+sentiment changes may be more frequent. Therefore, Propositions 7-8 are thus offered.
+Proposition 7. Changes in community population and structure influence resident sentiment.
+Proposition 8. Changes in resident identity influence sentiment. When community attachment
+increases, residents’ sentiments toward tourists change.
+4.2.2 Community Congruence
+In addition to community ambivalence, resident sentiment change may also trigger sentiment
+congruence within the community. Community congruence is defined as the state in which the
+residents of a community agree with each other and are sentimentally congruent toward tourists.
+During interactions among ingroup members, community congruence can be formed through
+both internal and external mechanisms. Homology (Bessi et al., 2016), mirroring an
+individual’s need for internal cohesion, is the tendency to socialize and engage with others,
+22
+where the same information is constantly reinforced due to ingroups’ similarities, resulting in
+a cocoon of information that makes sentiments similar. Argumentation is a means by which
+individuals and groups use reasoning as a tool to achieve their ends (Mercier & Sperber, 2011),
+and it assimilates sentiments by influencing people with external forces, such as new
+information and activities.
+Under both mechanisms of homophily and argumentation, sentiment change in the
+community may make resident sentiments toward tourists similar. On the one hand, mutual
+information reinforcement and peer pressure make residents prone to develop sentiments
+similar to those of the social mainstream; on the other hand, factors such as media propaganda
+and public events contribute to bringing residents’ sentiments closer to the mainstream public
+opinion of the society. Based on the outcomes of congruence, there would be two kinds of
+community congruence, as shown in Figure 7. Both scenarios, approaching consensus on their
+sentiments toward tourists, have completely different social impacts because they are at two
+extremes of the spectrum.
+[Insert Figure 7.]
+Resentment describes the overwhelming majority in the community holding negative
+sentiments toward tourists, causing the community as a whole to embody an atmosphere of
+aversion and rejection of tourists (Doxey, 1975). Barcelona could be an example of a
+destination experiencing Resentment, reflected by anti-tourist protests (Guy, 2024). According
+to official figures, in 2023, nearly 26 million tourists stayed overnight, but only 7.78 million of
+them stayed in legally registered hotels (Statista, 2024b). Thus, although tourists spent $13.8
+billion, the tourism revenues have not been distributed rationally. Meanwhile, the influx of
+tourists has driven up rents and housing prices in local communities; for example, rents have
+risen by 68% and the cost of buying a house has risen by 38% over the past decade (Guy, 2024).
+In addition, short-staying tourists, such as cruise passengers, visit only a few businesses or
+attractions, thus generating limited revenue for only a small number of entities. Due to the
+significant negative impact and lack of common economic gain, negative sentiments dominate
+and push such destinations into a state of Resentment. To alleviate the situation, the local
+government began to take measures such as charging taxes on overnight tourists and reducing
+the number of cruise passengers.
+Social Harmony is on the opposite end of the spectrum, reflecting a situation where
+most residents (and thus the community as a whole) have positive sentiments toward tourists.
+23
+Nepal and Bhutan are both famous tourist destinations known for friendly people and beautiful
+scenery. Both countries are very open to tourism, and communities generally have positive
+sentiments toward foreign tourists. The Nepal government’s efforts to develop ecotourism
+(Upadhaya et al., 2022) enhance community participation. The presence of tourists allows for
+the sharing of authentic local culture, which increases residents’ pride in their community (Cho,
+2020; Uchinaka et al., 2019). In addition, Nepal’s tourism revenue contributes to 7.9% of its
+GDP and creates 1.05 million jobs; thus, residents are very friendly to tourists (Upadhaya et
+al., 2022). Bhutan reduces the adverse effects of overtourism by targeting and taxing wealthy
+tourists (CNN Travel, 2023). Apart from the economic benefits that the community can derive
+from tourism, the local Bhutanese also view cultural exchanges as a source of pride, and as
+such, the local community is in Social Harmony.
+However, community congruence may narrow members’ cognitions and affects, thus
+leading to groupthink, where group members prioritize consensus and conformity over critical
+thinking and independent judgment (Janis, 1971). In such cases, group members may suppress
+their independent thinking or dissenting opinions to maintain group harmony. Off-mainstream
+opinions within the community may be present but are often downplayed or ignored to preserve
+group cohesion. Thus, groupthink may lead to extreme opinions or even behavior radicalization
+among the isolated minority because congruence dampens non-mainstream information, which
+leads to a growing information cocoon. Guided by information from a single sentiment
+orientation, a few community members’ opinions may become radicalized.
+In addition to the above summary, other possible responses are also to be verified by
+future empirical research. Because constraints on expressing sentiments online are lower than
+those offline (Wu et al., 2024; Yang et al., 2024), people tend to exaggerate their sentiments,
+which is likely to lead to the emergence of more polarized sentiments. Moving beyond the
+framework, residents are important stakeholders in tourism development and can influence the
+delivery of services (McCartney & In, 2016), thus, destination competitiveness and economic
+structure may be strengthened (weakened) by the positive (negative) community congruence.
+Future empirical research could explore Propositions 9-10 in-depth, guided by sociological and
+psychological theories, to develop further insights.
+Proposition 9. Community congruence causes residents whose views are in the absolute
+minority to communicate more intensely online compared to face-to-face.
+24
+Proposition 10. Community congruence leads to over-dependence on or exclusion from
+tourism activities, resulting in a less diversified economic structure. When inertia sets in, the
+industry becomes less efficient and may become slow in responding to crises.
+Furthermore, research context and methods are also essential for theory building. Cross-
+context and multi-method studies lead to generalizable findings and in-depth understandings
+of community ambivalence formation. We encourage the use of new and multiple methods to
+empirically validate the relationships proposed. Traditional studies mainly used qualitative
+and/or questionnaire data to measure resident ambivalence (Chen et al., 2019; Green, 2002;
+Melville, 2024), which may be subject to self-report bias. Big data analytics have been
+conducted with advanced techniques such as large language models to explore tourist and
+resident sentiment (Fu et al., 2019; Yang et al., 2024). With the development of new computing
+technologies and the abundance of multimodal data, opportunities abound for more accurate
+capturing and investigation of resident ambivalence.
+Proposition 11. Conducting cross-context research on resident sentiment leads to more
+generalizable findings about community ambivalence.
+Proposition 12. Utilizing advanced techniques, such as large language models, and multi-
+methods, leads to more accurate and timely capturing and understanding of community
+ambivalence.
+5. Discussion and Conclusion
+5.1 Dynamics of Community Ambivalence and Resident Sentiments
+Community ambivalence may change with the addition of new residents, the emigration of
+current residents, and sentiment changes among residents, thus making community
+ambivalence fluid. Because the overall sentiment of a community toward tourists could move
+between the two extremes of positivity and negativity, the two types of community
+ambivalence (Figure 5, Positive Predicament and Heightened Anxiety) are in a dynamic state
+of flux. Yet, direct changes between the two community congruence states (Figure 7,
+Resentment and Social Harmony) are not possible because extreme reversal of the sentiments
+of all members cannot be achieved in a short time. Nevertheless, the size of the resident
+subgroup with specific sentiments could evolve while the polarity of overall sentiment remains
+stable, allowing community ambivalence and community congruence to shift into each other.
+The details can be seen in Figure 8, where the horizontal axis represents the overall sentiment,
+with negative on the left and positive on the right. The vertical axis represents the degree of
+ambivalence, with community ambivalence on the top and community congruence on the
+25
+bottom. Social Harmony, Positive Predicament, Heightened Anxiety, and Resentment can be
+represented by each of the four quadrants.
+[Insert Figure 8.]
+Social Harmony reflects a healthy relationship between the resident and tourist groups,
+which is conducive to sustainable tourism development, and is, therefore, an ideal state sought
+by all stakeholders. As in the cases of Nepal and Bhutan, sustainable tourism is developed for
+tourists to enjoy cultural and ecological tourism and residents to reap the benefits of pride and
+financial gains (CNN Travel, 2023; Upadhaya et al., 2022). In actual practice, however, the
+community may develop negative sentiments and may have community ambivalence as
+tourism continues to develop. Since government agencies can improve resident sentiment
+through proper management (Weaver & Lawton, 2001) and effective communication, the
+status of Social Harmony can be achieved by constructively managing the dynamics of
+ambivalence. As the curved arrow in Figure 8, when Resentment occurs, destination
+management agencies can first try to navigate community ambivalence and change the state to
+Heightened Anxiety by turning the sentiments of minority subgroups into positive ones, then
+continue to expand the sizes of subgroups holding positive sentiments and gradually change
+the state to Positive Predicament, and finally try to reduce community ambivalence to achieve
+Social Harmony. For instance, the government agency of Copenhagen, Denmark, encourages
+residents and tourists to participate in regenerative actions, such as clean-ups or using
+sustainable transportation, which allow them to earn rewards like food, bike rides, and access
+to local experiences (VisitCopenhagen, 2025). Equal access to these activities encourages
+social interaction between the two groups, and the minority of residents who first come into
+contact with tourists will change their sentiments towards them. As the population involved in
+regenerative activities increases, their sentiments toward tourists, who temporarily become part
+of the community, would continue to change.
+5.2 Theoretical Implications
+As an original effort to conceptualize community ambivalence, this work has several
+theoretical implications. First, this study addresses a shortcoming in current research on
+resident sentiment, which either focuses on individual-level sentiment by constructing methods
+for calculating residents’ sentiment one by one (Fu et al., 2019; Hao et al., 2020) or observes
+the overall resident sentiment in a specific location (Chen et al., 2021; Kirilenko et al., 2023).
+However, sentiment ambivalence within any community can lead to complex social
+26
+consequences. Without recognizing the differences in views and their potential influencing
+factors, the effectiveness of resident sentiment analytics would be compromised. This study
+conceptualizes community ambivalence, which offers a nuanced understanding of resident
+sentiment formation, diversity, and transformation.
+Second, by identifying the four ambivalence dynamics, the study deepens the
+understanding of group-level ambivalence, particularly in a tourism context. On the one hand,
+existing studies on the impact of tourism on local communities summarized the dynamic
+evolution of resident sentiment. For example, Doxey (1975) summarized the changes in
+resident sentiment in four states (i.e., Euphoria, Apathy, Annoyance, and Antagonistic), and
+Butler (1980) proposed the life cycle of the destination and the corresponding changes in
+resident sentiment in six states (i.e., Exploration, Involvement, Development, Consolidation,
+Stagnation, and Decline or Rejuvenation). Nevertheless, the role of community ambivalence
+was not considered. The four proposed ambivalence states integrate the resident sentiment and
+ambivalence, revealing the developmental mechanisms of community ambivalence from a
+dynamic perspective. On the other hand, most previous research on ambivalence among
+residents has been observational for a particular location and has focused on residents’ attitudes
+and evaluations (Chen et al., 2019; Ma et al., 2024); ambivalence research on residents’
+sentiments is lacking. The conceptual framework and four ambivalence dynamics proposed
+enable a detailed investigation of the mechanisms of community ambivalence and provide a
+reference for subsequent empirical research. At the same time, the contextualized possible
+influencing factors of residents’ ambivalence are clarified, thus setting a foundation for the
+future development of ambivalence research in tourism.
+Third, the study integrates ambivalence and sentiments to provide a more holistic view
+of community dynamics. Because not all residents have the same sentiment as the overall
+community-level sentiment, a comprehensive picture of sentiments within a community can be
+understood when ambivalence is taken into consideration concurrently. As tourism planning
+research gradually moves toward holding a holistic viewpoint that considers the views and
+positions of various stakeholders (Agyeiwaah et al., 2016), understanding the perspectives of
+host communities enables the achievement of sustainable goals through mutual understanding
+and cooperation (Farsari, 2018; Shrestha & L’Espoir Decosta, 2023). Therefore, this study
+draws attention to and offers a foundation of community ambivalence for tourism planning and
+development research. Further, destination marketing research often aims to improve tourist
+experiences (Wu & Yang, 2023). Taking resident sentiment and community ambivalence into
+27
+consideration would facilitate the cultivation of a hospitable environment where tourists feel
+welcomed with enjoyable experiences. The four types of ambivalence dynamics offer different
+service landscapes for destination marketing researchers to refine their conceptual
+underpinning and study context.
+5.3 Practical Implications
+This work also has some practical implications for tourism policymakers and destination
+management organizations. First, the conceptualization of community ambivalence reveals the
+mechanisms inherent in residents’ sentiment inconsistencies, thereby providing tourism
+policymakers with a toolbox for systematically improving residents’ sentiments toward tourists
+and tourism. For example, in the stage of community ambivalence formation, management
+agencies can actively publicize tourists’ positive economic, social, and cultural contributions
+to communities and reduce negative stereotypes held by residents, thus stimulating more
+positive sentiments. In the stage of community ambivalence transformation, management
+agencies can tactically slow down the spread of negative sentiments according to the social
+atmosphere. For example, starting from the compliance mode of social influence (Kelman,
+1953), by publicizing positive relevant social events or community sentiments, residents could
+be nudged to conform and achieve a favorable reaction from other members of the community.
+Although these individuals may still hold a different opinion privately, at least the open social
+atmosphere is more welcoming for tourists. Trusted public figures and beloved influencers
+could be engaged to facilitate the identification mode of social influence acceptance to further
+manage community ambivalence. Through time, the agenda of social influence could be
+internalized by members of the community.
+Second, management agencies can try to cultivate better host-guest relationships based
+on the particular community ambivalence and congruence states. When Heightened Anxiety
+exists, the majority of residents’ concerns should be addressed through corrective actions or
+communication campaigns to avoid negative views from becoming damaging actions that
+could result in potential conflicts between residents and tourists. When Positive Predicament
+occurs, management agencies and businesses should try to identify the specific causes of the
+minority group members’ concerns and properly address those issues through the quality of
+product offerings, better organized tourist activities, and/or proper framing of messages to
+facilitate residents’ understanding of the importance of tourism to convert the minority of
+residents to align with the majority positive views. When Resentment occurs, government
+agencies should take immediate action through new policies or amendments to existing policies
+28
+and regulations to address social tensions. Industry-wide, multi-stakeholder collaborative
+actions are required to calm down the community’s emotions. When Social Harmony is
+reached, various activities can be organized to attract tourists and facilitate healthy interaction
+between residents and tourists to ensure the further sustainable development of tourism.
+Third, the dynamic nature of community ambivalence provides destination
+management agencies with a dialectical perspective, and in practice, ambivalence needs to be
+strategically managed by taking the specific context into account. To realize healthy host-guest
+relationships, destination managers would strive for a near consensus of positive resident
+sentiments (i.e., Social Harmony). However, community ambivalence is not something that
+always needs to be avoided. When Resentment occurs, destination managers can first devise
+strategies to transform community views into the category of Heightened Anxiety by
+leveraging community ambivalence, that is, persuading a small group of residents to change
+their sentiments from negative to positive. Contrarily, when Positive Predicament occurs,
+destination managers may try to decrease community ambivalence and change the state to
+Social Harmony by convincing a portion of the minority residents who hold negative views to
+conform with the majority’s positive sentiments. These could be done through incentives,
+communication campaigns, favorable policies, or moral appeals. For instance, the government
+agency of Flanders, Belgium, launched a large-scale listening project in 2017 to gather attitudes
+from residents and tourists and engage residents in policymaking, which has achieved its goal
+of balancing all stakeholders and flourishing the community (Travel to Tomorrow, 2023). In
+addition, the sentiments of Hong Kong residents have become more positive after the
+government tightened the border crossing policy for tourists and tightened the shopping
+restrictions on tourists (Hao et al., 2020). Therefore, leveraging or decreasing community
+ambivalence at the right time could help destinations create a healthy tourism social landscape.
+5.4 Future Research Agenda
+The conceptual framework of community ambivalence presented in Figure 4 illustrates the
+current understanding of the phenomenon based on a systematic literature review of relevant
+empirical studies, using the social identity and social influence theories as underpinning
+support. However, significant knowledge gaps exist. A few sample propositions are proposed
+to illustrate potential directions for future research, but they are by no means exhaustive, with
+many more possibilities to be derived. For example, additional variables relating to different
+stages of the resident community ambivalence formation and transformation are worthy of
+investigation. The framework is not meant for empirical testing in one comprehensive study.
+29
+Instead, it serves as a blueprint of various approaches that community ambivalence studies can
+use to enhance our understanding of the sociodynamic nature of the phenomenon. As additional
+theoretical development and empirical evidence become available, the framework proposed
+could be revised, expanded, and refined to further advance our theoretical understanding of this
+important topic.
+30
+Figure 1 Conceptual Research Flow
+Note. Adapted from Xin et al. (2013).
+31
+Figure 2 Associations of subjectivity terms
+Note. Adapted from Munezero et al. (2014).
+Figure 3 PRISMA Flow
+32
+Figure 4 Conceptual Framework of Community Ambivalence
+Note. Blue objects indicate stages of the process, where rectangles indicate acts and rounded rectangles indicate states. Yellow boxes indicate influencing factors and green boxes indicate
+responses to tourists. Closed-filled arrows indicate influence relationships and open arrows indicate sequences.
+33
+Figure 5 Community Ambivalence of Resident Sentiments toward Tourists
+Note. Each dot represents a resident. Red indicates the resident holds a negative sentiment toward tourists, while
+green indicates a positive sentiment toward tourists.
+Figure 6 Changes in Residents’ Sentiments toward Tourists
+Note. Each dot represents a resident, and each square represents a tourist. Red indicates the resident holds a
+negative sentiment toward tourists, while green indicates a positive sentiment toward tourists. Closed-filled arrows
+indicate influence relationships and open arrows indicate interpersonal interactions.
+1
+Figure 7 Community Congruence of Resident Sentiments toward Tourists
+Note. Each dot represents a resident. Red indicates the resident holds a negative sentiment toward tourists, while
+green indicates a positive sentiment toward tourists.
+Figure 8 The Dynamics of Community Ambivalence and Resident Sentiments
+Note. The curved arrow indicates the suggested management path to transform Resentment into Social Harmony.
+2
+References
+Agyeiwaah, E., Adongo, R., Dimache, A., & Wondirad, A. (2016). Make a customer, not a
+sale: Tourist satisfaction in Hong Kong. Tourism Management, 57, 68–79.
+https://doi.org/10.1016/j.tourman.2016.05.014
+Akers, R. L., Krohn, M. D., Lanza-Kaduce, L., & Radosevich, M. (1979). Social learning and
+deviant behavior: A specific test of a general theory. American Sociological Review,
+44(4), 636–655.
+Akhmedov, A., Hunter, W. C., & Choi, J. G. (2022). Q method finds anti-refugee sentiments
+on Yemeni migration to Jeju. Tourism Geographies, 24(1), 96–116.
+https://doi.org/10.1080/14616688.2020.1757746
+Alaei, A. R., Becken, S., & Stantic, B. (2019). Sentiment analysis in tourism: Capitalizing on
+big data. Journal of Travel Research, 58(2), 175–191.
+https://doi.org/10.1177/0047287517747753
+Arıkan Saltık, I., & Turgut, U. (2021). The role of community based tourism in avoiding
+overtourism. In A. Hassan & A. Sharma (Eds.), Overtourism, Technology Solutions and
+Decimated Destinations (pp. 117–131). Springer. https://doi.org/10.1007/978-981-16-
+2474-2_8
+Asch, S. E. (1961). Effects of group pressure upon the modification and distortion of
+judgments. In Documents of Gestalt Psychology (pp. 222–236). University of California
+Press. https://doi.org/10.1525/9780520313514-017
+Ashforth, B. E., Rogers, K. M., Pratt, M. G., & Pradies, C. (2014). Ambivalence in
+organizations: A multilevel approach. Organization Science, 25(5), 1453–1478.
+https://doi.org/10.1287/orsc.2014.0909
+Aston, S., Beban, A., & Walters, V. (2023). Policing freedom campers: The place, class, and
+xenophobic dynamics of overtourism in Aotearoa New Zealand. Tourism Geographies,
+25(6), 1534–1554. https://doi.org/10.1080/14616688.2023.2251428
+Baron, R. S., Vandello, J. A., & Brunsman, B. (1996). The forgotten variable in conformity
+research: Impact of task importance on social influence. Journal of Personality and
+Social Psychology, 71(5), 915–927. https://doi.org/10.1037//0022-3514.71.5.915
+Bender, A. K., & Kerstetter, D. L. (2020). Residents’ attitudes toward tourism development
+in a rural community: A qualitative approach. Journal of Park and Recreation
+Administration, 38(4), 90–108. https://doi.org/10.18666/JPRA-2020-10046
+Benwell, B., & Stokoe, E. (2006). Discourse and identity. Edinburgh University Press.
+1
+Bessi, A., Petroni, F., Vicario, M. Del, Zollo, F., Anagnostopoulos, A., Scala, A., Caldarelli,
+G., & Quattrociocchi, W. (2016). Homophily and polarization in the age of
+misinformation. European Physical Journal: Special Topics, 225(10), 2047–2059.
+https://doi.org/10.1140/epjst/e2015-50319-0
+Biddle, B. (1986). Recent developments in role theory. Annual Review of Sociology, 12(1),
+67–92. https://doi.org/10.1146/annurev.soc.12.1.67
+Bikhchandani, S., Hirshleifer, D., & Welch, I. (1992). A theory of fads, fashion, custom, and
+cultural change as informational cascades. Journal of Political Economy, 100(5), 992–
+1026. https://doi.org/10.1086/261849
+Brollo, B., & Celata, F. (2023). Temporary populations and sociospatial polarisation in the
+short-term city. Urban Studies, 60(10), 1815–1832.
+https://doi.org/10.1177/00420980221136957
+Brown, R. (2000). Social identity theory: Past achievements, current problems and future
+challenges. European Journal of Social Psychology, 30(6), 745–778.
+https://doi.org/10.1002/1099-0992(200011/12)30:6<745::AID-EJSP24>3.0.CO;2-O
+Butler, R. W. (1980). The concept of a tourist area cycle of evolution: Implications for
+management of resources. Canadian Geographer, 24, 5–12.
+https://doi.org/10.1111/j.1541-0064.1980.tb00970.x
+Cannon, W. B. (1927). The James-Lange theory of emotions : A critical examination and an
+alternative theory. The American Journal of Psychology, 39(1), 106–124.
+https://doi.org/10.2307/1415404
+Cattell, R. B. (1940). Sentiment or attitude? The core of a terminology problem in personality
+research. Journal of Personality, 9(1), 6–17. https://doi.org/10.1111/j.1467-
+6494.1940.tb02192.x
+Chauma, E. C., & Ngwira, C. (2022). Managing a world heritage site in Malawi: Do
+residents’ sentiments matter? Journal of Heritage Tourism, 17(2), 142–157.
+https://doi.org/10.1080/1743873X.2021.1889571
+Chen, N., & Hsu, C. H. C. (2021). Tourist stereotype content: Dimensions and accessibility.
+Annals of Tourism Research, 89, 103212. https://doi.org/10.1016/j.annals.2021.103212
+Chen, N., Hsu, C. H. C., & Li, X. (2021). Resident sentiment toward a dominant tourist
+market: Scale development and validation. Journal of Travel Research, 60(7), 1408–
+1425. https://doi.org/10.1177/0047287520947799
+Chen, N., Hsu, C. H. C., & Li, X. (Robert). (2018). Feeling superior or deprived? Attitudes
+2
+and underlying mentalities of residents towards Mainland Chinese tourists. Tourism
+Management, 66, 94–107. https://doi.org/10.1016/j.tourman.2017.11.007
+Chen, N., Li, F. (Sam), & Ma, J. (2025). Dual identity and ambivalent sentiment of border
+residents: Predicting border community support for tourism development. Tourism
+Management, 106, 105000. https://doi.org/10.1016/j.tourman.2024.105000
+Chen, Y., Cottam, E., & Lin, Z. (2020). The effect of resident-tourist value co-creation on
+residents’ well-being. Journal of Hospitality and Tourism Management, 44, 30–37.
+https://doi.org/10.1016/j.jhtm.2020.05.009
+Chen, Z., Wang, Y., Li, X. (Robert), & Lawton, L. (2019). It’s not just black or white: Effects
+of ambivalence on residents’ support for a mega-event. Journal of Hospitality and
+Tourism Research, 43(2), 283–313. https://doi.org/10.1177/1096348018804613
+Cheung, K. S., & Li, L. H. (2019). Understanding visitor–resident relations in overtourism:
+Developing resilience for sustainable tourism. Journal of Sustainable Tourism, 27(8),
+1197–1216. https://doi.org/10.1080/09669582.2019.1606815
+Cho, S. (2020). ‘Playing Okinawan’: A Search for authenticity and the power asymmetry in
+Japanese appropriation of Okinawan folk music. Journal of Intercultural Studies, 41(3),
+280–298. https://doi.org/10.1080/07256868.2020.1751597
+Cialdini, R. B., & Goldstein, N. J. (2004). Social influence: Compliance and conformity.
+Annual Review of Psychology, 55, 591–621.
+https://doi.org/10.1146/annurev.psych.55.090902.142015
+CNN Travel. (2023). Bhutan reducing its daily tourist tax for visitors who stay longer.
+Retrieved from https://edition.cnn.com/travel/bhutan-reducing-daily-tourist-tax-intl-
+hnk/index.html (Accessed on October 8, 2024)
+Crilly, D., Schneider, S. C., & Zollo, M. (2008). Psychological antecedents to socially
+responsible behavior. European Management Review, 5(3), 175–190.
+https://doi.org/10.1057/emr.2008.15
+Deblock, H. (2013). Back to my roots: Artifak and festivals in Vanuatu, Southwest Pacific.
+Critical Arts, 27(6), 768–783. https://doi.org/10.1080/02560046.2013.867596
+Diedrich, A., & García-Buades, E. (2009). Local perceptions of tourism as indicators of
+destination decline. Tourism Management, 30(4), 512–521.
+https://doi.org/10.1016/j.tourman.2008.10.009
+Doxey, G. V. (1975). A causation theory of visitor-resident irritants: Methodology and
+research inferences. The 6th Annual Conference of the Travel Research Association,
+3
+195–198.
+Duignan, M. B., Everett, S., & McCabe, S. (2022). Events as catalysts for communal
+resistance to overtourism. Annals of Tourism Research, 96, 103438.
+https://doi.org/10.1016/j.annals.2022.103438
+Emerson, M. R. (1976). Social exchange theory. Annual Reviews Sociology, 2, 335–362.
+https://doi.org/10.1146/annurev.so.02.080176.002003
+Farsari, I. (2018). A structural approach to social representations of destination collaboration
+in Idre, Sweden. Annals of Tourism Research, 71, 1–12.
+https://doi.org/10.1016/j.annals.2018.02.006
+Fennell, D. A., & de Grosbois, D. (2024). Development of a scale for assessing animal
+welfare literacy in tourism. Journal of Travel Research.
+https://doi.org/10.1177/00472875241294044
+Festinger, L. (1954). A theory of social comparison processes. Human Relations, 7(2), 117–
+140. https://doi.org/10.1177/001872675400700202
+Festinger, L. A. (1962). A theory of cognitive dissonance. Stanford University Press.
+Festinger, L., Schachter, S., & Back, K. (1950). Social pressures in informal groups. Stanford
+University Press.
+Flache, A., Mäs, M., Feliciani, T., Chattoe-Brown, E., Deffuant, G., Huet, S., & Lorenz, J.
+(2017). Models of social influence: Towards the next frontiers. Journal of Artificial
+Societies and Social Simulation, 20(4). https://doi.org/10.18564/jasss.3521
+Foroughi, M., de Andrade, B., & Pereira Roders, A. (2023). Capturing public voices: The
+role of social media in heritage management. Habitat International, 142, 102934.
+https://doi.org/10.1016/j.habitatint.2023.102934
+Fu, Y., Hao, J. X., Li, X. (Robert), & Hsu, C. H. C. (2019). Predictive accuracy of sentiment
+analytics for tourism: A metalearning perspective on Chinese travel news. Journal of
+Travel Research, 58(4), 666–679. https://doi.org/10.1177/0047287518772361
+Gajdošíková, Z. (2024). Innovating the social pillar for engaging local inhabitants in urban
+and mountain destinations. In V. Katsoni & G. Cassar (Eds.), International Conference
+of the International Association of Cultural and Digital Tourism (pp. 807–819).
+Springer. https://doi.org/10.1007/978-3-031-54338-8_47
+Gao, S., Hao, J., & Fu, Y. (2015). The application and comparison of web services for
+sentiment analysis in tourism. 2015 12th International Conference on Service Systems
+and Service Management (ICSSSM), 1–16.
+4
+https://doi.org/10.1109/ICSSSM.2015.7170341
+Garcia, L. M. (2016). Techno-tourism and post-industrial neo-romanticism in Berlin’s
+electronic dance music scenes. Tourist Studies, 16(3), 276–295.
+https://doi.org/10.1177/1468797615618037
+Gardner, P. L. (1987). Measuring ambivalence to science. Journal of Research in Science
+Teaching, 24(3), 241–247. https://doi.org/10.1002/tea.3660240305
+Georgiou, E.-S. (2023). Tourismflows in Venice: A personal perspective. Retrieved from
+https://regions.regionalstudies.org/ezine/article/issue-15-tourism-flows-
+venice/?doi=13673882.2023.00001010# (Accessed on October 8, 2024)
+Geremew, Y. M., Huang, W. J., & Hung, K. (2024). Fuzzy-Set Qualitative Comparative
+Analysis as a Mixed-Method and Analysis Technique: A Comprehensive Systematic
+Review. Journal of Travel Research, 63(1), 3–26.
+https://doi.org/10.1177/00472875231168619
+Gerritsma, R., & Vork, J. (2017). Amsterdam residents and their attitude towards tourists and
+tourism. Coactivity: Philosophy, Communication, 25(1), 85–98.
+https://doi.org/10.3846/cpc.2017.274
+Godovykh, M., Ridderstaat, J., Baker, C., & Fyall, A. (2021). COVID-19 and tourism:
+Analyzing the effects of COVID-19 statistics and media coverage on attitudes toward
+tourism. Forecasting, 3(4), 870–883. https://doi.org/10.3390/forecast3040053
+Goodson, D. J., van Riper, C. J., Andrade, R., Stewart, W., Cebrián-Piqueras, M. A., &
+Raymond, C. M. (2024). Broad values as the basis for understanding deliberation about
+protected area management. Sustainability Science, 19(2), 449–467.
+https://doi.org/10.1007/s11625-023-01423-z
+Gössling, S., McCabe, S., & Chen, N. (Chris). (2020). A socio-psychological
+conceptualisation of overtourism. Annals of Tourism Research, 84, 102976.
+https://doi.org/10.1016/j.annals.2020.102976
+Green, G. L. (2002). Marketing the nation: Carnival and tourism in Trinidad and Tobago.
+Critique of Anthropology, 22(3), 283–304.
+https://doi.org/10.1177/0308275X02022003759
+Gursoy, D., Boğan, E., Dedeoğlu, B. B., & Çalışkan, C. (2019). Residents’ perceptions of
+hotels’ corporate social responsibility initiatives and its impact on residents’ sentiments
+to community and support for additional tourism development. Journal of Hospitality
+and Tourism Management, 39, 117–128. https://doi.org/10.1016/j.jhtm.2019.03.005
+5
+Guy, J. (2024). Barcelona anti-tourism protesters fire water pistols at visitors. Retrieved
+from https://edition.cnn.com/2024/07/08/travel/barcelona-tourism-protests-scli-
+intl/index.html (Accessed on October 8, 2024)
+Hanafiah, M. H., Jamaluddin, M. R., & Kunjuraman, V. (2021). Qualitative assessment of
+stakeholders and visitors perceptions towards coastal tourism development at Teluk
+kemang, port dickson, Malaysia. Journal of Outdoor Recreation and Tourism, 35,
+100389. https://doi.org/10.1016/j.jort.2021.100389
+Hao, J. X., Fu, Y., Hsu, C., Li, X., & Chen, N. (2020). Introducing news media sentiment
+analytics to residents’ attitudes research. Journal of Travel Research, 59(8), 1353–1369.
+https://doi.org/10.1177/0047287519884657
+Haslam, S. A., McGarty, C., & Turner, J. C. (1996). Salient group memberships and
+persuasion: The role of social identity in the validation of beliefs. In J. L. Nye & A. M.
+Brower (Eds.), What’s Social About Social Cognition? Research on Socially Shared
+Cognition in Small Groups (pp. 29–56). SAGE.
+Hateftabar, F., & Chapuis, J. M. (2020). How resident perception of economic crisis
+influences their perception of tourism. Journal of Hospitality and Tourism Management,
+43, 157–168. https://doi.org/10.1016/j.jhtm.2020.02.009
+Hateftabar, F., & Rasoolimanesh, S. M. (2023). Crisis-driven shifts in resident pro-tourism
+behaviour. Current Issues in Tourism, 1–24.
+https://doi.org/10.1080/13683500.2023.2277905
+Heider, F. (1958). The psychology of interpersonal relations. Wiley.
+Hogg, M. A., Terry, D. J., & White, K. M. (1995). A tale of two theories : A critical
+comparison of identity theory with social identity theory. Social Psychology Quarterly,
+58(4), 255–269.
+Hovland, C. I., Harvey, O. J., & Sherif, M. (1957). Assimilation and contrast effects in
+reactions to communication and attitude change. Journal of Abnormal and Social
+Psychology, 55(2), 244–252. https://doi.org/10.1037/h0048480
+Hsu, C. H. C., & Chen, N. (2019). Resident attribution and tourist stereotypes. Journal of
+Hospitality and Tourism Research, 43(4), 489–516.
+https://doi.org/10.1177/1096348018823903
+Hsu, C. H. C., Li, X. R., & Chen, N. (2016). Resident sentiment: Preliminary
+conceptualization and measurement. 2016 TTRA International Conference.
+Huang, X., Lin, S., & Cui, Q. (2021). From “villages of longevity” to “villages of cancer”?
+6
+The emotional geography of tourism development in Bama, China. Emotion, Space and
+Society, 40, 100813. https://doi.org/10.1016/j.emospa.2021.100813
+Ivanova, M., & Buda, D. M. (2020). Thinking rhizomatically about communist heritage
+tourism. Annals of Tourism Research, 84, 103000.
+https://doi.org/10.1016/j.annals.2020.103000
+Janis, I. L. (1971). Groupthink. Psychology Today, 5(6), 46–46.
+Johnson, J. D., Snepenger, D. J., & Akis, S. (1994). Residents’ perceptions of tourism
+development. Annals of Tourism Research, 21(3), 629–642.
+https://doi.org/10.1016/0160-7383(94)90124-4
+Jones, E. E., & Davis, K. E. (1965). A theory of correspondent inferences: From acts to
+dispositions. Advances in Experimental Social Psychology, 2, 219-266.
+Joseph, C. A., & Kavoori, A. P. (2001). Mediated resistance tourism and the host community.
+Annals of Tourism Research, 28(4), 998–1009. https://doi.org/10.1016/S0160-
+7383(01)00005-6
+Jost, J. T., & Burgess, D. (2000). Attitudinal ambivalence and the conflict between group and
+system justification motives in low status groups. Personality and Social Psychology
+Bulletin, 26(3), 293–305. https://doi.org/10.1177/0146167200265003
+Kelman, H. C. (1953). Attitude change as a function of response restriction. Human
+Relations, 6(3), 185–214. https://doi.org/10.1177/001872675300600301
+Kim, G., Duffy, L. N., & Moore, D. W. (2020). Tourist attractiveness: Measuring residents’
+perception of tourists. Journal of Sustainable Tourism, 28(6), 898–916.
+https://doi.org/10.1080/09669582.2019.1708919
+Kirilenko, A. P., Ma, S., Stepchenkova, S. O., Su, L., & Waddell, T. F. (2023). Detecting
+early signs of overtourism: Bringing together indicators of tourism development with
+data fusion. Journal of Travel Research, 62(2), 382–398.
+https://doi.org/10.1177/00472875211064635
+Kirilenko, A. P., & Stepchenkova, S. O. (2017). Sochi 2014 Olympics on Twitter:
+Perspectives of hosts and guests. Tourism Management, 63, 54–65.
+https://doi.org/10.1016/j.tourman.2017.06.007
+Lee, R. M., & Robbins, S. B. (1995). Measuring belongingness: The social connectedness
+and the social assurance scales. Journal of Counseling Psychology, 42(2), 232–241.
+https://doi.org/10.1037/0022-0167.42.2.232
+Lever, M. W., Elliot, S., & Joppe, M. (2021). Exploring destination advocacy behavior in a
+7
+virtual travel community. Journal of Travel and Tourism Marketing, 38(5), 431–443.
+https://doi.org/10.1080/10548408.2021.1940421
+Li, H., Liu, H., Shin, H. H., & Ji, H. (2024a). Impacts of user-generated images in online
+reviews on customer engagement: A panel data analysis. Tourism Management, 101,
+104855. https://doi.org/10.1016/j.tourman.2023.104855
+Li, Y., Zhang, L., Qin, R., & Ryan, C. (2024b). Rally-around-the-destination? Changes in
+host-guest emotional solidarity after crises. Tourism Management, 105, 104956.
+https://doi.org/10.1016/j.tourman.2024.104956
+Lin, G., Lin, M. S., & Song, H. (2024). An Assessment of Prospect Theory in Tourism
+Decision-Making Research. Journal of Travel Research, 63(2), 275–297.
+https://doi.org/10.1177/00472875231171673
+Litvin, S. W., Smith, W. W., & McEwen, W. R. (2020). Not in my backyard: Personal
+politics and resident attitudes toward tourism. Journal of Travel Research, 59(4), 674–
+685. https://doi.org/10.1177/0047287519853039
+Lundberg, E. (2017). The importance of tourism impacts for different local resident groups:
+A case study of a Swedish seaside destination. Journal of Destination Marketing and
+Management, 6(1), 46–55. https://doi.org/10.1016/j.jdmm.2016.02.002
+Ma, X., Zhang, L., Su, W., & Wang, H. (2024). Residents’ attitudes toward land lease for
+rural tourism. Journal of Sustainable Tourism, 32(11), 2361–2379.
+https://doi.org/10.1080/09669582.2024.2340539
+Maio, G. R., Greenland, K., Bernard, M., & Esses, V. M. (2001). Effects of intergroup
+ambivalence on information processing: The role of physiological arousal. Group
+Processes & Intergroup Relations, 4(4), 355–372.
+https://doi.org/10.1177/1368430201004004005
+Mbaiwa, J. E. (2011). Cultural commodification and tourism: The Goo-moremi community,
+Central Botswana. Tijdschrift Voor Economische En Sociale Geografie, 102(3), 290–
+301. https://doi.org/10.1111/j.1467-9663.2011.00664.x
+McCartney, G., & In, W. L. W. (2016). House of Cards - An analysis of Macao’s resident
+support for tourism and casino development. Tourism and Hospitality Research, 16(2),
+144–157. https://doi.org/10.1177/1467358415600215
+McCaughey, R., Mao, I., & Dowling, R. (2018). Residents’ perceptions towards cruise
+tourism development: the case of Esperance, Western Australia. Tourism Recreation
+Research, 43(3), 403–408. https://doi.org/10.1080/02508281.2018.1464098
+8
+Melville, E. (2024). “We’re no longer the senzala”: Race, space, and difference in the Ethnic
+Capital of Brazil. Tourist Studies. https://doi.org/10.1177/14687976241274817
+Mercier, H., & Sperber, D. (2011). Why do humans reason? Arguments for an argumentative
+theory. Behavioral and Brain Sciences, 34, 57–111.
+https://doi.org/10.1017/S0140525X10000968
+Meredith, J. (1993). Theory building through conceptual methods. International Journal of
+Operations & Production Management, 13(5), 3–11.
+https://doi.org/10.1108/01443579310028120
+Merriam-Webster online dictionary. (2025). Merriam-Webster online dictionary. Retrieved
+from https://www.merriam-webster.com/ (Accessed on April 16, 2025)
+Merton, R. K. (1976). Sociological ambivalence and other essays. Free Press.
+Mohammad Malik, Y., Walia, S., Erkol Bayram, G., Valeri, M., & Basheer, S. (2024).
+Community attachment, tourist contact, and resident attitudes toward tourism
+development of Kashmir Valley. Tourism, 72(3), 410–421.
+https://doi.org/10.37741/t.72.3.9
+Munezero, M., Montero, C. S., Sutinen, E., & Pajunen, J. (2014). Are they different? Affect,
+feeling, emotion, sentiment, and opinion detection in text. IEEE Transactions on
+Affective Computing, 5(2), 101–111. https://doi.org/10.1109/TAFFC.2014.2317187
+Myers, D. G. (1982). Polarizing effects of social interaction. In Group decision making (pp.
+125–161). Academic Press.
+Nelson, K., & Matthews, A. L. (2018). Foreign presents or foreign presence? Resident
+perceptions of Australian and Chinese tourists in Niseko, Japan. Tourist Studies, 18(2),
+213–231. https://doi.org/10.1177/1468797617717466
+Nygård, M., & Uthardt, L. (2011). Opportunity or threat? Finnish hunters’ attitudes to
+hunting tourism. Journal of Sustainable Tourism, 19(3), 383–401.
+https://doi.org/10.1080/09669582.2010.524701
+Oppenheim, F. E. (2004). Social freedom: Definition, measurability, valuation. Social Choice
+and Welfare, 22(1), 175–185. https://doi.org/10.1007/s00355-003-0281-3
+P.J, S., Bhat, I. A., Myers, K., & Tanwar, N. (2020). Local stakeholders’ perspectives on
+religious heritage and tourism development in Varanasi. International Journal of
+Tourism Cities, 6(3), 529–544. https://doi.org/10.1108/IJTC-10-2019-0194
+Page, M. J., McKenzie, J. E., Bossuyt, P., Boutron, I., Hoffmann, T. C., Mulrow, C. D.,
+Shamseer, L., Tetzlaff, J. M., Akl, E., Brennan, S. E., Chou, R., Glanville, J., Grimshaw,
+9
+J. M., Hróbjartsson, A., Lalu, M. M., Li, T., Loder, E. W., Mayo-Wilson, E., McDonald,
+S., … Moher, D. (2021). The prisma 2020 statement: An updated guideline for reporting
+systematic reviews. British Medical Journal, 372, n71. https://doi.org/10.1186/s13643-
+021-01626-4
+Paradis, T. W. (2000). Main street transformed: Community sense of place for
+nonmetropolitan tourism business districts. Urban Geography, 21(7), 609–639.
+https://doi.org/10.2747/0272-3638.21.7.609
+Pavlić, I., Portolan, A., & Puh, B. (2020). Segmenting local residents by perceptions of
+tourism impacts in an urban World Heritage Site: the case of Dubrovnik. Journal of
+Heritage Tourism, 15(4), 398–409. https://doi.org/10.1080/1743873X.2019.1656218
+Perren, C., Boley, B. B., White, E. M., Green, G. T., & Woosnam, K. M. (2025). Protected
+area influence over resident attitudes towards tourism in gateway communities. Journal
+of Sustainable Tourism, 33(3), 436–456.
+https://doi.org/10.1080/09669582.2024.2349904
+Pradies, C., & Pratt, M. G. (2010). Ex uno plures: Toward a conceptualization of group
+ambivalence. Academy of Management Proceedings, 1, 1–6.
+https://doi.org/10.5465/ambpp.2010.54493648
+Ribeiro, M. A., Pinto, P., Silva, J. A., & Woosnam, K. M. (2018). Examining the predictive
+validity of SUS-TAS with maximum parsimony in developing island countries. Journal
+of Sustainable Tourism, 26(3), 379–398.
+https://doi.org/10.1080/09669582.2017.1355918
+Rothman, N. B., Pratt, M. G., Rees, L., & Vogus, T. J. (2017). Understanding the dual nature
+of ambivalence: Why and when ambivalence leads to good and bad outcomes. Academy
+of Management Annals, 11(1), 33–72. https://doi.org/10.5465/annals.2014.0066
+Rothman, N. B., & Wiesenfeld, B. M. (2007). The social consequences of expressing
+emotional ambivalence in groups and teams. In Affect and groups (pp. 275–308).
+Emerald Group Publishing Limited. https://doi.org/10.1016/S1534-0856(2007)10
+Scholtz, M. (2019). One ultramarathon, two cities: Differences in social impact perceptions.
+Journal of Sport and Tourism, 23(4), 181–202.
+https://doi.org/10.1080/14775085.2019.1654905
+Scholtz, M., & Saayman, M. (2018). Diving into the consequences of stakeholders unheard.
+European Journal of Tourism Research, 20, 105–124.
+https://doi.org/10.54055/ejtr.v20i.343
+10
+Shackman, A. J., McMenamin, B. W., Maxwell, J. S., Greischar, L. L., & Davidson, R. J.
+(2009). Right dorsolateral prefrontal cortical activity and behavioral inhibition.
+Psychological Science, 20(12), 1500–1506. https://doi.org/10.1111/j.1467-
+9280.2009.02476.x
+Shakeela, A., & Weaver, D. (2012). Resident reactions to a tourism incident: Mapping a
+Maldivian emoscape. Annals of Tourism Research, 39(3), 1337–1358.
+https://doi.org/10.1016/j.annals.2012.01.007
+Shand, A. F. (1922). The relations of complex and sentiment. III. British Journal of
+Psychology. General Section, 13(2), 123–129. https://doi.org/10.1111/j.2044-
+8295.1922.tb00088.x
+Shrestha, R. K., & L’Espoir Decosta, P. (2023). Developing dynamic capabilities for
+community collaboration and tourism product innovation in response to crisis: Nepal
+and COVID-19. Journal of Sustainable Tourism, 31(1), 168–186.
+https://doi.org/10.1080/09669582.2021.2023164
+Sinkovics, R. R., & Penz, E. (2009). Social distance between residents and international
+tourists - Implications for international business. International Business Review, 18(5),
+457–469. https://doi.org/10.1016/j.ibusrev.2009.06.002
+Skoultsos, S., Georgoula, V., & Temponera, E. (2020). Exploring “sense of community” in
+the festival tourism experience: Review of the relative literature. In V. Katsoni & T.
+Spyriadis (Eds.), Cultural and Tourism Innovation in the Digital Era: Sixth
+International IACuDiT Conference (pp. 67–77). Springer. https://doi.org/10.1007/978-3-
+030-36342-0_5
+Spotted by Locals. (2020). Overtourism in Venice: A local perspective. Retrieved from
+https://www.spottedbylocals.com/blog/overtourism-in-venice-a-local-perspective/
+(Accessed on October 8, 2024)
+Statista. (2024a). Number of tourist arrivals in Venice, Italy from 2003 to 2023. Retrieved
+from https://www.statista.com/statistics/732406/overnight-tourist-arrivals-in-venice-
+italy/ (Accessed on October 8, 2024)
+Statista. (2024b). Number of tourists in hotels in Barcelona, Spain from 1990 to 2023.
+Retrieved from https://www.statista.com/statistics/452060/number-of-tourists-in-
+barcelona-spain/ (Accessed on October 8, 2024)
+Tajfel, H., & Turner, J. C. (1979). An integrative theory of intergroup conflict. In W. Austin
+& S. Worchel (Eds.), The social psychology of intergroup relations (pp. 33–47).
+11
+Brooks/Cole.
+Tajfel, H., & Turner, J. C. (1986). The social identity theory of intergroup behavior. In S.
+Worchel & W. Austin (Eds.), Psychology of Intergroup Relations (pp. 7–24). Nelson
+Hall.
+Travel and Tour World. (2025). Amsterdam residents revolt as overtourism sparks protests
+and drastic travel restrictions to save the city, here is what you need to know. Retrieved
+from https://www.travelandtourworld.com/news/article/amsterdam-residents-revolt-as-
+overtourism-sparks-protests-and-drastic-travel-restrictions-to-save-the-city-here-is-what-
+you-need-to-know/ (Accessed on April 26, 2025)
+Travel to Tomorrow. (2023). Travel to Tomorrow: Our journey. Retrieved from
+https://www.traveltotomorrow.be/about/travel-tomorrow-our-journey (Accessed on May
+28, 2025)
+Tse, S., & Tung, V. W. S. (2022). Understanding residents’ attitudes towards tourists:
+Connecting stereotypes, emotions and behaviours. Tourism Management, 89, 104435.
+https://doi.org/10.1016/j.tourman.2021.104435
+Tse, S. W. T., & Tung, V. W. S. (2025). Understanding residents’ attitudes towards tourists
+through implicit stereotypes. Journal of Hospitality & Tourism Research, 49(1), 99–116.
+https://doi.org/10.1177/10963480231175516
+Tumusiime, D. M., & Svarstad, H. (2011). A local counter-narrative on the conservation of
+mountain gorillas. Forum for Development Studies, 38(3), 239–265.
+https://doi.org/10.1080/08039410.2011.610000
+Uchinaka, S., Yoganathan, V., & Osburg, V. S. (2019). Classifying residents’ roles as online
+place-ambassadors. Tourism Management, 71, 137–150.
+https://doi.org/10.1016/j.tourman.2018.10.008
+Upadhaya, S., Tiwari, S., Poudyal, B., Chhetri, S. G., & Dhungana, N. (2022). Local people’s
+perception of the impacts and importance of ecotourism in Central Nepal. PLoS ONE,
+17(5), 1–15. https://doi.org/10.1371/journal.pone.0268637
+van Harreveld, F., Nohlen, H. U., & Schneider, I. K. (2015). The ABC of ambivalence:
+affective, behavioral, and cognitive consequences of attitudinal conflict. In Advances in
+Experimental Social Psychology (1st ed., Vol. 52, pp. 285–324). Elsevier Inc.
+https://doi.org/10.1016/bs.aesp.2015.01.002
+Van Hooreweghe, K. (2016). Place and exclusion in New York City’s Jamaica Bay. Journal
+of Environmental Studies and Sciences, 6(4), 753–758. https://doi.org/10.1007/s13412-
+12
+015-0256-6
+Villa, M. (2019). Local ambivalence to diverse mobilities – The case of a Norwegian rural
+village. Sociologia Ruralis, 59(4), 701–717. https://doi.org/10.1111/soru.12263
+VisitCopenhagen. (2025). CopenPay. Retrieved from
+https://www.visitcopenhagen.com/copenpay (Accessed on May 28, 2025)
+Weaver, D. B., & Lawton, L. J. (2001). Resident perceptions in the urban-rural fringe. Annals
+of Tourism Research, 28(2), 439–458. https://doi.org/10.1016/S0160-7383(00)00052-9
+Wood, W. (2000). Attitude change: Persuasion and social influence. Annual Review of
+Psychology, 51, 539–570. https://doi.org/10.1146/annurev.psych.51.1.539
+Woosnam, K. M., Maruyama, N., Boley, B. B., & Erul, E. (2018). Stereotypes and perceived
+solidarity in ethnic enclave tourism. Journal of Tourism and Cultural Change, 16(2),
+138–154. https://doi.org/10.1080/14766825.2016.1242596
+Wu, J., Chen, J., Yang, T., & Zhao, N. (2024). How to stay competitive: An innovative
+concept to assess the business competitiveness using online restaurant reviews.
+International Journal of Hospitality Management, 122, 103836.
+https://doi.org/10.1016/j.ijhm.2024.103836
+Wu, J., & Yang, T. (2023). Service attributes for sustainable rural tourism from online
+comments : Tourist satisfaction perspective. Journal of Destination Marketing &
+Management, 30(2), 100822. https://doi.org/10.1016/j.jdmm.2023.100822
+Xin, S., Tribe, J., & Chambers, D. (2013). Conceptual research in tourism. Annals of Tourism
+Research, 41, 66–88. https://doi.org/10.1016/j.annals.2012.12.003
+Xu, J. (Bill), Yan, L., & Pratt, S. (2022). Destination image recovery with tourism mascots.
+Journal of Destination Marketing and Management, 25, 100732.
+https://doi.org/10.1016/j.jdmm.2022.100732
+Yang, T., Wu, J., & Zhang, J. (2024). Knowing how satisfied/dissatisfied is far from enough:
+a comprehensive customer satisfaction analysis framework based on hybrid text mining
+techniques. International Journal of Contemporary Hospitality Management, 36(3),
+873–892. https://doi.org/10.1108/IJCHM-10-2022-1319
+Ye, B. H., Zhang, H. Q., Huawen Shen, J., & Goh, C. (2014). Does social identity affect
+residents’ attitude toward tourism development?: An evidence from the relaxation of the
+individual visit scheme. International Journal of Contemporary Hospitality
+Management, 26(6), 907–929. https://doi.org/10.1108/IJCHM-01-2013-0041
+Young, T., Reindrawati, D. Y., Lyons, K., & Johnson, P. (2021). Host gazes from an Islamic
+13
+island: challenging homogeneous resident perception orthodoxies. Tourism
+Geographies, 23(3), 599–622. https://doi.org/10.1080/14616688.2020.1733067
+Zarnoth, P., & Sniezek, J. A. (1997). The social influence of confidence in group decision
+making. Journal of Experimental Social Psychology, 33(4), 345–366.
+https://doi.org/10.1006/jesp.1997.1326
+Zhang, T., Li, B., & Hua, N. (2025). Live-streaming tourism: Model development and
+validations. Journal of Travel Research, 64(3), 559–575.
+https://doi.org/10.1177/00472875231223133
+Zhang, Y., Cole, S., Ricci, P., & Gao, J. (2019). Context-based leisure travel facilitation
+among people with mobility challenges: A self-determination theory approach. Journal
+of Travel Research, 58(1), 42–62. https://doi.org/10.1177/0047287517741004
+Zhao, M., & Xie, J. (2011). Effects of social and temporal distance on consumers’ responses
+to peer recommendations. Journal of Marketing Research, 48(3), 486–496.
+https://doi.org/10.1509/jmkr.48.3.486
+14
+Appendix
+Table A1 Background of the reviewed articles
+Publication
+Article Title Publication Title
+Year
+Topic: Resident sentiment
+Residents’ perceptions of tourism development Annals of Tourism Research 1994
+Main street transformed: Community sense of place for
+Urban Geography 2000
+nonmetropolitan tourism business districts
+Resident perceptions in the urban-rural fringe Annals of Tourism Research 2001
+Resident reactions to a tourism incident: Mapping a Maldivian
+Annals of Tourism Research 2012
+emoscape
+2015 12th International
+The application and comparison of web services for sentiment Conference on Service
+2015
+analysis in tourism Systems and Service
+Management (ICSSSM)
+House of Cards—An analysis of Macao’s resident support for Tourism and Hospitality
+2016
+tourism and casino development Research
+Journal of Environmental
+Place and exclusion in New York City’s Jamaica Bay 2016
+Studies and Sciences
+Sochi 2014 Olympics on Twitter: Perspectives of hosts and
+Tourism Management 2017
+guests
+Examining the predictive validity of SUS-TAS with maximum Journal of Sustainable
+2018
+parsimony in developing island countries Tourism
+European Journal of
+Diving into the consequences of stakeholders unheard 2018
+Tourism Research
+Residents’ perceptions towards cruise tourism development: the Tourism Recreation
+2018
+case of Esperance, Western Australia Research
+Residents’ perceptions of hotels’ corporate social responsibility
+Journal of Hospitality and
+initiatives and its impact on residents’ sentiments to community 2019
+Tourism Management
+and support for additional tourism development
+Classifying residents’ roles as online place-ambassadors Tourism Management 2019
+Understanding visitor–resident relations in overtourism: Journal of Sustainable
+2019
+developing resilience for sustainable tourism Tourism
+One ultramarathon, two cities: Differences in social impact
+Journal of Sport & Tourism 2019
+perceptions
+Introducing news media sentiment analytics to residents’
+Journal of Travel Research 2020
+attitudes research
+A socio-psychological conceptualisation of overtourism Annals of Tourism Research 2020
+Local stakeholders’ perspectives on religious heritage and International Journal of
+2020
+tourism development in Varanasi Tourism Cities
+Cultural and Tourism
+Exploring “sense of community” in the festival tourism Innovation in the Digital
+2020
+experience: Review of the relative literature Era: Sixth International
+IACuDiT Conference
+Resident sentiment toward a dominant tourist market: Scale
+Journal of Travel Research 2021
+development and validation
+15
+Exploring destination advocacy behavior in a virtual travel Journal of Travel & Tourism
+2021
+community Marketing
+Overtourism, Technology
+The role of community based tourism in avoiding overtourism Solutions and Decimated 2021
+Destinations
+Host gazes from an Islamic island: Challenging homogeneous
+Tourism Geographies 2021
+resident perception orthodoxies
+Qualitative assessment of stakeholders and visitors perceptions
+Journal of Outdoor
+towards coastal tourism development at Teluk kemang, port 2021
+Recreation and Tourism
+dickson, Malaysia
+COVID-19 and tourism: Analyzing the effects of COVID-19
+Forecasting 2021
+statistics and media coverage on attitudes toward tourism
+Events as catalysts for communal resistance to overtourism Annals of Tourism Research 2022
+Journal of Destination
+Destination image recovery with tourism mascots 2022
+Marketing & Management
+Managing a World Heritage Site in Malawi: do residents’
+Journal of Heritage Tourism 2022
+sentiments matter?
+Q method finds anti-refugee sentiments on Yemeni migration to
+Tourism Geographies 2022
+Jeju
+Detecting early signs of overtourism: Bringing together
+Journal of Travel Research 2023
+indicators of tourism development with data fusion
+Policing freedom campers: The place, class, and xenophobic
+Tourism Geographies 2023
+dynamics of overtourism in Aotearoa New Zealand
+Capturing public voices: The role of social media in heritage
+Habitat International 2023
+management
+Rally-around-the-destination? Changes in host-guest emotional
+Tourism Management 2024
+solidarity after crises
+Protected area influence over resident attitudes towards tourism Journal of Sustainable
+2024
+in gateway communities Tourism
+Community attachment, tourist contact, and resident attitudes
+Tourism 2024
+toward tourism development of Kashmir Valley
+International Conference of
+Innovating the social pillar for engaging local inhabitants in the International Association
+2024
+urban and mountain destinations of Cultural and Digital
+Tourism
+Topic: Resident ambivalence
+Mediated resistance tourism and the host community Annals of Tourism Research 2001
+Marketing the nation: Carnival and tourism in Trinidad and
+Critique of Anthropology 2002
+Tobago
+Opportunity or threat? Finnish hunters’ attitudes to hunting Journal of Sustainable
+2011
+tourism Tourism
+Tijdschrift voor
+Cultural commodification and tourism: The Goo-moremi
+Economische en Sociale 2011
+community, Central Botswana
+Geografie
+A local counter-narrative on the conservation of Mountain Forum for Development
+2011
+Gorillas Studies
+16
+Back to my roots: Artifak and festivals in Vanuatu, Southwest
+Critical Arts 2013
+Pacific
+Techno-tourism and post-industrial neo-romanticism in Berlin’s
+Tourist Studies 2016
+electronic dance music scenes
+Foreign presents or foreign presence? Resident perceptions of
+Tourist Studies 2018
+Australian and Chinese tourists in Niseko, Japan
+Journal of Tourism and
+Stereotypes and perceived solidarity in ethnic enclave tourism 2018
+Cultural Change
+It’s not just black or white: Effects of ambivalence on residents’ Journal of Hospitality and
+2019
+support for a mega-event Tourism Research
+Local ambivalence to diverse mobilities – The case of a
+Sociologia Ruralis 2019
+Norwegian rural village
+Thinking rhizomatically about communist heritage tourism Annals of Tourism Research 2020
+Residents’ attitudes toward tourism development in a rural Journal of Park and
+2020
+community: A qualitative approach Recreation Administration
+‘Playing Okinawan’: A search for authenticity and the power Journal of Intercultural
+2020
+asymmetry in Japanese appropriation of Okinawan folk music Studies
+From “villages of longevity” to “villages of cancer”? The
+Emotion, Space and Society 2021
+emotional geography of tourism development in Bama, China
+Temporary populations and sociospatial polarisation in the short-
+Urban Studies 2023
+term city
+Journal of Sustainable
+Residents’ attitudes toward land lease for rural tourism 2024
+Tourism
+“We’re no longer the senzala”: Race, space, and difference in the
+Tourist Studies 2024
+Ethnic Capital of Brazil
+Broad values as the basis for understanding deliberation about
+Sustainability Science 2024
+protected area management
+Dual identity and ambivalent sentiment of border residents:
+Tourism Management 2025
+Predicting border
+17

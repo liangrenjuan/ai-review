@@ -1,0 +1,4997 @@
+Tourism Management 112 (2026) 105272
+Contents lists available at ScienceDirect
+TourismManagement
+journal homepage: www.elsevier.com/locate/tourman
+ImprovingsentimentanalysisintourismthroughLLM-enhancedirony
+detection
+Wenhui Liu, Likang Wu, Hongke Zhao ∗
+College of Management and Economics, Tianjin University,Tianjin,300072,China
+Laboratory of Computation and Analytics of Complex Management Systems (CACMS),China
+A R T I C L E I N F O A B S T R A C T
+Keywords: As user-generated content continues to proliferate across digital tourism platforms such as TripAdvisor, it
+Sentiment analysis has become a critical resource for evaluating service performance and tourist satisfaction within the tourism
+Tourism reviews sector. Among these reviews, ironic ones often reveal underlying issues or dissatisfaction, reflecting more
+Large language model genuine and reliable human emotions to influence users’ choices. However, conventional sentiment analysis
+I
+I
+r
+r
+o
+o
+n
+n
+i
+y
+c
+r
+r
+e
+e
+c
+v
+o
+i
+g
+e
+n
+w
+i
+s
+tion
+methods often fail to recognize irony, which can express negative sentiments through a superficially positive
+tone. To address the challenge of accurately classifying sentiments in tourism reviews, particularly ironic
+ones that can mislead traditional sentiment analysis models, this study introduces an innovative sentiment
+analysis framework named TSI. Leveraging large language models (LLM) for data augmentation, our approach
+integrates transfer learning and domain-specific knowledge, enhancing detection accuracy through advanced
+natural language processing (NLP) techniques and deep learning technologies. Extensive experiments on travel-
+related datasets from Yelp and Tripadvisor demonstrate that TSI outperforms traditional models in both
+overall sentiment classification accuracy and the identification of negative sentiments, particularly in ironic
+reviews. This work advances theoretical understanding and practical implementation of sentiment analysis
+within the tourism sector, equipping businesses with refined tools for interpreting customer sentiments. A new
+dataset targeting ironic travel reviews is also released to support ongoing scholarly exploration. For better
+reproduction, the source code is available.1
+1. Introduction comments on these platforms, providing valuable information for both
+tourists and tourism-related businesses (Xu et al., 2022). For instance,
+The tourist experience is deeply influenced by emotional factors
+Xiaohongshu, a representative social platform from China, that ex-
+at multiple stages (Prayag et al., 2013), particularly before the jour-
+hibits outstanding performance in cultural and tourism user-generated
+ney begins, when emotions guide both the desire to travel and the
+selection of travel destinations (Goossens, 2000). During the trip, emo-
+content (UGC) marketing, has surpassed 312 million monthly active
+tional intensity can fluctuate on a daily basis (Hosany et al., 2020). users.2
+Moreover, emotional responses from tourists are key determinants in In recent years, the presence of ironic sentiment in online reviews
+how they assess their travel experiences afterward, including their has increased, primarily due to the implicit expression of consumer
+level of satisfaction (del Bosque & Martín, 2008), destination attach-
+sentiment (Joshi et al., 2017). Irony is a common rhetorical device
+ment (Yuksel et al., 2010), trust, commitment (Han & Jeong, 2013),
+on social media platforms (Guan et al., 2025a), occurring in up to
+and loyalty (Yoon & Uysal, 2005). Especially negative emotional ex-
+periences often lead to reduced levels of satisfaction and customer 8.5% of online reviews3 and is difficult to recognize by software
+loyalty (Lee et al., 2008). As social media and online review sites tools (Papapicco & Mininni, 2020). Linguistic studies suggest that irony
+have rapidly expanded, content created by users has emerged as a arises when an incongruity exists between the situational context and
+key resource for assessing service quality and tourist satisfaction (Poly- the literal meaning conveyed by a statement (Gerrig & Goldvarg, 2000;
+zos et al., 2023). Users share their travel experiences, insights, and
+∗ Corresponding author at: College of Management and Economics, Tianjin University,Tianjin,300072,China.
+E-mail address: hongke@tju.edu.cn (H. Zhao).
+1 https://github.com/252820/Tourism-Model
+2 https://www.netinfluencer.com/xiaohongshu-social-media-investment-dst-global/
+3 https://gupea.ub.gu.se/handle/2077/23031
+https://doi.org/10.1016/j.tourman.2025.105272
+Received 24 January 2025; Received in revised form 25 July 2025; Accepted 25 July 2025
+Available online 8 August 2025
+0261-5177/© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+W. Liu et al. Tourism Management 112 (2026) 105272
+Fig. 1. Effect of ironic review.
+Ivanko & Pexman, 2003; Joshi et al., 2015; Zhang et al., 2019). When both users and platforms in deriving valuable insights, particularly
+applied to tourism review texts, we define irony as ‘‘verbal irony when attempting to detect irony or deeper emotional expressions.
+characterized by sentiment reversal, where the sentiment expressed Text sentiment analysis is a crucial task for promoting numerous
+contradicts the literal meaning. Specifically, the literal expression con- tourism applications (Sharma, Adhikary, & Borah, 2020). It involves
+veys a positive sentiment, while the intended meaning is negative, detecting and categorizing sentiments embedded in user-generated con-
+or vice versa’’. Ironic elements can induce machines to focus on su- tent related to tourism by leveraging advanced algorithms (Jim et al.,
+perficially positive descriptive words, thus making opposite sentiment 2024). The purpose is to assess whether the author expresses a posi-
+judgments on the comments (Sarmento et al., 2009). Moreover, com- tive, negative, or neutral stance regarding a given topic, product, or
+pared with the large amount of monotonous and artificially generated service (Wankhade et al., 2022). Due to the openness of tourism review
+content released by some platforms and merchants for marketing pur- communication, consumers tend to approach it with an emotional
+poses, ironic sentences that reflect more genuine and delicate human attitude and often express negative sentiment in their reviews (Goldin
+emotions (Bajerski, 2016) are more reliable and worthy of reference et al., 2008). Conducting sentiment analysis on these reviews can
+for users. Given that 70.9% of travelers acknowledge the influence improve the sales performance of enterprises, especially in the tourism
+of online reputation on their travel decisions,4 it is essential to ex- industry (Rialp-Criado et al., 2018). However, traditional sentiment
+amine this factor in tourism contexts such as online travel planning. analysis tools, while effective in broad strokes of positive or negative
+Notably, when negative reviews exhibit heightened emotional intensity sentiment detection, fail when encountering the complexities of human
+and authenticity, they tend to significantly undermine trust in the emotions and linguistic expressions such as irony (Balamurali et al.,
+destination (Lujun et al., 2021). 2024; Hu & Liu, 2012). Current algorithms primarily focus on the
+Given an intuitive case, in Fig. 1, a positive review praises a beach as transformation of general language models, with insufficient capability
+‘‘idyllic’’ with ‘‘crystal-clear water’’ and ‘‘powdery sand’’, emphasizing to recognize subtle implied meanings and emotions (Chakravarthi et al.,
+its appeal. In contrast, an ironic review describes the same beach as 2021). Additionally, they lack adequate integration and modeling of
+‘‘picturesque’’, pointing out the presence of litter that ‘‘harmoniously’’ domain-specific knowledge, particularly in the context of common
+blends with the sand, humorously highlighting a negative aspect. How- tourism-related information.
+ever, sentiment analysis detector classifies both genuinely positive and To tackle this challenge, we introduce a novel Text Sentiment clas-
+ironic reviews as ‘‘positive sentiment’’, failing to distinguish between sification model that incorporates Irony knowledge, TSI, specifically
+true positivity and irony. This results in misleading outcomes, hindering designed to accurately classify the sentiment of ordinary and ironic
+platforms and service providers — such as hotels and tourist destina- travel reviews. By integrating large language model (LLM)-based data
+tions — from obtaining accurate feedback and effectively identifying augmentation, domain-specific irony patterns, and context-aware senti-
+and addressing the issues raised by users. For instance, if a review like ment modeling, the proposed TSI framework addresses key limitations
+‘‘This restaurant is truly unique, it can turn a simple salad into a disaster!’’ is in prior work and enables more accurate detection of sentiment in
+misclassified as expressing positive sentiment, it can lead to a misjudg- tourism reviews. The approach is designed based on the following three
+ment of tourist feedback by service providers. Such misclassification views.
+obscures underlying issues, rendering feedback analysis ineffective.
+Modern travel platforms such as TripAdvisor and Yelp allow users to • V1: Addressing the ironic reviews sparsity issue can improve the
+share their experiences through comments and ratings, offering impor- algorithm’s ability to perceive irony.
+tant attitudinal and emotional feedback to service providers (Tsai et al., • V2: The ironic knowledge available in the public domain can
+2020). Nevertheless, language often carries subtle emotional cues that enhance the model’s ability to detect irony.
+are not fully captured by conventional rating systems (Geetha et al., • V3: Leveraging knowledge from the tourism field can aid in
+2017). Additionally, some platforms and social media sites do not offer designing a model tailored for analyzing travel reviews.
+rating features, thereby restricting users’ ability to efficiently interpret
+the sentiment of reviews. For instance, platforms like Instagram and We will validate these viewpoints through experiments. The approach
+Xiaohongshu lack integrated rating tools, which pose challenges for we proposed combines semantic analysis with context-aware tech-
+niques to detect the implicit sentiment cues embedded in irony, thereby
+avoiding surface-level misinterpretations. Specifically, this method con-
+4 https://www.mara-solutions.com/post/online-review-statistics-every- sists of three main stages. First, due to data scarcity, we use a large
+hotel-needs-to-know-in-2023# language model (LLM) for data augmentation, generating ironic travel
+2
+W. Liu et al. Tourism Management 112 (2026) 105272
+reviews to mitigate the issue of data imbalance. Second, given the pat- capacities (Tokarchuk et al., 2022) and to predict business outcomes
+tern similarities commonly found in ironic expressions, cross-domain such as restaurant survival (Li, Yu, et al., 2023).
+transfer learning offers a promising solution to the scarcity of irony- The utility of sentiment analysis extends to uncovering customer
+related knowledge within the tourism sector (Celik et al., 2020; Guan preferences regarding hotels (Bian et al., 2022; Tsai et al., 2020), sup-
+et al., 2025a; Guo et al., 2021; Kadli & Vidyavathi, 2023). Therefore, we porting the development of recommendation systems (Ray et al., 2021),
+combine ironic knowledge transfer learning with keyword weight ad- and forecasting financial performance in the tourism sector (Polyzos
+justment tailored to the tourism domain, enhancing the model’s under- et al., 2024). Empirical evidence consistently links review sentiment to
+standing of ironic expressions and improving the accuracy of tourism customer ratings and satisfaction (Geetha et al., 2017; Sharma, Park,
+review classification. Finally, we evaluate the model’s accuracy and & Nicolau, 2020), underlining its practical importance for strategic
+practicality through various experiments and a case study. Compared decision-making (Jain et al., 2022).
+to existing approaches, our model shows significant improvements However, most existing studies have focused on aggregate sentiment
+in accuracy while maintaining generalizability and scalability across signals while often overlooking nuanced linguistic expressions — such
+diverse datasets. As far as we are aware, this is the first study to utilize as irony — which may compromise classification accuracy. The limited
+LLM for generating and classifying ironic content in travel reviews. attention to such subtleties constrains the operational effectiveness of
+Our findings validate the potential of LLMs for data augmentation and current approaches in complex real-world scenarios.
+contribute to broadening the scope of sentiment analysis within the
+tourism domain. A detailed description of our method can be found 2.2. Methodology of sentiment analysis
+in Section 3.
+This study contributes to three aspects. First, this study tackles the The evolution of sentiment analysis methods in tourism has closely
+challenge of identifying sentiment in ironic tourism reviews by propos- followed broader developments in natural language processing. Early
+ing a robust approach that advances sentiment analysis in this domain. research relied on sentiment lexicons and basic machine learning clas-
+By resolving the subtle complexities of irony, our approach provides a sifiers (Pang & Lee, 2008; Turney & Littman, 2003). Algorithms such as
+more reliable framework for understanding user feedback in the context Naïve Bayes (Su et al., 2011), LightGBM (Ke et al., 2017), and SVM (Pu
+of tourism. Second, our work extends beyond theoretical contributions et al., 2019) achieved initial success but were limited by their reliance
+to have practical implications in areas such as social media review anal- on labor-intensive feature engineering (An & Moon, 2022).
+ysis, customer feedback interpretation, and enhancing user experience.
+With the emergence of deep learning architectures — including CNN
+Our work not only deepens the understanding of review content by
+(Kim, 2014), BERT (Sousa et al., 2019), Transformer (Naseem et al.,
+going beyond simple numerical ratings but also uncovers the sentiment
+2020), TextCNN (Wang, Wang, et al., 2022), and Bi-LSTM (Cheng &
+complexity embedded in user opinions. By accurately discerning the
+Chen, 2021) — the accuracy of sentiment classification has improved
+true sentiment behind ironic reviews, our method helps businesses and
+significantly, particularly for longer and more complex reviews (Li,
+platforms gain deeper insights into customer experiences. This enables
+Li, et al., 2023; Paolanti et al., 2021). These models enable auto-
+them to better identify areas for improvement, tailor their services
+mated feature extraction and robust context modeling; however, their
+more effectively, and ultimately improve customer satisfaction and
+performance still degrades in the presence of sophisticated language
+phenomena such as irony (Balamurali et al., 2024).
+engagement. Third, to support further research in this area, we have
+Transfer learning has emerged as a promising strategy to address
+made a new dataset publicly available, specifically designed to examine
+domain heterogeneity and improve model generalization (Ali et al.,
+ironic comments in tourism reviews. The dataset offers a meaningful
+2023; Celik et al., 2020; Guo et al., 2021; Liang et al., 2021). Recent
+foundation for scholars seeking to investigate how irony influences
+work applies transfer learning not only within sentiment analysis tasks
+consumer perception and decision-making processes within the tourism
+but also across related tasks such as irony detection (Guan et al., 2025b;
+sector.
+Zhang et al., 2019). Nevertheless, the integration of domain-specific
+The structure of this paper is as follows: Section 2 outlines relevant
+knowledge and explicit handling of irony remains underexplored in
+literature in the field; Section 3 elaborates on the methodology adopted
+tourism text analytics.
+in this study. Section 4 reports the experimental design and correspond-
+In summary, despite significant technological advances, existing
+ing results, while Section 5 concludes with a summary of insights and
+studies often lack domain-specific adaptation, leading to suboptimal
+their broader implications.
+performance in tourism-related sentiment analysis. To address this
+limitation, this study proposes a novel approach that integrates transfer
+2. Literature review
+learning with domain-specific knowledge, aiming to improve both the
+accuracy of sentiment polarity classification and the depth of contextual
+2.1. Sentiment analysis in tourism understanding in tourism text analysis.
+UGC from online travel platforms has become a primary data source 3. Methodology
+for tourism research, capturing travelers’ experiences, sentiments, and
+decision-making processes (Wang, Huang, & Liu-Lastres, 2022). Accu- This section will introduce the irony-aware sentiment recognition
+rately extracting and interpreting emotions from tourism-related texts is model that we proposed, along with the overall framework for perform-
+essential for understanding tourist behavior and promoting the sustain- ing our task.
+able development of the tourism industry (Alaei et al., 2019; Feldman,
+2013). 3.1. TSI model
+Recent studies have demonstrated that sentiment analysis not only
+supports destination image construction and brand promotion but The TSI model consists of four key modules: Tourism Domain En-
+also significantly influences traveler decision-making and satisfaction hancement Module, Textual Attention Computing Module, Irony-Aware
+(Hosany et al., 2020; Ladhari, 2009; Maital, 1999; Neidhardt et al., Transfer Learning Module, and Sentiment Classification Module. This
+2017). For instance, Li, Gao, and Song (2023) integrated sentiment model effectively analyzes tourism review data by integrating public
+analysis of user reviews to enhance forecasting models for tourism domain knowledge, BERT’s pre-trained knowledge, and the strengths of
+demand, while (Liu et al., 2019) applied sentiment modeling to eval- the self-attention architecture. By doing so, it can thoroughly capture
+uate perceptions of Australian destinations among Chinese tourists. the semantic information across the entire review. Fig. 2 provides an
+Other studies have used sentiment signals to assess destination carrying illustration of the TSI model’s structure.
+3
+W. Liu et al. Tourism Management 112 (2026) 105272
+Fig. 2. Architecture of the proposed TSI model.
+(1) Module 1∶ Tourism Domain Enhancement Module terms for tokenization (Chen et al., 2016; Kim et al., 2019). TF-IDF
+To design a model tailored for analyzing travel reviews, this module assesses a word’s importance within a document by evaluating both
+integrates BERT embeddings with domain-specific knowledge from the its frequency in the document and its rarity across the entire cor-
+tourism field (i.e., a set of relevant keywords) to construct features. pus. A higher TF-IDF score reflects a word’s greater significance. This
+First, the BERT model is used to convert the input review text into an approach effectively emphasizes crucial vocabulary while minimizing
+embedding vector. storage and computational demands (Tian & Zhang, 2023).
+In summary, this module utilizes BERT embeddings to generate
+𝐞(𝐱)=𝐵𝐸𝑅𝑇(𝐱), (1)
+rich, contextual semantic representations of the review text, capturing
+where 𝐱 represents the input review text, and 𝐞(𝐱) is the embedding both the overall meaning and intricate relationships between words.
+vector obtained by processing the input review text through the BERT At the same time, the keyword weight adjustment process amplifies
+model. 𝐵𝐸𝑅𝑇(⋅) denotes the encoding process carried out by the BERT the significance of key features directly related to the tourism domain.
+model. BERT (Devlin et al., 2019), a pre-trained model, excels in cap- This method integrates both domain-specific knowledge and review-
+turing deep semantic relationships within text. Its primary strength lies specific terminology, ensuring the model prioritizes the most relevant
+in its bidirectional Transformer architecture, which enables enhanced terms. The combined focus on contextual comprehension and domain
+text comprehension by effectively capturing contextual information. relevance strengthens the model’s capability to accurately identify
+Then, to further enhance knowledge in the tourism domain, we adjust sentiment in tourism reviews, thereby improving the overall sentiment
+the weight of each keyword in the domain keyword list, increasing analysis process.
+its embedding weight to (1+𝑝) times its original value. Here, 𝑝 is (2) Module 2∶ Textual Attention Computing Module
+a hyperparameter that controls the weight increase ratio, which lies In this module, we employ the self-attention mechanism to calculate
+between 0 and 1. word-level attention for the review text. The process begins by applying
+three distinct linear transformations to the embedding vectors of each
+𝐄=𝐞(𝐱)+𝑝⋅𝐞(𝐱)⊙𝐉, (2)
+word to generate the query 𝑄, key 𝐾, and value 𝑉 representations,
+where 𝐄 represents the final embedding vector after weight adjustment, respectively. Next, attention scores are computed by calculating the dot
+√
+and ⊙ denotes the element-wise multiplication (Hadamard product). product between 𝑄 and 𝐾, scaled by 𝑑 , where 𝑑 is the dimension of
+𝑘 𝑘
+The indicator function 𝐉 indicates whether the 𝑖th dimension of the em- the key vector. The scores are then passed through the softmax function
+bedding corresponds to a domain keyword. If 𝐽 =1, the corresponding to obtain the normalized attention weights 𝐀. Finally, the context-
+𝑖
+weight is amplified; if 𝐽 =0, the weight remains unchanged. aware representation 𝐂 for each word is obtained by multiplying the
+𝑖
+The domain keyword list consists of two components: one derived attention weights matrix 𝐀 with the values matrix 𝑉. This procedure
+from large language models (i.e., LLM domain keywords) and the can be expressed as follows.
+other from the review texts (i.e., TF-IDF review keywords). The LLM
+𝑄=𝐄𝐖𝑄, 𝐾=𝐄𝐖𝐾, 𝑉 =𝐄𝐖𝑉,
+domain keywords are generated by GPT-4 using prompt engineering,
+( )
+which helps guide the model to produce relevant tourism-related key- 𝑄𝐾⊤
+𝐀=softmax , (3)
+words. GPT-4, a powerful large model with extensive public domain √ 𝑑
+𝑘
+knowledge, is capable of capturing essential knowledge in the tourism
+𝐂=𝐀𝑉,
+domain. Prompt engineering provides a clear direction on the type
+of content to generate. The TF-IDF review keywords consist of the where 𝐖𝑄, 𝐖𝐾, and 𝐖𝑉 represent learnable parameter matrices.
+top 100 high-frequency terms extracted from the review texts in the The self-attention mechanism assigns distinct weights to each word
+dataset using the TF-IDF method. This technique, commonly applied in the input sequence, allowing the model to capture relationships
+in information retrieval and text mining, is designed to identify key between words regardless of their positions in the sentence (Vaswani
+4
+W. Liu et al. Tourism Management 112 (2026) 105272
+et al., 2017). The key concept of self-attention is to compute the atten- where 𝑓(⋅) is forward propagation function of the DNN model, and
+tion weight for each word, reflecting its importance, and then aggregate 𝜃 𝑡 denotes the model parameters for the target domain. By trans-
+the information of the words based on these weights. This allows the ferring the learned ironic knowledge, the model can apply the ac-
+model to focus on significant features while suppressing less relevant quired understanding of irony to recognize ironic sentiment in tourism
+ones, effectively enhancing its ability to capture nuanced contextual reviews.
+relationships. By incorporating self-attention, the model becomes more Through the use of transfer learning, the model can effectively trans-
+sensitive to the sentiment nuances in the text, better capturing the fer ironic knowledge from the source domain, thereby improving the
+subtle shifts in sentiment tendencies throughout the review. This re-
+detection of ironic sentiment in the target domain—tourism reviews.
+sults in a richer understanding of textual sentiment content, ultimately
+This approach not only improves the performance of the model in
+sentiment classification but also allows for more accurate detection of
+improving sentiment classification performance.
+irony, which is often challenging to identify using traditional sentiment
+(3) Module 3∶ Irony-Aware Transfer Learning Module
+analysis techniques.
+The lack of sufficient contextual knowledge and specific domain
+(4) Module 4∶ Sentiment Classification Module
+information complicates the accurate detection of sentiment in ironic In the sentiment classification module, the feature representations
+statements. Utilizing external sentiment knowledge is a highly effective of module 2 and module 3 are first combined using a concatenation
+strategy for improving irony detection (Zhang et al., 2019). To capital- layer. The concatenated features are expressed as follows:
+ize on the extensive ironic knowledge available in public resources and
+enhance the model’s ability to identify and interpret irony, we apply
+𝐇=Concat(𝐂;𝐓). (7)
+transfer learning in this module to improve sentiment representation. Following this, a Dropout layer is applied to mitigate the risk of
+Specifically, we adapt a Deep Neural Network (DNN) model, previously overfitting by randomly disabling connections in the network, which
+trained on an irony dataset, to a tourism review dataset. Transfer helps enhance the generalization ability of the model. Afterward, the
+learning, a machine learning technique, boosts model performance by concatenated features are fed into a linear layer to make the final
+transferring knowledge gained from one task to a related task (Du et al., sentiment classification. The output from this layer is then passed
+2013). The core idea behind transfer learning is to transfer annotated through the Sigmoid activation function, which normalizes the result
+data or knowledge structures from the source domain to the target to a range between 0 and 1. This final output is represented as:
+domain, thereby improving the learning effectiveness for the target
+𝐇 =Dropout(𝐇),
+𝑑
+task (Pan & Yang, 2010). In our model, the source domain involves
+𝐙=𝐇 𝐖 +𝐛,
+the task of irony recognition using an irony dataset, whereas the target 𝑑 𝑙 𝑙 (8)
+1
+domain focuses on identifying the sentiment of ironic reviews within 𝑡̂=𝜎(𝐙)= .
+1+𝑒−𝐙
+tourism contexts. The transfer learning process involves transferring
+model parameters between the source and target domains to improve
+Here, 𝐖
+𝑙
+denotes the weight matrix of the linear layer, 𝐛
+𝑙
+represents the
+performance in the target domain. The procedure is described in detail
+bias term, and 𝑦̂ represents the final sentiment classification result. The
+value of 𝑦̂ close to 1 indicates a higher likelihood of positive sentiment,
+as follows.
+while the value close to 0 signifies negative sentiment. The final output
+Initially, a DNN model is trained on the source domain dataset, 𝐷 .
+𝑠 is classified into specific sentiment categories, such as positive (1) or
+A binary cross-entropy loss function, 𝐿 , is employed to optimize the
+𝑠 negative (0).
+model and derive the source domain model parameters, 𝜃 . The training
+𝑠 (5) Model training
+process can be expressed mathematically as:
+For each tourism review, the true label 𝑡 and the predicted senti-
+𝑗
+ment result 𝑡̂ from the model are computed. The performance of the
+𝜃 =argmin𝐿 (𝑓(𝐷 ;𝜃)). (4) 𝑗
+𝑠
+𝜃
+𝑠 𝑠
+model is assessed using the binary cross-entropy loss. The objective is
+Here, 𝑓(⋅;𝜃) represents the model function of DNN and 𝜃 denotes the to minimize this loss by optimizing the model parameters. This can be
+model parameters. The source domain dataset 𝐷 is a publicly available expressed mathematically as:
+𝑠
+irony dataset. The DNN model comprises an embedding layer, a pooling 𝑀
+layer, three fully connected layers, two ReLU activations, two Dropout m 𝜙 in𝐽(𝜙)=− 𝑀 1 ∑[ 𝑡 𝑗 log(𝑡̂ 𝑗 )+(1−𝑡 𝑗 )log(1−𝑡̂ 𝑗 ) ] . (9)
+layers, and a Sigmoid activation. Input text data is embedded into a 𝑗=1
+vector space using GloVe embeddings. The loss function adopts binary 𝐽(𝜙) represents the loss function, which depends on model parameters
+cross entropy loss  , given by: 𝜙. 𝑀 denotes the number of reviews. We perform model optimization
+𝑠
+using the Adam optimizer, a widely used adaptive learning rate method
+𝑁
+ =− 1 ∑ [(1−𝑧)⋅log(1−𝑝(𝑧))+𝑧 ⋅log(𝑝(𝑧))], (5) that efficiently updates the model parameters
+𝑠 𝑁 𝑖 𝑖 𝑖 𝑖
+𝑖=1
+3.2. The proposed overall framework
+where 𝑝(𝑧) represents the predicted probability for the 𝑖th item, 𝑧
+𝑖 𝑖
+represents the true label for the 𝑖th item, and 𝑁 represents the number
+This section presents the overall framework for conducting the task.
+of items. The model is trained using the Adam optimizer, which is a
+The procedure is divided into three main stages: data preparation,
+variant of stochastic gradient descent (SGD) that incorporates adaptive
+data processing and model development, and model evaluation. The
+moment estimation (Kingma, 2014). workflow of the proposed overall framework is depicted in Fig. 3,
+We utilize the learned parameters to initialize the model for the providing a clear visualization of the model components and their
+target domain after training the model on the source domain. The interactions.
+dataset for the target domain is comprised of tourism reviews. The Step 1∶ Data preparation
+source domain parameters, denoted as 𝜃 , are used to initialize the The initial step in the proposed overall framework consists of
+𝑠
+target domain model. Subsequently, the target model undergoes fine- preparing four datasets, which come from two primary sources: the
+tuning with the target domain dataset. The fine-tuning procedure can public dataset and the LLM Irony Dataset.5 Sarcasm Corpus V26 is a
+be expressed mathematically as follows:
+𝐓=𝑓(𝐂;𝜃 𝑡 ), 5 https://github.com/252820/Tourism-Model/blob/master/data/irony.csv
+(6)
+𝜃 =𝜃 , 6 https://github.com/soraby/sarcasm2/tree/main/sarcasm_v2
+𝑡 𝑠
+5
+W. Liu et al. Tourism Management 112 (2026) 105272
+Fig. 3. Overall framework.
+commonly used dataset for irony detection. It is utilized as the source
+domain dataset for performing DNN transfer learning in Module 2.
+TripAdvisor Reviews7 and Yelp Restaurant Reviews8 are commonly
+utilized datasets for sentiment analysis within the tourism sector (Ali
+et al., 2022; Xiang et al., 2017). [LLM Irony Dataset is a dataset
+generated using LLM, aimed at alleviating the sparsity issue of ironic
+reviews]. A comprehensive explanation of the dataset synthesis process
+is outlined below. All datasets are publicly accessible and can be
+obtained via the links provided in the footnotes.
+Implicit sentiment conveyed through irony is challenging for tradi-
+tional models, and ironic reviews are rare in available tourism datasets,
+limiting sentiment analysis performance in this domain. To address this,
+we used an LLM for data augmentation, generating additional ironic
+reviews with negative sentiment to expand our dataset. Specifically,
+we first manually selected 300 ironic sentences from 3000 negative-
+Fig. 4. Data augmentation process.
+sentiment reviews sourced from TripAdvisor and Yelp, forming a seed
+sample pool 𝐷 . Using in-context learning, we repeatedly prompted
+𝑝
+the Qwen-Max LLM: in each iteration, two random seed samples were
+Dataset, all labeled with negative sentiment. This approach signifi-
+inserted into a fixed prompt template (see Fig. 4) to generate a new
+cantly broadens the diversity of ironic expressions in our dataset and
+ironic review. This process was repeated 5000 times, producing 5000
+enhances the model’s ability to recognize implicit sentiment in tourism
+candidate samples, mathematically expressed as:
+reviews.
+𝑆 𝑔 =LLM(prompt 𝑔 (𝑆 1 ,𝑆 2 )), (10) Step 2∶ Data processing and model preparation
+Since the original datasets lack sentiment polarity labels, we man-
+where 𝑆 ,𝑆 ∈𝐷 . After deduplication and manual quality screening,
+1 2 𝑝
+ually labeled the review texts for our experiments. Sentiment polarity
+3000 high-quality ironic reviews were retained as our final LLM Irony
+was treated as a binary classification task, where ‘‘0’’ indicates negative
+sentiment and ‘‘1’’ indicates positive sentiment. Specifically, reviews
+7 https://www.kaggle.com/datasets/arnabchaki/tripadvisor-reviews-2023 rated 4 or 5 were labeled as positive (1), while those rated between 1
+8 https://www.kaggle.com/datasets/farukalam/yelp-restaurant-reviews and 3 were categorized as negative (0). In most cases, a 3-point rating
+6
+W. Liu et al. Tourism Management 112 (2026) 105272
+indicates that the user perceives the service as merely meeting basic 4. Experiments
+standards, failing to generate significant joy or satisfaction (Ali et al.,
+2022; Li et al., 2024; Xiang et al., 2017). Such reviews often suggest The absence of large-scale, high-quality datasets hinders the model’s
+that the service was mediocre, failing to leave a strong positive impres- ability to accurately detect sentiment (Guan et al., 2025a; Zhang et al.,
+sion or enhance customer satisfaction. To encourage tourism service 2019). Transferring knowledge from one domain to another can lead
+providers to deliver better experiences, increase customer satisfaction, to improved accuracy and outcomes (Celik et al., 2020). Utilizing
+and improve the likelihood of repeat visits, we have conservatively domain-related information can enhance model performance (He et al.,
+included reviews with a 3-point rating in the ‘‘negative’’ category. This 2025). Based on these theoretical foundations, the following research
+binary labeling approach was chosen to simplify the sentiment analysis questions are presented for the experimental section.
+process and facilitate more efficient model training. By adopting this
+clear-cut classification method, we aimed to streamline the analysis • RQ1. How can LLM be effectively utilized to alleviate the issue
+and improve the model’s capability to accurately distinguish between of ironic reviews sparsity?
+positive and negative sentiments in tourism reviews. • RQ2. How does the TSI model enhance sentiment analysis over
+Following the labeling process, several data cleaning procedures baselines?
+were carried out to ensure the dataset’s quality and consistency. First, • RQ3. What is the effect of utilizing ironic knowledge available in
+all numerical values were removed from the text to prevent any unin- the public domain?
+tended influence on sentiment classification. Next, excess whitespace • RQ4. What is the effect of utilizing knowledge from the tourism
+and unnecessary punctuation were eliminated to streamline the text field?
+and improve processing efficiency. Common stopwords that do not
+contribute significant meaning for sentiment analysis were filtered out. These four questions correspond to the three Views mentioned
+All text was transformed to lowercase to standardize the data and in the introduction, i.e., they need to verify the motivation of our
+reduce token variability. Each review was tokenized to facilitate more model design. To address these four questions, this section details the
+efficient model processing and analysis. These preprocessing steps were experimental setup, presents the results of comparison experiments,
+crucial for standardizing the data, minimizing noise, and improving the conducts an ablation study, and includes a case study to showcase the
+efficiency and accuracy of subsequent tasks. After preprocessing, the practical effectiveness of the TSI model.
+dataset was divided into training, validation, and test sets.
+By following these rigorous preprocessing steps, we ensured that 4.1. Experimental setup
+the dataset was well-prepared for training high-performing sentiment
+analysis models, thereby enhancing their ability to accurately classify Machine learning models were implemented by constructing classi-
+the sentiment of tourism reviews. Then we integrated domain knowl- fiers with the Scikit-Learn library in Python (Shoval et al., 2011), while
+edge into the proposed model and used the prepared data to train and deep learning models were built using the PyTorch framework, known
+fine-tune it. for its adaptability and efficiency in handling large-scale deep learning
+Step 3∶ Model evaluation tasks. All experiments were conducted on an Nvidia 4090 GPU with
+To assess the effectiveness of our approach, we utilized five com- 24 GB of VRAM, ensuring fast processing and efficient handling of large
+monly recognized evaluation metrics: accuracy, precision, recall, F1- datasets and model computations.
+score, and Negative Predictive Value (NPV). These metrics are com- For model comparison, we evaluated the following seven baseline
+monly employed for evaluating machine learning models (Choi et al., models:
+2020). These metrics are defined as follows:
+𝑇𝑃+𝑇𝑁 • Naive Bayes. This probabilistic classifier, grounded in Bayes’
+𝐴𝑐𝑐=
+𝑇𝑃+𝐹𝑃+𝑇𝑁+𝐹𝑁
+, (11)
+theorem, is commonly applied in sentiment analysis. For example, Al-
+𝑇𝑃 muhaya et al. (2024) used polynomial Naive Bayes for sentiment
+𝑃𝑟𝑒= 𝑇𝑃+𝐹𝑃 , (12) analysis of Arabic tweets on Twitter, while (Charitha et al., 2023)
+employed it for sentiment classification of IMDB movie reviews.
+𝑇𝑃
+𝑅𝑒𝑐= , (13) • LightGBM. As an efficient Gradient Boosting Decision Tree
+𝑇𝑃+𝐹𝑁
+(GBDT) framework, LightGBM is frequently used for sentiment analysis
+2×𝑃𝑟𝑒×𝑅𝑒𝑐
+𝐹1= , (14) tasks. Khatun and Rabeya (2022) applied LightGBM to analyze Bangla-
+𝑃𝑟𝑒+𝑅𝑒𝑐
+language book reviews, categorizing them as positive or negative.
+𝑇𝑁
+𝑁𝑃𝑉 = . (15) • TextCNN. A deep learning model based on Convolutional Neu-
+𝑇𝑁+𝐹𝑁
+ral Networks, TextCNN, has shown effectiveness in text classification
+In these equations, TP represents the number of positive reviews in
+the gold-standard dataset that are correctly identified as positive, while
+tasks (Kim, 2014). For example, Wang, Wang, et al. (2022) combined
+TN denotes the number of negative reviews accurately classified as
+Word2Vec embeddings with TextCNN to perform sentiment classifica-
+negative. Conversely, FN refers to positive reviews mistakenly classified
+tion on Weibo comments.
+as negative, and FP signifies the reviews predicted as positive that are
+• Bi-LSTM. This network architecture improves upon the tradi-
+actually negative in the gold-standard dataset.
+tional Long Short-Term Memory (LSTM) model by processing data in
+Higher values for accuracy, precision, recall, F1-score, and NPV both forward and backward directions, merging their outputs without
+generally indicate better overall model performance (Bian et al., 2022). altering the internal structure of LSTM (Gao et al., 2024). Zhang and
+We selected Naive Bayes, LightGBM, TextCNN, Bi-LSTM, W2C_RNN, Guo (2021) applied Bi-LSTM for sentiment analysis on product reviews
+BERT, and GPT-4 as our baseline models. Each of these models serves from platforms like Taobao and JD.COM.
+as a benchmark for evaluating the performance and efficacy of the TSI • W2C_RNN. This method combines Word2Vec embeddings with a
+model. They cover a wide range of sentiment analysis techniques, from Recurrent Neural Network (RNN), offering a novel approach particu-
+traditional machine learning methods like Naive Bayes and LightGBM larly suited for travel contexts. Ying and Yufan (2023) used W2C_RNN
+to more sophisticated deep learning models such as TextCNN, Bi-LSTM, for sentiment analysis of travel reviews to support destination recom-
+W2C_RNN, and BERT. This diverse set of baseline models provides mendations.
+a comprehensive evaluation framework, allowing us to thoroughly • BERT. As a pre-trained NLP model, BERT (Devlin et al., 2019)
+examine the performance and effectiveness of our proposed method has demonstrated outstanding performance across numerous NLP tasks.
+across various evaluation metrics. By comparing our model against We included BERT as a baseline to determine whether performance
+these varied approaches, we can better understand its strengths and improvements result from BERT’s capabilities or from the proposed
+weaknesses in different contexts. methodology.
+7
+W. Liu et al. Tourism Management 112 (2026) 105272
+Table 1
+Experiment parameter settings.
+Model Embedding dimension Dropout Epochs Optimizer Weight decay Learning rate Batch size
+DNN 400 0.5 50 Adam 1e−5 1e−4 128
+TSI 768 0.5 50 Adam 1e−4 1e−4 128
+• GPT-4. Developed by OpenAI, GPT-4 is a large language model 4.2. Model evaluation
+that utilizes a Mixture of Experts (MoE) architecture comprising ap-
+proximately 1.76 trillion parameters. During a typical inference, around To further validate the contributions of each module in the TSI
+220 billion of these parameters are activated. The model excels at model, we conducted a stepwise validation and an ablation study using
+tasks involving text processing, complex semantic reasoning, and long- Yelp Restaurant Reviews and TripAdvisor Reviews.
+context understanding. (1) Stepwise validation
+To validate the model in a stepwise fashion, we outline and eval-
+To ensure reliable and reproducible classification performance acr- uate three configurations. Detailed below are the specifics of each
+oss all models, the following systematic procedure was adopted: configuration, which will guide our phased assessment of the model’s
+effectiveness.
+• Dataset Split. The dataset was divided into three distinct subsets:
+60% of the samples were designated for training, 20% for validation, • I. The model incorporates Module 1 and Module 4.
+and the remaining 20% for testing. This conventional division guar- • II. The model incorporates Module 1, Module 2, and Module 4.
+antees that the model is assessed on unseen data, offering a reliable • III. The model incorporates Module 1, Module 2, Module 3, and
+estimate of its generalization ability. Module 4.
+• Optimizer and Hyperparameter Tuning. For optimization, the
+Fig. 6 presents the results of the stepwise validation across the two
+Adam optimizer was chosen due to its efficiency and adaptive learning
+datasets, demonstrating the effectiveness of each module.
+rate, which helps improve convergence in complex models. Hyper-
+(2) Ablation study
+parameters, including the learning rate, weight decay, and keyword
+The ablation study provides answers to RQ3 and RQ4. The aim
+weight parameter 𝑝, were tuned using grid search. This exhaustive
+of this study was to evaluate the impact of the proposed modules —
+search method tested different combinations of hyperparameter val-
+specifically Module 1 (the tourism domain enhancement module) and
+ues to identify the optimal configuration for each model. The opti-
+Module 3 (the irony-aware transfer learning module) — on overall
+mal parameter combinations and values that yielded the best perfor-
+performance. Below, we outline the three configurations evaluated:
+mance are documented in the source code, ensuring transparency and
+reproducibility of the results. • TSI-KT. The full model without the irony-aware transfer learning
+• Keyword Extraction. In the keyword weight adjustment process, module and the tourism domain enhancement module.
+we utilized LLM to generate a total of 26 keywords, aimed at enhancing • TSI-T. The full model without the irony-aware transfer learning
+the quality of feature representation for the sentiment analysis task. In module.
+addition, we extracted another 100 high-frequency keywords using the • TSI. The complete model, including all modules.
+traditional TF-IDF method.
+• Early Stopping. To avoid overfitting and guarantee that the The outcomes of the ablation study for both datasets are presented
+in Fig. 7.
+model does not memorize the training data, we adopted an early
+Fig. 7(a) illustrates the performance metrics for the Yelp Restaurant
+stopping strategy. This approach tracks the model’s performance on
+Reviews across the three model configurations. The results demon-
+the validation set throughout training. If performance stagnates with-
+strate that the TSI model consistently delivers the best performance
+out significant improvement for five consecutive epochs, training is
+across most metrics, clearly indicating the advantage of integrating
+stopped. This approach helps conserve computational resources and
+both the irony-aware transfer learning module and the tourism domain
+prevents the model from learning noise in the data.
+enhancement module. The TSI model achieves superior accuracy and
+precision, suggesting that the inclusion of the irony-aware transfer
+The experimental parameters are set as shown in Table 1.
+learning module helps the model capture implicit irony patterns within
+To solve RQ1, we used both GPT and Qwen-Max in the data
+the dataset. The TSI-T model shows a relative improvement in recall.
+augmentation process, combined with carefully designed prompts, to
+This indicates that the tourism domain enhancement module positively
+generate ironic reviews. Specifically, GPT was instructed to generate
+impacts the model’s ability to identify tourism-related features.
+multiple reviews in a single request based on the provided prompt.
+Similarly, Fig. 7(b) presents the performance metrics for TripAdvi-
+Conversely, Qwen-Max generated multiple reviews through several API
+sor Reviews. The trends observed are almost consistent with those from
+calls, incorporating random sampling into the prompt design. These
+the Yelp Restaurant Reviews, with the TSI model outperforming both
+two approaches resulted in noticeable differences in the outcomes of
+TSI-T and TSI-KT in accuracy, precision, and F1-score. The TSI model
+the generated reviews.
+continues to show superior performance, confirming its robustness
+As illustrated in Fig. 5, compared to GPT’s method of direct gener-
+across different datasets. The TSI-T model shows improvements over
+ation, Qwen’s strategy using random sampling produced significantly TSI-KT, particularly in accuracy and precision. This suggests that the
+more effective reviews. Fig. 5 demonstrates the authenticity and at- tourism domain enhancement module significantly enhances feature
+tractiveness of Qwen’s generated content, as well as its advantages in extraction and boosts the model’s capability to identify tourism-specific
+creating engaging and realistic ironic comments. As observed, Qwen’s features. The TSI-KT model exhibits the lowest performance across
+approach stands out for generating nuanced, diverse, and contextually most metrics, except for recall, reinforcing the conclusion that both
+relevant content, frequently incorporating subtle details that enhance modules are essential for achieving optimal performance in sentiment
+the engagement and realism of the reviews. In contrast, GPT’s direct classification.
+outputs tend to be repetitive, lacking the contextual richness and The results from stepwise validation and ablation study clearly
+diversity needed to produce compelling irony. This comparison high- demonstrate that both the irony-aware transfer learning module and
+lights the clear advantages of adding randomness and variability when the tourism domain enhancement module contribute significantly to
+augmenting samples with LLM. improving model performance. The TSI model, which incorporates both
+8
+W. Liu et al. Tourism Management 112 (2026) 105272
+Fig. 5. Data augmentation comparison.
+Fig. 6. Visualization of stepwise validation.
+Fig. 7. Visualization of ablation study.
+9
+W. Liu et al. Tourism Management 112 (2026) 105272
+Fig. 8. Result of negative predictive value (NPV).
+Table 2 highlights that even without the irony-aware transfer learning module,
+Experimental results. the TSI-T model remains a robust contender in sentiment classification.
+Dataset Model Acc Pre Rec F1-score This underscores the strength of its underlying architecture, particu-
+Yelp Restaurant Reviews LightGBM 0.8872 0.8951 0.9767 0.9341 larly the integration of knowledge from the tourism field. Overall, these
+Naive Bayes 0.8780 0.8725 0.9747 0.9208 results confirm that the TSI model significantly enhances sentiment
+TextCNN 0.9069 0.9196 0.9710 0.9446
+Bi-LSTM 0.8184 0.8184 1.000 0.9001
+classification performance. The inclusion of the irony-aware transfer
+W2C_RNN 0.8803 0.9049 0.9540 0.9288 learning module is crucial, as it plays a key role in improving accuracy
+BERT 0.8520 0.8504 0.9938 0.9165 and overall effectiveness. We have conducted paired t-tests comparing
+GPT-4 0.8128 0.8186 0.9740 0.8896 the performance of TSI against the best baseline model (TextCNN)
+TSI-T 0.9163 0.9276 0.9599 0.9434
+TSI 0.9215 0.9335 0.9605 0.9468
+across five independent runs using different random seeds. We report
+p-values to assess whether TSI’s improvements over baselines are sta-
+Tripadvisor Reviews LightGBM 0.8871 0.8956 0.9759 0.9340
+Naive Bayes 0.8861 0.8850 0.9893 0.9343
+tistically significant at 𝛼=0.05. Table 3 shows that the improvements
+TextCNN 0.9031 0.9213 0.9507 0.9357 achieved by TSI are statistically significant, supporting the robustness
+Bi-LSTM 0.7275 0.7275 1.0000 0.8423 of our model.
+W2C_RNN 0.8947 0.8999 0.9803 0.9384 (2) Results of negative sentiment identification
+BERT 0.8459 0.8442 0.9716 0.9034
+GPT-4 0.8566 0.8720 0.9702 0.9185
+To assess the model’s effectiveness in accurately detecting negative
+TSI-T 0.9235 0.9381 0.9705 0.9540 sentiment, we focused on the NPV metric, which specifically evaluates
+TSI 0.9285 0.9429 0.9715 0.9570 the model’s capability to correctly identify negative reviews. For com-
+parison, we selected three representative models from the baseline: two
+of the highest-performing baseline models and one ensemble learning
+modules, shows superior generalizability and robustness across the two
+model based on traditional machine learning techniques. We conducted
+datasets. These findings demonstrate the effectiveness of integrating
+the evaluation on three distinct datasets. The NPV metric was calcu-
+domain-specific knowledge from the tourism industry with publicly
+lated for each model on each dataset, and the results are presented in
+available ironic knowledge. Moreover, they validate our design choices
+Fig. 8.
+and highlight the importance of combining domain-specific insights As illustrated in Fig. 8, the TSI model achieves the highest NPV
+with the ability to detect implicit irony to achieve effective sentiment across all three datasets, outperforming the other four models. This
+analysis. indicates that the TSI model excels in identifying negative sentiment,
+as it maintains a higher proportion of true negatives (TN) over false
+4.3. Experiment results and analysis negatives (FN) in relation to the total number of negative reviews in the
+dataset. Essentially, the TSI model demonstrates a superior capability
+We present the outcomes of two experimental studies: one focused to avoid misclassifying negative instances, which is crucial for appli-
+on sentiment classification and the other on identifying negative sen- cations where correctly identifying negative sentiment is paramount.
+timent. Each experiment evaluates the performance of the TSI model Moreover, the TSI model excels at detecting negative sentiment in
+against baseline models. The results from these experiments provide ironic reviews, which are often challenging for traditional sentiment
+answers to RQ2, RQ3, and RQ4. analysis models to classify accurately. The results on the LLM Irony
+(1) Results of sentiment classification dataset further emphasize the TSI model’s strength in handling implicit
+To assess the performance of our proposed model, specifically the and complex forms of negative sentiment, including irony. This demon-
+TSI and its variant TSI-T, several experiments were conducted. The strates the impact of utilizing the ironic knowledge available in the
+TSI-T model omits the irony-aware transfer learning module from the public domain.
+TSI model, allowing us to examine the effect of ironic knowledge on The TSI-T model, while lacking the irony-aware transfer learning
+sentiment classification. To increase the diversity of the training data, module, still performs well in negative sentiment identification. How-
+Yelp Restaurant Reviews and TripAdvisor Reviews were respectively ever, its performance falls slightly short compared to the TSI model.
+enhanced by a portion of the LLM Irony Dataset. The experiments were The TextCNN model lags behind TSI and TSI-T in terms of NPV,
+evaluated using various performance metrics on these datasets. highlighting the importance of incorporating irony-specific knowledge
+The experimental results, presented in Table 2, indicate that the TSI in the sentiment identification process. BiLSTM and LightGBM, which
+model outperforms all other models on most evaluation metrics across are not specifically designed to handle irony, struggle to recognize it,
+both datasets. Notably, the TSI model achieves accuracy exceeding 92% making it challenging for them to attain high NPV scores. In summary,
+and F1-score exceeding 94%, demonstrating its high reliability and ef- the TSI model exhibits superior performance in accurately identifying
+fectiveness in sentiment classification. The high F1-score demonstrates negative sentiment, particularly in the context of ironic reviews, where
+the model’s capability to maintain a balanced performance between traditional models like BiLSTM and LightGBM may struggle. These
+precision and recall, making it well-suited for sentiment analysis tasks. findings underscore the significance of integrating irony-aware mecha-
+TSI-T model performs second-best in most metrics across both datasets, nisms into sentiment analysis systems to improve their effectiveness in
+albeit slightly less effective than the TSI model. Its strong performance practical applications.
+10
+W. Liu et al. Tourism Management 112 (2026) 105272
+Table 3
+T-test.
+Dataset Model Acc_1 Acc_2 Acc_3 Acc_4 Acc_5 T-statistic 𝑃-value
+Yelp Restaurant Reviews TextCNN 0.9026 0.9043 0.9038 0.9048 0.9069 −24.15542778 0.00001742
+TSI 0.9189 0.9215 0.9196 0.9203 0.9208 – –
+Tripadvisor TextCNN 0.9031 0.9114 0.9113 0.9121 0.9123 −10.05141152 0.00055095
+TSI 0.9285 0.9277 0.9280 0.9286 0.9283 – –
+Fig. 9. Influence of hyperparameter 𝑝 on model performance.
+4.4. Parameter sensitivity analysis Table 4
+Hyperparameter table of TF-IDF.
+To evaluate the sensitivity of TSI and TSI-T models to different hy- Top K Acc Pre Rec F1 Dataset
+perparameters, we conducted an experiment using the Yelp Restaurant 50 0.9211 0.9335 0.9599 0.9465 Yelp
+Reviews and Tripadvisor Reviews datasets. Specifically, we focused on 100 0.9215 0.9335 0.9605 0.9468 Yelp
+analyzing the impact of the keyword weight parameter, denoted as
+150 0.9211 0.9414 0.9507 0.956 Yelp
+𝑝, on the performance of both models. The results are illustrated in
+Fig. 9, which shows how variations in the hyperparameter 𝑝 affect
+performance metrics. This provides answers to RQ4.
+Fig. 9(a) illustrates how changes in the keyword weight parameter
+increases, while the precision starts by increasing and then decreases.
+(𝑝) influence the TSI model’s performance on Yelp Restaurant Reviews.
+This pattern suggests that there exists an optimal range for 𝑝 that
+As 𝑝 increases, accuracy, precision, and F1-score initially rise but then
+maximizes the performance of the two models.
+begin to decline. This suggests that there is an optimal range for
+Overall, the analysis reveals that within a certain range, the TSI
+𝑝 where the model performs best. In contrast, the recall follows a
+model’s performance improves slightly with increasing 𝑝, while the TSI-
+different pattern, decreasing initially and then increasing as 𝑝 grows.
+T model performs progressively worse. These findings highlight the
+The highest values for accuracy, precision, and F1-score occur when
+importance of carefully tuning 𝑝 based on specific performance metrics
+𝑝=0.5, although the recall is at its lowest during this period.
+prioritized by each model, as the optimal setting of this hyperparameter
+Fig. 9(b) illustrates the TSI-T model’s performance under the same
+can vary depending on the model and dataset.
+conditions. For TSI-T, as the keyword weight parameter 𝑝 increases, all Table 4 suggests that setting the hyperparameter of TF-IDF to 100
+metrics show a general decline. The model performs best in accuracy, provides the best accuracy and recall, making it an optimal choice for
+precision, F1-score, and recall when 𝑝 = 0.1, which indicates that a the Yelp dataset.
+larger value for 𝑝 tends to depress its performance across all metrics.
+The influence of varying 𝑝 on the performance metrics of both 4.5. Further exploration of fine-grained classification
+models using the Tripadvisor Reviews is depicted in Figs. 9(c) and
+9(d). As 𝑝 increases, the accuracy and F1-score for both models remain For further exploration of fine-grained classification, we conducted
+relatively stable. The TSI model achieves its peak accuracy and F1- a detailed analysis of the 3-star reviews in the Yelp restaurant dataset.
+score at 𝑝=0.3, whereas the TSI-T model reaches its highest values at In total, there are 2069 such reviews. We utilized Qwen2.5-72B to re-
+𝑝=0.1. The recall for both models initially decreases and subsequently label these reviews, resulting in 691 neutral labels and 1378 negative
+11
+W. Liu et al. Tourism Management 112 (2026) 105272
+Table 5 This case study clearly illustrates the strengths of the TSI model
+Experimental results of 3-class. in recognizing nuanced sentiment in ironic reviews. While TextCNN
+Dataset Model Acc Pre Rec F1-score struggles to detect negative sentiment in the presence of irony, often
+Yelp Restaurant Reviews LightGBM 0.8598 0.5711 0.5347 0.5464 misclassifying it as positive, the TSI model excels in identifying these
+Naive Bayes 0.8560 0.5989 0.5041 0.5280 implicit emotional cues. By effectively capturing both the overt and
+TextCNN 0.8844 0.5751 0.5791 0.5766
+Bi-LSTM 0.7502 0.4468 0.4015 0.4028
+covert emotional signals in the text, the TSI model proves to be more
+W2C_RNN 0.7526 0.4332 0.4494 0.4298 reliable for complex sentiment analysis tasks, particularly when dealing
+BERT 0.8825 0.6727 0.7561 0.7004 with ironic language. These findings showcase the superior capability of
+GPT-4 0.6728 0.5859 0.4027 0.3671 the TSI model to handle complex, multi-layered sentiment expressions,
+TSI-T 0.9165 0.6002 0.6182 0.6090 making it highly suitable for real-world sentiment analysis tasks.
+TSI 0.9225 0.6038 0.6261 0.6148
+5. Conclusion and discussion
+labels. To ensure accuracy, we manually reviewed and validated each High-quality sentiment analysis of tourism reviews is crucial for
+annotation. This refined annotation process enables a more precise helping tourists make informed decisions when choosing travel ser-
+evaluation of how different subsets of 3-star reviews affect model vices (Ali et al., 2022). This research introduces an innovative method
+performance. Based on this newly annotated dataset, we performed a for improving sentiment analysis in tourism reviews, particularly in
+three-class classification experiment, distinguishing between positive, detecting negative sentiment within ironic contexts. By incorporating
+neutral, and negative sentiments. As presented in Table 5, the TSI tourism domain knowledge and irony-aware transfer learning, our
+model still achieved the highest accuracy. However, due to the lim- method improves the detection of implicit sentiment cues, especially
+ited number of neutral reviews, all models exhibited restricted ability those involving irony, which are often challenging to capture using
+to learn distinguishing features for this class, resulting in relatively traditional sentiment analysis techniques.
+low precision, recall, and F1-score. Therefore, in this context, binary We conducted extensive experiments using three tourism-related
+classification is more appropriate than three-class classification. And datasets to validate the TSI model. The first experiment evaluated
+the results of this experiment further support the effectiveness and the classification performance of various models in sentiment analysis,
+robustness of our method under a fine-grained labeling scheme. where the TSI model achieved remarkable results, with over 92%
+accuracy and an F1-score exceeding 94%. These outcomes confirm
+4.6. Case study
+the effectiveness of the TSI model in classifying tourism-related re-
+views. The second experiment compared the proposed models with
+three representative baseline models. Based on the NPV metric, TSI
+To assess the ability of the TSI model to effectively recognize
+demonstrated a superior ability to identify negative sentiment in ironic
+sentiment in ironic reviews, we conducted a case study comparing the
+reviews. The third experiment involved a parameter sensitivity analysis
+performance of the TextCNN and TSI models. Specifically, we selected
+for both TSI and TSI-T models, highlighting the importance of fine-
+a set of five reviews in the real world, including four reviews containing
+tuning the keyword weight parameter (𝑝). The fourth experiment was
+irony and one general (non-ironic) review, to evaluate how each model
+an ablation study that clearly demonstrated the significant performance
+performs in identifying the sentiment of these texts. This selection
+improvements achieved by combining the irony-aware transfer learning
+aimed to assess how each model performs in identifying the sentiment
+module and the tourism domain enhancement module. Lastly, the fifth
+of these texts. Fig. 10 depicts the comparative results and provides
+experiment was a case study comparing TSI with the leading baseline
+answers to RQ2.
+model, TextCNN. It highlighted TSI’s superior performance in accu-
+TextCNN model’s predicted outcomes are displayed on the left side
+rately identifying negative sentiment, especially in reviews containing
+of Fig. 10. This model misclassifies all five reviews as positive (class
+irony. In contrast, TextCNN showed a tendency to misclassify such
+1), despite the fact that the reviews express negative sentiment. This
+reviews as positive. This observation aligns with prior research (Sar-
+misclassification suggests that TextCNN struggles to correctly identify
+mento et al., 2009), which found that irony can influence a model’s
+the emotional tone of reviews containing ironic expressions. Despite
+classification performance. Our results further highlight the TSI model’s
+the presence of clear negative sentiment in the text, TextCNN appears
+robustness in recognizing negative feedback, especially in the presence
+to rely heavily on surface-level features such as positive vocabulary,
+of ironic expressions.
+resulting in erroneous positive classifications. This highlights a key
+Taken together, these experimental findings support the usefulness
+limitation of TextCNN in dealing with the complex nuances of ironic
+and reliability of the TSI model for sentiment analysis in the tourism
+language, where the sentiment often contradicts the surface-level text
+sector, particularly in detecting negative sentiment in ironic reviews.
+features. Additionally, the TextCNN model incorrectly classified two
+positive reviews as negative. This points to a potential opportunity for 5.1. Theoretical implications
+improving the model’s accuracy in distinguishing between positive and
+negative sentiments. Research on the influence of ironic reviews in sentiment analysis
+In contrast, the right side of Fig. 10 displays the predicted results within the tourism industry remains scarce. Most existing frameworks
+from the TSI model. Here, the TSI model successfully classified all re- concentrate on detecting explicit and direct emotional expressions in
+views, underscoring its robust capability to detect sentiment accurately, online reviews (Li, Gao, & Song, 2023; Liu et al., 2019; Tokarchuk et al.,
+even when faced with ironic reviews. Notably, in the fifth sentence of 2022), frequently overlooking the nuanced and implicit characteristics
+the case study, which predominantly features positive vocabulary, the of irony. To address this limitation, this study introduces an innovative
+TSI model accurately identifies the underlying negative sentiment. This approach designed to better capture the underlying emotions in ironic
+outcome further emphasizes the TSI model’s robustness in handling reviews, thereby enhancing the depth and accuracy of sentiment anal-
+complex and implicit sentiment expressions, where positive words may ysis in the tourism sector. Our model integrates advanced techniques
+be used ironically to convey a negative sentiment. The TSI model’s such as domain adaptation, data augmentation, and irony modeling
+enhanced performance underscores the importance of incorporating to improve sentiment classification, marking a significant advancement
+irony-aware mechanisms. Such mechanisms are crucial for achieving over traditional methods that fail to adequately account for irony.
+accurate sentiment analysis in contexts where traditional models might This research builds on and extends previous studies in several
+fail due to their reliance on surface-level features. key ways. First, it advances the field of text sentiment recognition by
+12
+W. Liu et al. Tourism Management 112 (2026) 105272
+Fig. 10. Sentiment analysis case.
+proposing a refined model capable of distinguishing between ordinary influences sentiment analysis models and could lead to the develop-
+and ironic travel reviews. The model enhances classification accuracy, ment of more sophisticated tools for analyzing emotional expression in
+offering deeper insights into the interaction between irony and negative user-generated content.
+sentiment in online reviews, a dynamic that has been underexplored in
+5.2. Managerial implications
+prior literature. Second, our study introduces a novel dataset containing
+ironic travel reviews, which is pivotal in addressing the scarcity of
+The proposed model, with its strong ability to accurately identify
+annotated irony data within the tourism domain. This dataset is further
+negative sentiment in ordinary and ironic travel reviews, offers several
+enriched through an initial attempt to augment samples using large
+key managerial implications for the tourism industry.
+language models (LLMs), which serves as a stronger basis for future Firstly, the model can be embedded into smart tourism platforms
+academic inquiry and applied practices in sentiment analysis. like Booking and Ctrip as a cloud-based API to analyze user reviews
+Incorporating these advancements, our study contributes to the in real time. The boxed summary below highlights how TSI can be
+growing dialogue around the intersection of emotion detection and
+effectively integrated into smart tourism platforms to improve user
+experience and business outcomes. We estimate that incorporating the
+irony in sentiment analysis, which has remained an underdeveloped
+model into existing smart tourism platforms will incur low computa-
+area in tourism-related research. By bridging the gap between existing
+tional overhead (with an inference time of approximately 0.5 s per
+sentiment models and the complexities of irony detection, this work
+review) while achieving a 94% improvement in review classification
+opens new avenues for applying text mining and machine learning
+accuracy. This can translate into higher customer trust and booking
+techniques in tourism and other domains that require a nuanced under- precision. Early adopters of this irony-aware model could gain a com-
+standing of complex emotional expressions, such as irony. Moreover, petitive edge by enhancing user experience and brand perception. Local
+the findings may inspire further theoretical exploration into how irony tourism boards can also leverage TSI to detect subtle dissatisfaction
+13
+W. Liu et al. Tourism Management 112 (2026) 105272
+in visitor feedback that traditional sentiment models might overlook, cross-cultural sentiment expression and improve the adaptability of
+enabling proactive service improvements. models like TSI for global tourism markets. Expanding the model to
+multiple languages would also foster better cross-cultural understand-
+Best Practice: Integrating TSI into Tourism Platforms
+ing and enhance its international applicability. Second, integrating
+textual models with visual and emoji-aware models (e.g., using CLIP
+On product pages for hotels, car rentals, flights, etc., dynamic
+or emoji embeddings) could significantly improve the detection of
+sentiment polarity labels can be displayed (e.g., ‘‘93% of 450
+nuanced or implicit sentiments, often conveyed through non-textual
+reviews express positive sentiment’’), with warning tags added to
+elements. Finally, by using user-level data to build personalized irony
+ironic negative reviews (e.g., ‘‘Note: 22% of negative reviews may
+detection systems and embedding them into platforms like TripAd-
+contain irony’’). When users browse, they can filter services by
+visor, real-time irony detection during feedback submission could be
+sentiment intensity (e.g., ‘‘Show hotels with > 90% positive sen-
+achieved. This would help promptly identify and escalate serious com-
+timent’’). This approach goes beyond traditional rating systems,
+plaints — especially ironic ones — thus improving response efficiency
+providing travelers with instant, real-time emotional insights that and customer satisfaction on global tourism platforms.
+can significantly enhance the decision-making process when book-
+ing travel services, thereby increasing booking conversion rates. CRediT authorship contribution statement
+By integrating sentiment analysis with product listings, travel
+websites can offer customers more transparent and meaningful Wenhui Liu: (First Author) Writing – review & editing, Writ-
+information, helping them avoid negative experiences and choose ing – original draft, Visualization, Validation, Supervision, Software,
+services that best match their preferences. Resources, Project administration, Methodology, Investigation, For-
+mal analysis, Data curation, Conceptualization. Likang Wu: (Equal
+Secondly, smart tourism platforms can use the model to imple- Contribution) Writing – review & editing, Validation, Supervision,
+ment precision marketing strategies based on sentiment analysis. For Project administration, Methodology, Formal analysis, Conceptualiza-
+instance, if an airline detects negative comments about baggage fees tion. Hongke Zhao: (Corresponding Author) Writing – review & edit-
+(e.g., ‘‘Paying $50 for my luggage to arrive two days late—what an ing, Supervision, Funding acquisition, Conceptualization.
+amazing experience!’’), it can automatically trigger targeted promotions
+(e.g., discount coupons for baggage fees). This personalized approach
+Declaration of competing interest
+can help platforms attract customers more effectively and boost con-
+The authors declare that they have no known competing finan-
+version rates. TSI can also be integrated into recommendation systems
+cial interests or personal relationships that could have appeared to
+to improve customer satisfaction. Finally, the model’s ability to detect
+influence the work reported in this paper.
+negative ironic sentiment provides tourism platforms with a crucial
+tool for addressing negative feedback promptly and effectively. For
+Acknowledgments
+example, when the platform identifies high-risk ironic negative reviews
+(e.g., a restaurant review stating, ‘‘Perfect choice for food poisoning
+This study was partially funded by the supports of National Natu-
+enthusiasts!’’), it can flag these as priority cases and immediately esca-
+ral Science Foundation of China (72471165, 72101176), Natural Sci-
+late the risk alert to the customer service team, generating automated
+ence Foundation of Tianjin (24JCQNJC01560) and Tianjin University
+compensation suggestions (e.g., free meal voucher templates). By iden-
+Independent Innovation Fund-Social Impact Project (2025XSC-0048).
+tifying and addressing risky reviews in a timely manner, businesses
+can reduce customer complaints, minimize customer churn, and pre-
+References
+vent booking losses. After implementing sentiment-based early warning
+systems, the average complaint handling time for customer service Alaei, A. R., Becken, S., & Stantic, B. (2019). Sentiment analysis in tourism: capitalizing
+teams can be significantly reduced, lowering labor costs. The model on big data. Journal of Travel Research, 58(2), 175–191. http://dx.doi.org/10.1177/
+enables platforms to proactively identify emerging trends and potential 0047287517747753.
+issues before customer feedback escalates, allowing for active customer
+Ali,
+A
+A .,
+n e
+G
+w
+. Y
+p
+a
+r
+s
+o
+e
+m
+en
+is
+,
+in
+M
+g
+. ,
+te
+A
+c
+l
+h
+ja
+n
+n
+i
+a
+q
+b
+u
+i
+e
+,
+s .
+M
+M
+.,
+e
+A
+so
+b
+p
+e
+o
+d
+t
+,
+a m
+S.
+ia
+,
+n
+&
+J
+G
+ou
+P
+r
+T
+n
+,
+a l
+C .
+o f
+( 2
+B
+0
+i
+2
+g
+3 )
+D
+.
+a
+T
+ta
+ra
+,
+n
+2
+sf
+0
+e
+2
+r
+3 ,
+l ea
+3
+r
+1
+n
+–
+i
+3
+n
+2
+g:
+.
+relationship management and fostering a positive brand image. http://dx.doi.org/10.58496/MJBD/2023/004.
+Ali, T., Omar, B., & Soulaimane, K. (2022). Analyzing tourism reviews using an LDA
+5.3. Limitations and future research topic-based sentiment analysis approach. MethodsX, [ISSN: 2215-0161] 9, Article
+101894. http://dx.doi.org/10.1016/j.mex.2022.101894.
+Almuhaya, B., Saha, B., Kaur, M., Bazel, M. A., & Mohammed, R. (2024). Compar-
+Although this study offers meaningful insights, it does have certain ative analysis of machine learning algorithms for Arabic sentiment analysis on
+limitations that also open avenues for future research. A primary limi- imbalanced social media data. In 2024 ASU international conference in emerging
+tation lies in the exclusive use of English review data, which constrains technologies for sustainability and intelligent systems (pp. 1362–1367). http://dx.doi.
+the applicability of the findings across other languages and cultural org/10.1109/ICETSIS61505.2024.10459389.
+An, H. w., & Moon, N. (2022). Design of recommendation system for tourist spot
+settings. Sentiment expression varies across languages, and the absence
+using sentiment analysis based on CNN-LSTM. Journal of Ambient Intelligence and
+of multilingual analysis — especially for low-resource languages with Humanized Computing, 13(3), 1653–1663. http://dx.doi.org/10.1007/s12652-019-
+distinct irony and sentiment patterns — limits the model’s adaptability 01521-w.
+to diverse global markets. Another limitation is that our model has Bajerski, M. (2016). ‘‘I understand you, so I’ll not hurt you with my irony’’: Cor-
+relations between irony and emotional intelligence. Psychology of Language and
+been trained and evaluated solely on textual data, without considering
+Communication, 20, http://dx.doi.org/10.1515/plc-2016-0015.
+multimodal elements like emojis or images. Integrating emojis and Balamurali, O., Sai, A. A., & Anand, S. (2024). Advancing tourism chatbots: Under-
+exploring image-text fusion models could enhance the detection of standing irony, sarcasm, and negative emotions of users. In 2024 15th international
+implicit sentiments, offering a more comprehensive understanding of conference on computing communication and networking technologies (pp. 1–7). http:
+customer experiences. Additionally, while we utilize general-domain
+Bian
+/
+,
+/
+Y
+d
+.
+x
+,
+.d
+Y
+o
+e
+i
+,
+. o
+R
+r
+.
+g
+,
+/
+Z
+1
+h
+0
+a
+.1
+n
+1
+g
+0
+,
+9
+J
+/
+.,
+I C
+&
+C C
+Y
+N
+an
+T
+,
+6 1
+X
+0
+.
+0
+(
+1
+2
+.
+0
+2
+2
+0
+2
+2
+)
+4
+.
+.1
+C
+0
+u
+7
+st
+2
+o
+3
+m
+88
+er
+3 .
+preference identification from
+irony corpora for transfer learning, the effectiveness of such transfer hotel online reviews: A neural network based fine-grained sentiment analysis.
+across high-context domains, such as tourism, remains limited. Certain Computers & Industrial Engineering, 172, Article 108648. http://dx.doi.org/10.1016/
+forms of domain-specific irony may still be overlooked by the model. j.cie.2022.108648.
+To address these limitations, future research could take several
+Celik
+in
+,
+v
+Y
+a
+.
+s
+,
+iv
+T
+e
+a l
+d
+o
+u
+,
+c
+M
+ta
+.
+l
+,
+c
+Y
+a
+i
+r
+l
+c
+d
+i
+i
+n
+r
+o
+im
+m
+,
+a
+O
+d
+.
+e
+,
+te
+K
+c
+a
+t
+r
+i
+a
+o
+b
+n
+a
+b
+ta
+a
+k
+se
+,
+d
+M
+u
+.,
+s i
+&
+ng
+A
+d
+c
+e
+h
+e
+a
+p
+r y
+tr
+a
+a
+,
+n
+U
+sf
+.
+e r
+R .
+l e
+(
+a
+2
+r
+0
+n
+2
+in
+0
+g
+) .
+w
+A
+it
+u
+h
+t o
+w
+m
+h
+a
+o
+t
+l
+e
+e
+d
+-
+promising directions. First, incorporating multilingual data — such as
+slide images. Pattern Recognition Letters, 133, 232–239. http://dx.doi.org/10.1016/
+Chinese — into the analysis would enable a deeper understanding of j.patrec.2020.03.011.
+14
+W. Liu et al. Tourism Management 112 (2026) 105272
+Chakravarthi, B. R., Soman, K., Ponnusamy, R., Kumaresan, P. K., Thamburaj, K. Jim, J. R., Talukder, M. A. R., Malakar, P., Kabir, M. M., Nur, K., & Mridha, M. F.
+P., McCrae, J. P., et al. (2021). Dravidianmultimodality: A dataset for multi- (2024). Recent advancements and challenges of NLP-based sentiment analysis: A
+modal sentiment analysis in tamil and malayalam. http://dx.doi.org/10.48550/ state-of-the-art review. Natural Language Processing Journal, Article 100059. http:
+arXiv.2106.04853, arXiv preprint arXiv:2106.04853. //dx.doi.org/10.1016/j.nlp.2024.100059.
+Charitha, N. S. L. S., Yasaswi, K., Rakesh, V., Varun, M., Yeswanth, M., & Kiran, J. Joshi, A., Bhattacharyya, P., & Carman, M. J. (2017). Automatic sarcasm detection: A
+S. (2023). Comparative study of algorithms for sentiment analysis on IMDB movie survey. ACM Computing Surveys, 50(5), 1–22. http://dx.doi.org/10.1145/3124420.
+reviews. In 2023 9th international conference on advanced computing and communica- Joshi, A., Sharma, V., & Bhattacharyya, P. (2015). Harnessing context incongruity for
+tion systems: vol. 1, (pp. 824–828). http://dx.doi.org/10.1109/ICACCS57279.2023. sarcasm detection. In Proceedings of the 53rd annual meeting of the Association for
+10113113. Computational Linguistics and the 7th international joint conference on natural language
+Chen, K., Zhang, Z., Long, J., & Zhang, H. (2016). Turning from TF-IDF to TF-IGM for processing (volume 2: short papers) (pp. 757–762). http://dx.doi.org/10.3115/v1/
+term weighting in text classification. Expert Systems with Applications, 66, 245–260. P15-2124.
+http://dx.doi.org/10.1016/j.eswa.2016.09.009. Kadli, P., & Vidyavathi, B. (2023). Cross domain hybrid feature fusion based sarcastic
+Cheng, W., & Chen, S. (2021). Sentiment analysis of financial texts based on attention opinion recognition over E-commerce reviews using adversarial transfer learning.
+mechanism of FinBERT and BiLSTM. In 2021 international conference on computer International Journal of Intelligent Engineering & Systems, 16(2), http://dx.doi.org/10.
+engineering and application (pp. 73–78). http://dx.doi.org/10.1109/ICCEA53728. 22266/ijies2023.0430.13.
+2021.00022. Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., Ye, Q., & Liu, T. Y. (2017).
+Choi, J., Jeong, B., Yoon, J., Coh, B. Y., & Lee, J. M. (2020). A novel approach to Lightgbm: A highly efficient gradient boosting decision tree. Advances in Neural
+evaluating the business potential of intellectual properties: A machine learning- Information Processing Systems, 30.
+based predictive analysis of patent lifetime. Computers & Industrial Engineering, 145, Khatun, M. E., & Rabeya, T. (2022). A machine learning approach for sentiment analysis
+Article 106544. http://dx.doi.org/10.1016/j.cie.2020.106544. of book reviews in bangla language. In 2022 6th international conference on trends in
+del Bosque, I. R., & Martín, H. S. (2008). Tourist satisfaction a cognitive-affective electronics and informatics (pp. 1178–1182). http://dx.doi.org/10.1109/ICOEI53556.
+model. Annals of Tourism Research, 35(2), 551–573. http://dx.doi.org/10.1016/j. 2022.9776752.
+annals.2008.02.006. Kim, Y. (2014). Convolutional neural networks for sentence classification. In Proceedings
+Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. (2019). Bert: Pre-training of of the 2014 conference on empirical methods in natural language processing (pp.
+deep bidirectional transformers for language understanding. In Proceedings of the 1746–1751). http://dx.doi.org/10.3115/v1/D14-1181.
+2019 conference of the North American chapter of the Association for Computational
+Kim, D., Seo, D., Cho, S., & Kang, P. (2019). Multi-co-training for document clas-
+Linguistics: human language technologies, volume 1 (long and short papers) (pp.
+sification using various document representations: TF–IDF, LDA, and Doc2Vec.
+4171–4186). http://dx.doi.org/10.18653/v1/N19-1423.
+Information Sciences, 477, 15–29. http://dx.doi.org/10.1016/j.ins.2018.10.006.
+Du,
+t
+B
+a
+.
+r
+,
+g e
+Z
+t
+h a
+d
+n
+e
+g
+te
+,
+c
+L
+ti
+.
+o
+,
+n
+T a
+f
+o
+ro
+,
+m
+D .,
+h y
+&
+p e
+Z
+r
+h
+sp
+a
+e
+n
+c
+g
+t
+,
+r a
+D
+l
+.
+im
+(2
+a
+0
+g
+1
+e
+3
+s
+)
+.
+.
+N
+U
+e
+n
+u
+s
+r
+u
+o
+p
+co
+er
+m
+v
+p
+is
+u
+e
+ti
+d
+n g
+t
+,
+r a
+1
+n
+2
+s
+0
+fe
+,
+r
+7
+l
+2
+ea
+–
+r
+8
+n
+2
+i
+.
+n g
+h t
+f
+t
+o
+p
+r
+:
+Kingma, D. P. (2014). Adam: A method for stochastic optimization. arXiv preprint
+arXiv:1412.6980.
+F
+G
+G
+e
+a
+e
+l
+e
+o
+d
+t
+,
+/
+o
+f
+m
+h
+o
+/
+M
+f
+a
+a
+r
+d
+,
+t
+.
+n
+h
+x
+s
+,
+,
+M
+h
+.
+e
+F
+d
+R
+o
+e
+.
+o
+A
+,
+r
+.
+n
+i
+t
+C
+.
+(
+S
+g
+o
+2
+M
+t
+i
+,
+r
+e
+n
+0
+g
+X
+,
+x
+g
+1
+/
+t
+.
+h
+5
+3
+,
+1
+a
+6
+m
+)
+0
+&
+.
+,
+(
+.
+o
+4
+T
+1
+P
+S
+v
+)
+0
+e
+u
+.
+,
+i
+,
+c
+1
+e
+n
+h
+8
+6
+&
+,
+r
+2
+n
+/
+e
+E
+–
+i
+j
+S
+v
+q
+.
+.
+8
+n
+i
+i
+u
+(
+9
+n
+e
+e
+2
+e
+w
+.
+h
+u
+s
+0
+a
+c
+h
+s
+2
+a
+o
+,
+.
+t
+4
+n
+t
+m
+I
+S
+p
+)
+d
+n
+.
+.
+:
+.
+/
+2
+a
+A
+(
+2
+/
+0
+p
+2
+0
+d
+1
+p
+0
+s
+2
+x
+t
+2
+l
+1
+4
+u
+.
+i
+.
+d
+c
+7
+0
+d
+a
+o
+1
+)
+8
+y
+.
+t
+i
+4
+.
+i
+.
+0
+o
+o
+o
+t
+R
+h
+5
+n
+f
+r
+e
+g
+6
+s
+l
+b
+A
+/
+a
+.
+e
+f
+s
+1
+t
+o
+r
+i
+i
+0
+a
+o
+t
+r
+-
+n
+.
+n
+b
+s
+1
+s
+e
+a
+1
+c
+h
+n
+s
+o
+4
+i
+e
+t
+n
+p
+5
+i
+d
+m
+t
+/
+r
+b
+2
+o
+s
+e
+e
+e
+l
+4
+n
+n
+t
+3
+c
+t
+w
+t
+o
+6
+i
+a
+e
+n
+m
+2
+n
+e
+f
+5
+a
+e
+e
+n
+6
+r
+l
+n
+y
+e
+.
+t
+c
+2
+n
+s
+u
+i
+a
+c
+4
+s
+s
+e
+n
+3
+.
+t
+a
+o
+6
+C
+(
+l
+p
+m
+2
+o
+y
+p
+7
+m
+s
+e
+.
+i
+4
+r
+s
+m
+.
+1
+s
+a
+u
+0
+e
+l
+n
+6
+g
+n
+i
+–
+o
+c
+t
+1
+i
+a
+r
+m
+i
+1
+t
+t
+i
+1
+h
+o
+en
+n
+)
+m
+.
+s
+t
+L
+L
+a
+ee
+d
+,
+h
+A
+1
+e
+a
+Y
+m
+9
+r
+.
+(
+s
+i
+o
+3
+,
+t
+K
+t
+u
+)
+R
+i
+,
+.
+d
+o
+,
+.
+y
+n
+3
+L
+(
+s
+0
+2
+,
+e
+i
+8
+n
+0
+e
+–
+s
+,
+0
+3
+a
+t
+9
+h
+C
+t
+3
+)
+i
+e
+.
+1
+s
+.
+f
+.
+K
+S
+a
+h
+h
+e
+c
+.
+o
+,
+t
+r
+t
+t
+i
+v
+t
+e
+o
+L
+p
+i
+l
+n
+e
+c
+: /
+e
+e
+,
+i
+/
+n
+,
+d
+q
+a
+d
+S
+x
+u
+n
+u
+.
+.
+a
+d
+s
+d
+l
+K
+t
+o
+i
+r
+t
+.
+l
+y
+i
+y
+,
+o
+.
+.
+o
+,
+y
+&
+r
+a
+M
+e
+g
+l
+m
+/
+t
+B
+a
+y
+1
+o
+n
+a
+.
+0
+a
+t
+b
+i
+.
+g
+i
+o
+J
+1
+n
+i
+o
+n
+n
+1
+,
+u
+a
+g
+0
+r
+B
+l
+8
+n
+S
+.
+s
+/
+a
+e
+a
+0
+l
+J
+r
+t
+v
+9
+.
+i
+o
+i
+s
+6
+c
+(
+f
+f
+0
+e
+a
+2
+4
+c
+0
+B
+Q
+t
+5
+0
+u
+i
+u
+2
+o
+8
+s
+a
+n
+0
+i
+)
+n
+.
+l
+,
+9
+i
+e
+t
+1
+F
+a
+s
+y
+s
+0
+n
+e
+:
+9
+s
+d
+A
+R
+t
+5
+i
+n
+e
+b
+v
+5
+s
+e
+a
+3
+e
+I
+h
+l
+2
+a
+n
+s
+a
+r
+c
+0
+t
+c
+v
+e
+a
+.
+h
+r
+i
+p
+n
+o
+,
+e
+a
+u
+s
+6
+t
+r
+i
+a
+1
+o
+a
+l
+n
+(
+n
+1
+a
+i
+d
+n
+)
+l
+,
+t
+p
+e
+J
+5
+o
+n
+a
+u
+t
+6
+t
+r
+i
+r
+–
+o
+o
+n
+6
+n
+n
+a
+4
+s
+s
+l
+:
+,
+.
+’
+Gerr
+a
+6
+ig
+n
+1
+,
+d
+,
+R
+4
+o
+3
+.
+n
+–
+l
+J
+i
+5
+.
+n
+,
+4
+e
+.
+&
+c
+h
+u
+t
+G
+s
+t
+t
+p
+o
+o
+:
+l
+/
+m
+d
+/
+v
+e
+d
+a
+r
+x
+r
+.
+r
+g
+d
+a
+,
+o
+ti
+i
+Y
+n
+.o
+.
+g
+r
+s
+(
+g
+2
+f
+/
+o
+0
+1
+r
+0
+0
+0
+h
+.1
+)
+o
+.
+0
+t e
+1
+A
+l
+6
+s
+d
+/
+d
+-
+j .
+i
+A
+t
+t
+o
+i
+n
+v
+u
+e
+r
+e
+m
+m
+e
+a
+f
+p
+f
+n
+i
+e
+r
+.
+c
+2
+ic
+t
+0
+s
+a
+1
+l
+i
+6
+a
+n
+.
+n
+1
+a
+t
+2
+h
+l
+.
+y
+0
+e
+s
+2
+i
+p
+s
+2
+.
+e
+.
+r
+T
+c
+o
+e
+u
+p
+r
+t
+i
+i
+s
+o
+m
+n
+M
+o
+a
+f
+n
+s
+a
+a
+g
+r
+e
+c
+m
+a
+e
+sm
+nt
+:
+,
+Li, H
+h
+an
+t
+.,
+t
+a
+p
+l
+G
+:
+y
+/
+s
+a
+/
+i
+o
+d
+s.
+,
+x .
+A
+d
+H
+o
+n
+.,
+i
+n
+.
+a
+o
+&
+l
+r
+s
+g /
+S
+o
+1
+o
+f
+0
+n
+.
+T
+g
+1
+o
+,
+0
+u
+1
+H
+r
+6
+is
+.
+/
+m
+j
+(
+. j
+2
+b
+R
+0
+u
+e
+2
+s
+s
+3
+r
+e
+e
+a
+).
+s
+r
+.
+c
+2
+T
+h
+0
+,
+o
+0
+u
+1
+6
+r
+0
+.
+i
+0
+s
+3
+m
+5
+,
+. 0
+A
+f
+0
+r
+o
+9
+t
+r
+i
+.
+e
+c
+c
+le
+a st
+1
+i
+0
+n
+3
+g
+6 6
+w
+7
+i
+.
+t h
+h t
+g
+tp
+ra
+:/
+n
+/
+u
+d
+la
+x
+r
+.d o
+se
+i.
+n
+o
+t
+r
+i
+g
+m
+/1
+en
+0
+t
+.
+Situational disparity and echoic mention. Metaphor and Symbol, 15(4), 197–208.
+Li, J
+1
+.,
+0
+H
+16
+u
+/
+a
+j
+n
+.a
+g
+n
+,
+n
+Y
+a
+.,
+l s
+L
+.2
+u
+0
+,
+2
+Y
+3
+.,
+. 1
+W
+03
+a
+6
+n
+6
+g
+7
+,
+.
+L., Ren, Y., & Chen, R. (2024). Sentiment analysis using
+Gold
+h
+r
+i
+e
+n
+t
+g
+t
+,
+p
+u
+P
+:
+l
+/
+a
+.
+/
+t
+R
+d
+io
+.
+x
+,
+n
+.d
+M
+:
+o
+r
+c
+i
+e
+R
+.o
+a
+a
+r
+p
+e
+g
+p
+,
+/
+r
+1
+K
+a
+0
+i
+.
+s
+,
+.
+a
+1
+R
+l
+2
+a
+0
+a
+m
+7
+n
+e
+/
+d
+l
+S
+,
+1
+s
+W
+u
+5
+p
+3
+.,
+p
+2
+r
+&
+7
+e
+8
+s
+G
+6
+si
+r
+8
+o
+o
+M
+n
+ss
+S
+,
+o
+1
+f
+J
+5
+.
+n
+0
+J
+e
+4
+.
+g
+_
+(
+1
+a
+2
+.
+t
+0
+iv
+0
+e
+8 )
+e
+.
+m
+T
+o
+h
+t
+e
+i o
+n
+n
+e
+.
+u
+B
+ra
+io
+l
+l
+b
+og
+a
+i
+s
+c
+e
+a
+s
+l
+o
+P
+f
+s y
+e
+c
+m
+h
+o
+ia
+t
+t
+i
+r
+o
+y
+n
+,
+E
+ba
+-c
+s
+o
+e
+m
+d
+m
+m
+e
+o
+r
+d
+c
+e
+e
+l .
+re
+C
+v
+o
+i
+m
+ew
+pu t
+k
+er
+e
+s
+y
+,
+w
+M
+o
+a
+rd
+te
+-
+r
+g
+i
+e
+a
+n
+ls
+e r
+a
+a
+n
+t
+d
+e d
+C o
+im
+nt
+a
+in
+g
+u
+e
+a ,
+w
+8
+i
+0
+th
+(1 )
+a
+, 1
+h
+5
+y
+8
+br
+1
+i
+–
+d
+1 5
+m
+9
+a
+9
+c
+.
+h
+h
+in
+tt
+e
+p :/
+le
+/
+a
+d
+r
+x
+n
+.
+i
+d
+n
+o
+g
+i
+-
+.
+63(6), 577–586. http://dx.doi.org/10.1016/j.biopsych.2007.05.031.
+org/10.32604/cmc.2024.052666.
+G
+G
+o
+u
+o
+an
+s
+R
+s
+,
+e
+e
+s
+X
+n
+e
+s
+.
+a
+,
+,
+r
+C
+c
+C
+h
+a
+.
+,
+o
+(
+2
+,
+2
+7
+J
+0
+(
+.
+0
+,
+2
+0
+)
+Z
+)
+,
+h
+.
+3
+a
+T
+0
+n
+o
+1
+g
+u
+–
+,
+r
+3
+H
+i
+2
+sm
+.
+1
+,
+.
+C
+i
+h
+n
+a
+t
+o
+f
+t
+o
+p
+,
+r
+:
+B
+m
+/
+.
+/
+,
+a
+d
+t
+&
+x
+io
+. d
+n
+L
+o
+iu
+i
+a
+.
+,
+n
+o r
+d
+B
+g
+.
+/
+p
+(
+1
+l
+2
+e
+0
+0
+a
+.1
+s
+2
+u
+0
+5
+r
+1
+)
+e
+.
+6 /
+M
+m
+S
+I
+o
+0
+A
+t
+1
+i
+N
+v
+6
+:
+a
+0
+t
+-
+M
+i
+7
+o
+3
+u
+n
+8
+l
+.
+t
+3
+i
+A
+-
+(
+h
+9
+n
+e
+9
+n
+a
+)
+a
+d
+0
+l s
+0
+i
+0
+n
+o
+6
+c
+f
+o
+7
+T
+n
+-
+o
+5
+g
+u
+.
+r
+r
+u
+i
+i
+s
+t
+m
+y
+Li, R
+m
+h
+.
+e
+,
+i
+t
+n
+e
+i
+L
+r
+n
+i
+o
+,
+g
+g e
+Y
+o
+n
+.
+f
+e i
+Q
+o
+ty
+n
+.,
+l
+a
+in
+R
+n
+e
+d
+u a
+i
+r
+n
+t
+e
+s
+,
+v
+i
+i
+W
+n
+ew
+f
+.
+l u
+s
+e
+Q
+n
+o
+.
+c
+,
+f
+in
+Z
+p
+g
+e
+h
+e
+a
+f
+r
+a
+n
+-
+c
+g
+to
+t
+,
+o
+-p
+r
+S
+s
+e
+.
+.
+e
+T
+r
+N
+o
+.
+a
+u
+,
+c
+ri
+c
+&
+s
+o
+m
+m
+W
+M
+m
+a
+a
+o
+n
+n
+d
+g
+a
+a
+,
+g
+ti
+e
+M
+o
+m
+n
+.
+e
+s
+n
+:
+Y
+t,
+.
+C
+9
+u
+(
+6
+s
+2
+,
+t
+0
+o
+A
+2
+m
+r
+3
+t
+e
+)
+i
+r
+.
+c le
+S
+e m
+e
+1
+n
+o
+0
+t
+t
+i
+4
+m
+i
+7
+o
+0
+e
+n
+n
+4
+a
+t
+l
+.
+aware attention network with transfer learning for sarcasm detection. Expert
+http://dx.doi.org/10.1016/j.tourman.2022.104704.
+Systems with Applications, 263, Article 125702. http://dx.doi.org/10.1016/j.eswa.
+Li, H., Yu, B. X., Li, G., & Gao, H. (2023). Restaurant survival prediction using
+customer-generated content: An aspect-based sentiment analysis of online reviews.
+2024.125702.
+Guan, X., Cao, J., Zhang, H., Cao, B., & Liu, B. (2025). MIAN: Multi-head incongruity
+Tourism Management, 96, Article 104707. http://dx.doi.org/10.1016/j.tourman.
+aware attention network with transfer learning for sarcasm detection. Expert Systems
+2022.104707.
+with Applications, [ISSN: 0957-4174] 263, Article 125702. http://dx.doi.org/10. Liang, Y., Meng, F., Zhang, J., Chen, Y., Xu, J., & Zhou, J. (2021). An iterative multi-
+1016/j.eswa.2024.125702. knowledge transfer network for aspect-based sentiment analysis. In Findings of the
+Guo, X., Li, B., Yu, H., & Miao, C. (2021). Latent-optimized adversarial neural transfer
+Association for Computational Linguistics: EMNLP 2021 (pp. 1768–1780). Association
+for sarcasm detection. In Proceedings of the 2021 conference of the North American
+for Computational Linguistics, http://dx.doi.org/10.18653/v1/2021.findings-emnlp.
+chapter of the Association for Computational Linguistics: human language technologies
+152.
+(pp. 5394–5407). http://dx.doi.org/10.18653/v1/2021.naacl-main.425. Liu, Y., Huang, K., Bao, J., & Chen, K. (2019). Listen to the voices from home: An
+Han, H., & Jeong, C. (2013). Multi-dimensions of patrons’ emotional experiences in analysis of Chinese tourists’ sentiments regarding Australian destinations. Tourism
+upscale restaurants and their role in loyalty formation: Emotion scale improvement. Management, 71, 337–347. http://dx.doi.org/10.1016/j.tourman.2018.10.004.
+International Journal of Hospitality Management, 32, 59–70. http://dx.doi.org/10. Lujun, S., Yang, Q., Swanson, S., & Chen, N. (2021). The impact of online reviews
+1016/j.ijhm.2012.04.004. on destination trust and travel intention: The moderating role of online review
+He, Y., Feng, J., Ding, G., Guo, Y., & He, T. (2025). Domain knowledge boosted trustworthiness. Journal of Vacation Marketing, 28, Article 135676672110632. http:
+adaptation: Leveraging vision-language models for multi-source domain adaptation. //dx.doi.org/10.1177/13567667211063207.
+Neurocomputing, 619, Article 129114. http://dx.doi.org/10.1016/j.neucom.2024. Maital, S. (1999). ‘‘The experience economy: Work is theatre & every business a stage"
+129114. by B. Joseph Pine II and James H. Gilmore (Book Review). Sloan Management
+Hosany, S., Hunter-Jones, P., & McCabe, S. (2020). Emotions in tourist experiences: Review, 40(4), 93.
+Advancing our conceptual, methodological and empirical understanding. Journal Naseem, U., Razzak, I., Musial, K., & Imran, M. (2020). Transformer based deep
+of Destination Marketing & Management, 16, Article 100444. http://dx.doi.org/10. intelligent contextual embedding for Twitter sentiment analysis. Future Generation
+1016/j.jdmm.2020.100444. Computer Systems, 113, 58–69. http://dx.doi.org/10.1016/j.future.2020.06.050.
+Hu, X., & Liu, H. (2012). Text analytics in social media. In C. C. Aggarwal, & Neidhardt, J., Rümmele, N., & Werthner, H. (2017). Predicting happiness: user inter-
+C. Zhai (Eds.), Mining text data (pp. 385–414). Boston, MA: Springer US, http: actions and sentiment analysis in an online travel forum. Information Technology &
+//dx.doi.org/10.1007/978-1-4614-3223-4_12. Tourism, 17, 101–119. http://dx.doi.org/10.1007/s40558-017-0079-2.
+Ivanko, S. L., & Pexman, P. M. (2003). Context incongruity and irony processing. Pan, S. J., & Yang, Q. (2010). A survey on transfer learning. IEEE Transactions on
+Discourse Processes, 35(3), 241–279. http://dx.doi.org/10.1207/S15326950DP3503_ Knowledge and Data Engineering, 22(10), 1345–1359. http://dx.doi.org/10.1109/
+2. TKDE.2009.191.
+Jain, P. K., Pamula, R., & Yekun, E. A. (2022). A multi-label ensemble predicting model Pang, B., & Lee, L. (2008). Opinion mining and sentiment analysis. Foundations
+to service recommendation from social media contents. Journal of Supercomputing, and Trends® in Information Retrieval, 2(1–2), 1–135. http://dx.doi.org/10.1561/
+78(4), 5203–5220. http://dx.doi.org/10.1007/s11227-021-04087-7. 1500000011.
+15
+W. Liu et al. Tourism Management 112 (2026) 105272
+Paolanti, M., Mancini, A., Frontoni, E., Felicetti, A., Marinelli, L., Marcheggiani, E., Wankhade, M., Rao, A. C. S., & Kulkarni, C. (2022). A survey on sentiment anal-
+& Pierdicca, R. (2021). Tourism destination management using sentiment analysis ysis methods, applications, and challenges. Artificial Intelligence Review, 55(7),
+and geo-location information: a deep learning approach. Information Technology & 5731–5780. http://dx.doi.org/10.1007/s10462-022-10144-1.
+Tourism, 23, 241–264. http://dx.doi.org/10.1007/s40558-021-00196-4. Xiang, Z., Du, Q., Ma, Y., & Fan, W. (2017). A comparative analysis of major online
+Papapicco, C., & Mininni, G. (2020). Twitter culture: irony comes faster than tourist review platforms: Implications for social media analytics in hospitality and tourism.
+mobility. Journal of Tourism and Cultural Change, 18(5), 545–556. http://dx.doi. Tourism Management, 58, 51–65. http://dx.doi.org/10.1016/j.tourman.2016.10.001.
+org/10.1080/14766825.2019.1611839. Xu, Q. A., Chang, V., & Jayne, C. (2022). A systematic review of social media-based
+Polyzos, E., Fotiadis, A., & Huan, T. C. (2023). From heroes to scoundrels: Exploring the sentiment analysis: Emerging trends and challenges. Decision Analytics Journal, 3,
+effects of online campaigns celebrating frontline workers on COVID-19 outcomes. Article 100073. http://dx.doi.org/10.1016/j.dajour.2022.100073.
+Technology in Society, 72, Article 102198. http://dx.doi.org/10.1016/j.techsoc.2023. Ying, W., & Yufan, H. (2023). Research on sentiment analysis of travel reviews based on
+102198. Word2Vec and RNN. In 2023 IEEE international conference on electrical, automation
+Polyzos, E., Fotiadis, A., & Huan, T. C. (2024). The asymmetric impact of Twitter and computer engineering (pp. 133–137). http://dx.doi.org/10.1109/ICEACE60673.
+sentiment and emotions: Impulse response analysis on European tourism firms using 2023.10442629.
+micro-data. Tourism Management, 104, Article 104909. http://dx.doi.org/10.1016/ Yoon, Y., & Uysal, M. (2005). An examination of the effects of motivation and
+j.tourman.2024.104909. satisfaction on destination loyalty: a structural model. Tourism Management, 26(1),
+Prayag, G., Hosany, S., & Odeh, K. (2013). The role of tourists’ emotional experiences 45–56. http://dx.doi.org/10.1016/j.tourman.2003.08.016.
+and satisfaction in understanding behavioral intentions. Journal of Destination Yuksel, A., Yuksel, F., & Bilim, Y. (2010). Destination attachment: Effects on customer
+Marketing & Management, 2(2), 118–127. http://dx.doi.org/10.1016/j.jdmm.2013. satisfaction and cognitive, affective and conative loyalty. Tourism Management,
+05.001. 31(2), 274–284. http://dx.doi.org/10.1016/j.tourman.2009.03.007.
+Pu, X., Wu, G., & Yuan, C. (2019). Exploring overall opinions for document level Zhang, T., & Guo, J. (2021). Research on Chinese sentiment analysis based on bi-
+sentiment classification with structural SVM. Multimedia Systems, 25, 21–33. http: LSTM networks. In 2021 IEEE/aCIS 20th international fall conference on computer and
+//dx.doi.org/10.1007/s00530-017-0550-0. information science (pp. 198–203). http://dx.doi.org/10.1109/ICISFall51598.2021.
+Ray, B., Garain, A., & Sarkar, R. (2021). An ensemble-based hotel recommender system 9627460.
+using sentiment analysis and aspect categorization of hotel reviews. Applied Soft Zhang, S., Zhang, X., Chan, J., & Rosso, P. (2019). Irony detection via sentiment-
+Computing, 98, Article 106935. http://dx.doi.org/10.1016/j.asoc.2020.106935. based transfer learning. Information Processing & Management, 56(5), 1633–1644.
+Rialp-Criado, A., Rialp-Criado, J., et al. (2018). Examining the impact of managerial http://dx.doi.org/10.1016/j.ipm.2019.04.006.
+involvement with social media on exporting firm performance. International Business
+Review, 27(2), 355–366. http://dx.doi.org/10.1016/j.ibusrev.2017.09.003.
+Sarmento, L., Carvalho, P., Silva, M. J., & De Oliveira, E. (2009). Automatic creation
+of a reference corpus for political opinion mining in user-generated content. In Wenhui Liu is currently a graduate student majoring in
+Proceedings of the 1st international CIKM workshop on topic-sentiment analysis for Management Science and Engineering at the School of Man-
+mass opinion (pp. 29–36). http://dx.doi.org/10.1145/1651461.1651468. agement and Economics, Tianjin University. She graduated
+Sharma, A., Adhikary, A., & Borah, S. B. (2020). Covid-19’s impact on supply chain from the School of Management and Economics at Tianjin
+decisions: Strategic insights from NASDAQ 100 firms using Twitter data. Journal of University in 2023 with a Bachelor’s degree in Management,
+Business Research, 117, 443–449. http://dx.doi.org/10.1016/j.jbusres.2020.05.035. majoring in Confidentiality Management. Her research inter-
+Sharma, A., Park, S., & Nicolau, J. L. (2020). Testing loss aversion and diminishing ests include data mining and machine learning, text analysis,
+sensitivity in review sentiment. Tourism Management, 77, Article 104020. http: and the application of large language models.
+//dx.doi.org/10.1016/j.tourman.2019.104020.
+Shoval, N., McKercher, B., Ng, E., & Birenboim, A. (2011). Hotel location and tourist
+activity in cities. Annals of Tourism Research, 38(4), 1594–1612. http://dx.doi.org/
+10.1016/j.annals.2011.02.007.
+Sousa, M. G., Sakiyama, K., de Souza Rodrigues, L., Moraes, P. H., Fernandes, E. R., & Dr. Likang Wu is a lecturer/assistant professor of the Col-
+Matsubara, E. T. (2019). BERT for stock market sentiment analysis. In 2019 IEEE lege of Management and Economics at Tianjin University,
+31st international conference on tools with artificial intelligence (pp. 1597–1601). IEEE, China. He received his Ph.D. degree from University of
+http://dx.doi.org/10.1109/ICTAI.2019.00231. Science and Technology of China (USTC) in 2024. His
+Su, J., Shirab, J. S., & Matwin, S. (2011). Large scale text classification using research interests are in the broad areas of Data Mining
+semi-supervised multinomial naive bayes. In Proceedings of the 28th international and Artificial Intelligence, with a particular focus on Large
+conference on machine learning (pp. 97–104). Language Models and Decision Systems. He has published
+Tian, Y. X., & Zhang, C. (2023). An end-to-end deep learning model for solving data- innovative papers in top-tier journals and conferences such
+driven newsvendor problem with accessibility to textual review data. International as DSS, TKDE, TKDD, Pattern Recognition, IP&M, KDD,
+Journal of Production Economics, 265, Article 109016. http://dx.doi.org/10.1016/j. WWW, AAAI, IJCAI, SIGIR, EMNLP, and CIKM. He serves
+ijpe.2023.109016. as top-tier conference program committee members (e.g.,
+Tokarchuk, O., Barr, J. C., & Cozzio, C. (2022). How much is too much? Es- ICLR, NeurIPS, KDD, WWW, AAAI, IJCAI, SIGIR, etc.), and
+timating tourism carrying capacity in urban context using sentiment analysis. journal reviewers (e.g., IJOC, IP&M, TPAMI, TKDE, TMC,
+Tourism Management, 91, Article 104522. http://dx.doi.org/10.1016/j.tourman. TKDD, TOIS, TNNLS, etc.).
+2022.104522.
+T
+T
+V
+W
+s
+u
+a
+a
+a
+r
+s
+n
+i
+n
+w
+,
+o
+8
+s
+2
+&
+i
+p
+o
+g
+e
+n
+e
+a
+f
+n
+C
+0
+1
+o
+,
+y
+t
+m
+n
+e
+s
+l
+,
+(
+.
+,
+P
+T
+i
+4
+t
+Z
+r
+i
+n
+a
+F
+A
+s
+,
+o
+n
+o
+P
+)
+.
+n
+e
+.
+,
+u
+,
+a
+l
+r
+A
+.
+,
+o
+o
+t
+t
+r
+t
+3
+i
+n
+.
+h
+i
+C
+H
+i
+s
+i
+D
+c
+,
+c
+o
+s
+u
+1
+o
+h
+m
+l
+u
+n
+.
+t
+S
+5
+k
+e
+t
+,
+e
+r
+o
+a
+a
+e
+h
+h
+–
+a
+n
+r
+n
+l
+&
+l
+1
+R
+a
+3
+i
+v
+i
+,
+g
+n
+e
+z
+0
+c
+e
+r
+4
+e
+K
+,
+o
+e
+n
+,
+L
+e
+s
+4
+l
+6
+e
+e
+n
+.
+v
+t
+i
+1
+.
+,
+W
+d
+t
+a
+a
+I
+r
+f
+i
+t
+2
+.
+e
+,
+e
+t
+r
+e
+H
+h
+m
+.
+i
+r
+c
+2
+w
+c
+N
+o
+t
+e
+(
+u
+h
+.
+i
+t
+a
+2
+n
+n
+J
+s
+s
+,
+p
+.
+n
+,
+h
+i
+0
+.
+c
+E
+:
+Y
+o
+,
+w
+,
+e
+/
+t
+1
+P
+f
+m
+n
+t
+.
+r
+/
+7
+M
+&
+i
+a
+p
+o
+o
+s
+t
+d
+p
+H
+r
+)
+:
+:
+h
+n
+m
+i
+.
+x
+/
+.
+m
+r
+.
+L
+A
+,
+/
+.
+i
+n
+L
+r
+d
+c
+a
+A
+i
+d
+&
+e
+u
+a
+e
+a
+.
+o
+r
+c
+x
+t
+v
+u
+s
+,
+l
+-
+i
+t
+o
+(
+.
+L
+C
+s
+i
+.
+r
+e
+d
+2
+N
+o
+e
+m
+o
+I
+a
+a
+h
+n
+n
+o
+0
+w
+r
+c
+l
+s
+.
+e
+t
+p
+s
+g
+,
+i
+0
+t
+i
+i
+.
+i
+i
+n
+a
+a
+r
+/
+o
+g
+o
+n
+3
+U
+h
+e
+t
+,
+r
+1
+h
+n
+r
+f
+)
+i
+e
+s
+a
+s
+o
+g
+0
+t
+W
+o
+.
+,
+z
+l
+s
+t
+r
+/
+p
+.
+n
+i
+,
+k
+i
+m
+M
+1
+.
+v
+1
+s
+B
+f
+.
+o
+1
+u
+3
+e
+K
+0
+a
+.
+e
+r
+4
+A
+(
+l
+a
+t
+.
+e
+a
+.
+n
+s
+2
+i
+1
+(
+5
+l
+C
+i
+o
+s
+t
+(
+l
+e
+2
+)
+t
+0
+u
+/
+u
+n
+2
+M
+,
+,
+s
+0
+1
+9
+r
+d
+0
+s
+y
+J
+i
+2
+6
+A
+p
+4
+y
+o
+2
+n
+.
+a
+2
+r
+/
+T
+4
+,
+r
+u
+0
+g
+o
+n
+j
+o
+)
+t
+r
+0
+J
+)
+.
+c
+i
+.
+a
+d
+n
+t
+c
+.
+1
+o
+p
+e
+n
+o
+n
+l
+s
+2
+I
+n
+I
+r
+e
+e
+u
+W
+s
+s
+s
+m
+m
+a
+.
+e
+e
+a
+e
+i
+r
+9
+i
+n
+s
+n
+1
+m
+e
+d
+p
+c
+p
+s
+4
+,
+g
+t
+e
+i
+0
+t
+a
+.
+r
+i
+4
+b
+a
+i
+L
+o
+o
+c
+0
+s
+m
+n
+o
+0
+a
+I
+.
+n
+v
+t
+y
+0
+,
+n
+.
+1
+n
+e
+s
+s
+i
+2
+6
+a
+n
+t
+G
+o
+3
+n
+d
+e
+0
+n
+4
+g
+o
+P
+f
+.
+t
+o
+m
+2
+.
+d
+.
+n
+r
+c
+m
+t
+0
+s
+u
+o
+r
+e
+h
+T
+X
+i
+c
+.
+s
+e
+I
+x
+t
+(
+t
+1
+o
+e
+n
+e
+i
+z
+t
+i
+p
+t
+u
+a
+0
+e
+c
+r
+p
+f
+,
+p
+o
+d
+o
+r
+-
+s
+i
+4
+:
+g
+A
+i
+s
+u
+.
+/
+r
+i
+h
+s
+1
+n
+m
+m
+e
+/
+m
+m
+.
+o
+6
+2
+g
+n
+d
+a
+:
+n
+N
+0
+s
+2
+m
+e
+x
+t
+M
+g
+0
+.
+I
+r
+.
+i
+.
+,
+o
+a
+n
+o
+s
+d
+a
+0
+a
+h
+n
+r
+f
+f
+t
+o
+K
+–
+n
+e
+i
+e
+u
+6
+i
+z
+a
+r
+a
+d
+t
+.
+.
+S
+a
+0
+h
+e
+o
+i
+g
+s
+y
+t
+A
+n
+e
+1
+r
+e
+e
+i
+t
+s
+g
+m
+o
+c
+0
+r
+n
+t
+r
+/
+e
+e
+a
+3
+n
+,
+)
+n
+e
+m
+1
+.
+v
+1
+a
+n
+L
+o
+o
+0
+e
+s
+s
+l
+t
+.
+s
+f
+f
+t
+l
+.
+,
+,
+,
+D
+v
+C
+a
+i
+h
+c
+I
+K
+l
+S
+D
+u
+n
+N
+o
+g
+y
+e
+a
+h
+n
+a
+r
+t
+t
+n
+r
+e
+s
+F
+s
+.
+i
+t
+o
+i
+e
+s
+t
+n
+o
+m
+a
+f
+O
+r
+w
+p
+e
+i
+H
+e
+n
+,
+a
+e
+t
+m
+R
+u
+e
+r
+y
+l
+.
+s
+a
+o
+I
+e
+e
+n
+b
+M
+t
+E
+r
+s
+H
+n
+n
+d
+o
+t
+l
+y
+,
+E
+i
+c
+S
+i
+g
+g
+e
+f
+s
+n
+E
+e
+A
+a
+e
+k
+h
+C
+c
+S
+i
+n
+C
+e
+e
+s
+J
+l
+a
+T
+o
+p
+c
+d
+u
+d
+o
+M
+n
+i
+m
+a
+r
+r
+Z
+e
+d
+u
+o
+a
+d
+n
+m
+n
+h
+E
+e
+p
+r
+n
+c
+T
+n
+c
+s
+D
+a
+c
+u
+e
+a
+o
+s
+e
+r
+o
+a
+a
+e
+o
+s
+t
+r
+a
+a
+d
+a
+s
+l
+n
+e
+d
+c
+t
+a
+n
+o
+a
+t
+t
+a
+r
+o
+i
+i
+t
+n
+i
+s
+n
+c
+e
+t
+o
+o
+m
+o
+h
+a
+a
+E
+i
+d
+c
+g
+n
+n
+a
+n
+a
+c
+e
+n
+i
+s
+t
+,
+n
+s
+t
+c
+m
+i
+,
+T
+g
+e
+i
+v
+s
+C
+o
+e
+i
+A
+o
+1
+s
+,
+i
+e
+n
+p
+o
+n
+n
+c
+u
+n
+0
+d
+C
+e
+r
+h
+m
+T
+s
+i
+c
+0
+o
+M
+n
+e
+n
+h
+S
+i
+t
+p
+f
+r
+a
+o
+g
+h
+p
+y
+o
+e
+i
+u
+n
+,
+n
+n
+a
+e
+s
+a
+l
+s
+T
+o
+t
+j
+t
+s
+s
+g
+p
+i
+a
+i
+e
+r
+o
+P
+g
+K
+n
+n
+,
+e
+a
+l
+m
+D
+r
+y
+h
+g
+n
+g
+r
+I
+n
+E
+s
+o
+e
+.
+s
+,
+U
+w
+o
+s
+D
+o
+,
+c
+E
+r
+a
+w
+i
+n
+i
+f
+i
+i
+n
+.
+I
+E
+c
+M
+t
+t
+s
+i
+E
+l
+h
+h
+t
+i
+d
+C
+v
+e
+r
+i
+o
+E
+T
+a
+m
+e
+e
+d
+e
+o
+h
+t
+n
+n
+E
+r
+r
+f
+g
+h
+g
+n
+i
+a
+e
+s
+,
+n
+r
+e
+e
+s
+n
+i
+m
+S
+r
+e
+a
+a
+t
+T
+e
+u
+s
+e
+y
+C
+n
+D
+o
+a
+e
+a
+r
+p
+.
+(
+o
+a
+d
+n
+n
+d
+c
+i
+f
+U
+p
+s
+l
+n
+r
+t
+a
+H
+l
+c
+o
+o
+j
+i
+S
+C
+s
+e
+g
+I
+o
+o
+o
+i
+r
+m
+T
+a
+n
+g
+y
+e
+s
+u
+n
+t
+v
+c
+f
+C
+e
+m
+b
+r
+s
+o
+e
+t
+S
+)
+e
+t
+n
+r
+i
+r
+r
+o
+e
+o
+h
+,
+o
+e
+y
+r
+y
+a
+m
+n
+f
+n
+n
+s
+e
+n
+s
+l
+H
+e
+t
+t
+s
+e
+M
+a
+s
+f
+.
+e
+E
+a
+U
+e
+t
+r
+t
+a
+m
+i
+r
+i
+f
+a
+o
+v
+H
+n
+c
+n
+o
+o
+e
+c
+n
+o
+m
+s
+s
+i
+i
+h
+n
+n
+d
+e
+-
+-
+-
+:
+,
+,
+Wan
+1
+o
+c
+g
+o
+f
+0
+,
+m
+1
+Z
+w
+6
+p
+.
+e
+,
+u
+/
+i
+t
+j
+W
+b
+.
+e
+a
+o
+r
+a
+n
+n
+n
+n
+c
+g
+o
+e
+a
+,
+t
+m
+l
+w
+e
+M
+.
+m
+o
+2
+.
+r
+,
+0
+e
+k
+n
+2
+S
+,
+h
+t
+2
+s
+e
+e
+.
+l
+1
+n
+e
+b
+0
+c
+,
+a
+t
+0
+s
+H
+r
+0
+e
+o
+.
+6
+d
+n
+,
+4
+i
+&
+c
+o
+.
+n
+H
+a n
+a
+T
+d
+n
+e
+,
+x
+a
+t
+Y
+u
+C
+.
+t
+N
+o
+(
+m
+N
+20
+a
+2
+m
+ti
+2
+o
+o
+)
+n
+d
+.
+e
+A
+(
+l
+p
+.
+p
+p
+p
+I
+.
+n
+l i c
+2
+2
+a
+2
+0
+t
+3
+i
+2
+o
+–
+2
+n
+2 2
+i
+o
+n
+8
+f
+t
+)
+e
+s
+.
+r
+e
+n
+n
+h
+a
+t
+t
+t
+i
+t
+i
+m
+p
+on
+:
+e
+/
+a
+n
+/
+l
+t
+d
+c
+x
+c
+o
+.
+l
+d
+n
+a
+o
+s
+fe
+s
+i
+r
+i
+.
+f
+o
+e
+i
+n
+r
+c
+g
+c
+a
+e
+/
+t i
+1
+o
+o
+0
+n
+n
+.
+S
+S
+W
+y
+IG
+W
+st
+K
+e
+W
+D
+m
+D
+s
+a
+,
+,
+n
+A
+d
+A
+C
+C
+I
+M
+E
+M
+E
+W
+E
+T
+S
+I
+r
+C
+D
+a
+D
+M
+n
+M
+s
+,
+a
+A
+.
+ct
+C
+io
+M
+n s
+S IG
+o
+I
+n
+R ,
+t
+A
+h
+C
+e
+M
+W
+C
+e
+I
+b
+K
+,
+M
+O
+, I
+m
+JC
+eg
+A
+a
+I,
+,
+A
+A
+A
+C
+A
+M
+I,
+1109/ICCNEA57056.2022.00057.
+16

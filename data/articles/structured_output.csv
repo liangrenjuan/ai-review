@@ -1,0 +1,195 @@
+﻿File ID,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15,Q16,Q17,Q18,Q19,Q20,Q21,Q22,Q23,Q24,Q25,Q26,Q27,Q28
+Kwon - 2026 - Aspect-based sentiment analysis through zero-shot text classification and impact-asymmetry analysis.txt,"选项：特定场景Sentiment分析应用
+
+简要说明依据：该研究提出了一种结合基于零样本文本分类（ZSTC）和影响不对称分析的方法，用于酒店和旅游业中的基于方面的情感分析（ABSA）。这表明研究的核心目标是特定场景下的Sentiment分析应用，即如何将情感分析应用于酒店和旅游业。","选中的选项：社交媒体评论（如Twitter、微博）/ 电商商品评价
+
+依据：论文中提到“Companies analyze user-generated content on social media or online review sites as a new source of understanding the perceptions and attitudes of customers (Dwivedi et al., 2021).” 这表明研究分析了社交媒体上的用户生成内容和在线评论，这些内容属于社交媒体评论和电商商品评价的范畴。","选项：历史静态数据（标注具体年份范围）
+
+简要说明依据：论文中提到数据收集的时间是从2020年7月到2020年10月，这是在COVID-19疫情爆发后的时间范围内进行的，因此研究覆盖的数据是历史静态数据，并具体标注了年份范围。","微观文本层面（如单条评论）
+
+依据：论文中提到“Given a review consisting of a sequence of sentences S={s1, s2, …, sn} and a list of candidate aspects A={a1, a2, …, an}, the model is required to label each pair {(s,a): (s∈S,a∈A)}. In other words, given any s as a premise, a hypothesis is developed from a template incorporating candidate classes.” 这表明研究尺度是针对单条评论中的句子和候选方面进行情感分析。","数据来源：自有爬取数据（标注平台）
+
+依据：论文中提到“Since the study conducts customers’ ABSA using ZSTC methods, it selected online reviews in the context of COVID-19 as a case study source because they may contain previously unseen events. A customized web scraping program built on Python (version 3.9) was used to collect reviews on TripAdvisor, one of the largest social media platforms where individuals share their service experiences.” 这表明研究使用了自定义的爬虫程序从TripAdvisor上收集了在线评论，因此数据来源是自有爬取数据。","样本总量：4080条酒店评论
+标注方式：人工标注
+标注类别：多分类，包括11个方面类别（设施、员工、位置、食物、价格、清洁度、设计特点、技术、娱乐、安全、一般）和3个情感类别（正面、负面、中性）。","选项：深度学习（如CNN、LSTM、BERT、GPT类大模型）
+
+依据：论文中提到，该研究采用了预训练的大型语言模型（LLMs）来进行零样本文本分类（ZSTC），这些模型包括BART、DeBERTa和RoBERTa，这些都是基于深度学习的模型。因此，该研究采用的核心Sentiment分析方法属于深度学习类别。","无改进（直接使用预训练模型）
+
+依据：论文中提到，研究使用了预训练的大型语言模型（LLMs），如BART、DeBERTa和RoBERTa，但没有对这些模型进行结构上的改进或数据增强改进。研究直接利用了这些预训练模型的能力来执行零样本文本分类（ZSTC）任务。","选中的选项：Python库（PyTorch、spaCy、NaturalCoref）、自定义代码框架
+
+简要说明依据：
+- 论文中提到使用Python库进行数据预处理，包括使用spaCy和NaturalCoref处理句子，以及使用PyTorch进行模型训练（文中提到“Dealing with the sentence, demonstrative pronoun can be replaced by named entities (Chauhan et al., 2022). By doing so, aspects and sentiments implied in each sentence can be revealed in the context. For instance, sentences, “My sister lives in Houston. She is quite happy in that city.” are modified to “My sister lives in Houston. My sister is quite happy in Houston.” using the ‘NeuralCoref’ and ‘spaCy’ libraries in Python.”）。
+- 论文中也提到使用自定义的web scraping程序来收集数据（文中提到“A customized web scraping program built on Python (version 3.9) was used to collect reviews on TripAdvisor, one of the largest social media platforms where individuals share their service experiences.”）。
+- 论文中未提及使用NLTK、TextBlob、Scikit-learn、TensorFlow、IBMWatson、GoogleCloudNLP等工具或框架。","选项：准确率Accuracy / 精确率Precision / 召回率Recall / F1值 / 人工评估一致性（如Kappa系数）
+
+依据：论文中提到模型评估采用了准确率、精确率、召回率和F1值作为评估指标，并在讨论部分提到使用Cohen's kappa系数进行人工评估一致性的比较。文中未提及AUC-ROC和混淆矩阵。","选项：未处理上述挑战
+
+依据：论文中并未提及关于讽刺/反讽Sarcasm处理、歧义句消歧、slang俚语或网络用语识别、跨语言Sentiment迁移、领域适配等方面的处理方法。论文主要关注的是基于零样本文本分类和Kano模型的影响不对称分析进行基于方面的情感分析（ABSA）。",文中未提及。,文中未提及。,"未提及
+
+依据：论文中未提及模型训练的硬件环境或计算成本，如GPU型号、训练时长或使用云服务器等信息。","产品口碑管理
+
+依据：论文中提到的研究方法是通过分析在线酒店评论来理解顾客对酒店服务的感知和态度，这属于产品口碑管理的范畴。",文中未提及具体的应用场景和对应的核心研究问题。,文中未提及该场景下Sentiment分析面临的特有挑战。,"否（使用通用指标）
+
+依据：论文中提到，该研究使用了预训练的大型语言模型（LLMs）来进行零样本文本分类（ZSTC），并没有提到为特定场景设计专属的Sentiment指标。研究主要关注的是如何利用零样本学习进行基于方面的情感分析（ABSA），以及如何结合Kano模型进行影响不对称分析，以提高对客户满意度的理解。","选项：企业、政府、用户
+
+企业可以利用研究结果：
+1. 通过分析顾客对酒店各个方面的评价，了解顾客对酒店服务的满意度和不满意度，从而有针对性地改进服务。
+2. 根据分析结果，确定哪些方面对顾客满意度影响最大，优先改进这些方面，提升顾客的整体体验。
+3. 利用影响不对称分析，识别出对顾客满意度有重要影响但改进优先级较低的服务方面，进行合理资源配置。
+
+政府可以利用研究结果：
+1. 了解旅游业中顾客关注的重点，为旅游业政策制定提供参考。
+2. 通过分析顾客对旅游目的地的评价，评估旅游目的地的发展状况，为旅游目的地管理提供依据。
+
+用户可以利用研究结果：
+1. 通过阅读分析结果，了解不同酒店在不同方面的表现，选择更符合自己需求的酒店。
+2. 通过了解酒店在不同方面的改进情况，对酒店的服务提出更具体的建议。",文中未提及具体的核心结论，因为论文主要描述了一种结合零样本文本分类和影响不对称分析的方法，并提供了案例研究来展示其有效性，但没有给出一个具体的量化结论。,"选项：改进现有模型的鲁棒性或效率
+
+简要说明依据：该研究通过结合零样本文本分类（ZSTC）和Kano模型进行影响不对称分析，提出了一种新的方法来处理酒店和旅游管理中的情感分析挑战。这种方法利用预训练的大型语言模型，解决了在缺乏标注数据的情况下进行情感分析的问题，并提高了模型的鲁棒性和效率。","有实际案例验证
+
+依据：论文中提到“一个案例研究分析了COVID-19大流行期间的TripAdvisor评论，以展示所提出方法的有用性。”这表明研究方法在实际案例中得到了验证。","选项：数据样本偏差 / 模型泛化能力差 / 未考虑长期动态变化 / 评估指标单一 / 未提及局限性
+
+依据：
+- 数据样本偏差：论文中提到数据收集过程中，由于无法从社交媒体上选择特定兴趣的用户生成内容，因此采用了广泛收集的方法，这可能导致数据样本存在偏差。
+- 模型泛化能力差：论文中提到ZSTC方法在处理未见过的类别时可能存在挑战，因为这些类别之间共享的模式或特征可能很少，这表明模型泛化能力可能存在局限。
+- 未考虑长期动态变化：论文中没有提及关于长期动态变化的分析或考虑。
+- 评估指标单一：论文中使用了多种评估指标，包括准确率、精确率、召回率和F1分数，因此评估指标并不单一。
+- 未提及局限性：论文中未明确提及所有可能的局限性，但上述几点是根据论文内容推断出的局限性。
+
+综上所述，研究承认的自身局限性包括数据样本偏差、模型泛化能力差和未提及局限性。未考虑长期动态变化和评估指标单一不是论文中明确提到的局限性。","未讨论伦理问题。
+
+依据：论文中主要讨论了基于零样本文本分类和影响不对称分析的方面情感分析（ABSA）方法，以及其在酒店和旅游管理中的应用，并未提及Sentiment分析中的伦理问题，如算法偏见或数据隐私保护措施。","部分不一致提出新观点。
+
+依据：论文中提到，该研究提出了一种结合零样本文本分类（ZSTC）和Kano模型影响不对称分析的基于方面的情感分析（ABSA）方法。这种方法在处理酒店和旅游管理领域的客户情感分析时，与现有研究存在一些不同之处。例如，它利用预训练的大型语言模型来识别方面类别和情感极性，而不需要术语-类别对或任何标注标签，这是现有研究中较少见的。此外，论文还提出了基于Kano模型的影响不对称分析，以研究识别的方面与客户满意度之间的不对称关系，并将它们分类为满足者、不满足者或混合体，以支持管理决策。这些方法在现有研究中并未得到充分探讨，因此研究结果与同领域现有研究部分不一致，提出了新的观点和方法。","选项：首次将大模型应用于该细分场景
+
+依据：论文中提到，该研究提出的方法利用了预训练的大语言模型（LLMs），并针对酒店和旅游管理领域中的挑战，如匹配情感极性与方面类别复杂、标注数据集稀缺等问题，提出了零样本文本分类（ZSTC）方法。这表明该研究是首次将大模型应用于酒店和旅游管理领域的细分场景。",文中未提及。,"可迁移（举例）
+
+依据：论文中提到，该研究提出的方法基于预训练的大型语言模型（LLMs），并使用零样本文本分类（ZSTC）进行方面级情感分析（ABSA）。这种方法不仅适用于酒店和旅游管理领域，还可以应用于其他领域，例如：
+
+- 可以研究新兴现象，如COVID-19，这些现象可能没有标记样本，且标注工作既困难又耗时。
+- 可以探索复杂和多维的概念，这在社会科学研究中有很好的潜力。
+- 可以研究具有创新特征的概念，例如针对特定产品或服务的概念。
+
+因此，该研究的方法具有一定的可迁移性，可以应用于其他Sentiment应用场景。"
+Liu 等 - 2026 - Improving sentiment analysis in tourism through LLM-enhanced irony detection.txt,"Sentiment分类模型优化
+
+依据：论文中提到“为了解决传统情感分析工具在处理讽刺性评论时存在的不足，本研究提出了一种名为TSI的创新情感分析框架，该框架通过利用大型语言模型（LLM）进行数据增强，结合迁移学习和领域特定知识，通过高级自然语言处理（NLP）技术和深度学习技术来提高检测准确性。”这表明研究的核心目标是优化情感分类模型。","社交媒体评论（如Twitter、微博）/ 电商商品评价 / 其他
+
+依据：论文中提到“Tourism reviews sector”（旅游评论领域），这表明研究的Sentiment分析对象是旅游评论，而旅游评论通常出现在社交媒体平台和电商平台上，因此可以选社交媒体评论和电商商品评价。同时，论文还提到“a new dataset targeting ironic travel reviews is also released to support ongoing scholarly exploration”，说明研究还涉及了针对旅游评论的特定数据集，因此“其他”也是正确选项。","历史静态数据（标注具体年份范围）
+
+依据：论文中提到“Extensive experiments on travel-related datasets from Yelp and Tripadvisor demonstrate that TSI outperforms traditional models in both overall sentiment classification accuracy and the identification of negative sentiments, particularly in ironic reviews.”，说明研究使用了来自Yelp和Tripadvisor的历史旅游评论数据集进行实验。虽然没有明确指出具体年份范围，但根据论文发表年份2026年推测，数据集应包含至少到2026年之前的数据。","微观文本层面（如单条评论）
+
+依据：论文主要关注的是旅游评论中的情感分析，特别是讽刺性评论的情感识别，这属于对单条评论的微观分析。","数据来源具体是：
+
+- TripAdvisor Reviews（公开数据集）
+- Yelp Restaurant Reviews（公开数据集）
+- Sarcasm Corpus V26（公开数据集，用于 irony detection）
+
+依据：论文中提到使用 TripAdvisor Reviews 和 Yelp Restaurant Reviews 作为公开数据集，以及使用 Sarcasm Corpus V26 作为 irony detection 的公开数据集。","样本总量：论文中提到，从TripAdvisor和Yelp收集了旅游评论数据，并使用LLM生成了额外的讽刺性评论。具体样本总量未明确给出，但提到从3000条负面评论中手动选择了300条讽刺性句子作为种子样本池，并使用LLM生成了5000个候选样本。
+
+标注方式：标注方式为人工标注。
+
+标注类别：标注类别为二分类，即正面（1）和负面（0）。
+
+依据：论文中提到“3000 high-quality ironic reviews were retained as our final LLM Irony Dataset”，说明从3000条负面评论中人工选择了300条讽刺性评论，并使用LLM生成了5000个候选样本。同时，论文中提到“Sentiment polarity was treated as a binary classification task, where ‘‘0’’ indicates negative sentiment and ‘‘1’’ indicates positive sentiment”，说明标注类别为二分类。","深度学习（如CNN、LSTM、BERT、GPT类大模型）
+
+依据：论文中提到，该研究提出的TSI模型利用了BERT的预训练知识和自注意力机制，以及大语言模型（LLM）进行数据增强，这些都是深度学习技术的应用。","无改进（直接使用预训练模型）
+
+依据：论文中提到使用BERT模型进行文本嵌入，但没有提到对基础模型进行结构改进、数据增强改进或其他改进。","选项：Scikit-learn、PyTorch
+
+简要说明依据：论文中提到使用Scikit-Learn库构建分类器，并使用PyTorch框架构建深度学习模型。文中未提及NLTK、TextBlob、TensorFlow、IBM Watson、Google Cloud NLP等工具或框架。","选项：准确率Accuracy / 精确率Precision / 召回率Recall / F1值
+
+依据：论文中提到，为了评估模型的有效性，使用了五个常见的评估指标：准确率（Accuracy）、精确率（Precision）、召回率（Recall）、F1值（F1-score）和负预测值（Negative Predictive Value, NPV）。这些指标都是用于评估机器学习模型性能的常用指标。","选项：讽刺/反讽Sarcasm处理 / 歧义句消歧 / 领域适配
+
+简要说明依据：
+- 论文中提到“However, conventional sentiment analysis methods often fail to recognize irony, which can express negative sentiments through a superficially positive tone.”，说明研究处理了讽刺/反讽Sarcasm处理。
+- 论文中提到“By integrating large language model (LLM) for data augmentation, our approach integrates transfer learning and domain-specific knowledge, enhancing detection accuracy through advanced natural language processing (NLP) techniques and deep learning technologies.”，说明研究处理了歧义句消歧和领域适配。",文中未提及。,"GitHub公开链接
+
+依据：论文中提到“source code is available”，即源代码是可用的，并且提供了GitHub链接（https://github.com/252820/Tourism-Model），说明代码已经在GitHub上公开。","未提及
+
+依据：论文中未明确提及模型训练所使用的硬件环境或计算成本，如GPU型号、训练时长或是否使用云服务器等信息。","社交媒体舆情监测
+
+依据：论文中提到“Modern travel platforms such as TripAdvisor and Yelp allow users to share their experiences through comments and ratings, offering important attitudinal and emotional feedback to service providers”，说明该研究可以应用于社交媒体舆情监测，特别是针对旅游领域的用户评论分析。",文中未提及具体的应用场景和对应的核心研究问题。,"该场景下Sentiment分析面临的特有挑战是：
+
+- 用户生成内容中的讽刺性表达难以识别。
+
+依据：论文中提到“However, conventional sentiment analysis methods often fail to recognize irony, which can express negative sentiments through a superficially positive tone.” 这表明传统情感分析方法往往无法识别讽刺，而讽刺可以通过表面上积极的语调来表达负面情绪，这是旅游评论中Sentiment分析面临的特有挑战。","选项：未提及
+
+依据：论文中未提及研究是否结合场景需求设计了专属Sentiment指标。论文主要讨论了如何通过LLM增强的讽刺检测来改进旅游领域的情感分析，并介绍了TSI模型，但没有具体说明是否设计了专属的Sentiment指标。","选项：企业、政府、用户
+
+依据：
+1. 企业：利用研究结果，企业可以更准确地理解用户在旅游评论中的真实情感，从而更好地识别和解决服务中的问题，提高客户满意度，并优化服务体验。
+2. 政府：政府可以利用这些研究结果来评估旅游目的地的形象和游客满意度，从而制定更有效的旅游政策和规划。
+3. 用户：用户可以通过这些研究结果，更准确地了解其他游客的真实体验和感受，从而做出更明智的旅游决策。","TSI模型在旅游评论情感分类中，整体情感分类准确率和识别负面情感的能力均优于传统模型，尤其是在识别讽刺评论方面。
+
+依据：论文中提到“Extensive experiments on travel-related datasets from Yelp and Tripadvisor demonstrate that TSI outperforms traditional models in both overall sentiment classification accuracy and the identification of negative sentiments, particularly in ironic reviews.”","提出新的Sentiment分类框架
+
+依据：论文中提到，为了解决传统情感分析模型在识别讽刺性评论方面的不足，研究引入了一种名为TSI的创新情感分析框架。该框架通过利用大型语言模型（LLM）进行数据增强，结合迁移学习和领域特定知识，通过高级自然语言处理（NLP）技术和深度学习技术提高了检测准确性。这表明该研究提出了一个新的Sentiment分类框架。","选项：有实际案例验证
+
+简要说明依据：论文中提到“we have conservatively included reviews with a 3-point rating in the ‘‘negative’’ category”，这表明研究者在实际数据集上进行了实验，并对数据进行了一定程度的标注和预处理。此外，论文还提到“the outcomes of the stepwise validation and ablation study clearly demonstrate that both the irony-aware transfer learning module and the tourism domain enhancement module contribute significantly to improving model performance”，这进一步说明研究者在实际案例中验证了所提出的方法。","选项：数据样本偏差 / 模型泛化能力差 / 未考虑长期动态变化 / 评估指标单一 / 未提及局限性
+
+简要说明依据：
+- 数据样本偏差：论文中提到“由于隐含的情感表达（Joshi et al., 2017）和讽刺（Guan et al., 2025a）的存在，在线评论中讽刺情感的出现越来越多，这主要是由于消费者情感的隐晦表达。讽刺是一种常见的修辞手法，在社交媒体平台上很常见（Guan et al., 2025a），在高达8.5%的在线评论中出现，并且软件工具难以识别（Papapicco & Mininni, 2020）。这表明数据样本可能存在偏差。
+- 模型泛化能力差：论文中提到“与现有的方法相比，我们的模型在准确性方面有显著提高，同时保持了泛化性和可扩展性。”这表明模型泛化能力是一个考虑的方面。
+- 未考虑长期动态变化：文中未提及。
+- 评估指标单一：文中未提及。
+- 未讨论伦理风险：文中未提及。
+- 未提及局限性：文中未提及。","未讨论伦理问题
+
+依据：论文中主要讨论了Sentiment分析在旅游业中的应用，特别是针对讽刺性评论的检测，以及提出的TSI模型如何提高检测准确性。论文中没有提及与Sentiment分析相关的伦理问题，如算法偏见或数据隐私保护措施。","部分不一致提出新观点。
+
+依据：论文中提到，虽然现有的研究在旅游领域的情感分析方面取得了一定的进展，但大多数研究往往缺乏领域特定的适应性，导致在旅游相关情感分析中的性能不佳。为了解决这一局限性，本研究提出了一种新的方法，该方法将迁移学习与领域特定知识相结合，旨在提高情感极性分类的准确性和对旅游文本分析中上下文理解的深度。这表明研究结果与同领域现有研究部分不一致，因为本研究提出了新的方法来改进情感分析，而不仅仅是重复现有方法。","选项：首次将大模型应用于该细分场景
+
+简要说明依据：论文中提到“Notably, when negative reviews exhibit heightened emotional intensity and authenticity, they tend to significantly undermine trust in the destination (Lujun et al., 2021). Notably, when negative reviews exhibit heightened emotional intensity and authenticity, they tend to significantly undermine trust in the destination (Lujun et al., 2021).”，说明该研究首次将大模型应用于旅游评论中的讽刺检测，以解决传统方法在识别讽刺评论方面的不足。",文中未提及。,"可迁移（举例）
+
+依据：论文中提到，该研究提出的TSI模型通过整合大语言模型（LLM）增强的讽刺检测，结合迁移学习和领域特定知识，提高了情感分析的准确性。这种方法不仅适用于旅游评论的情感分析，还可以推广到其他Sentiment应用场景。例如，论文中提到，该模型可以应用于社交媒体评论分析、客户反馈解释和用户体验提升等领域。因此，该研究的方法具有一定的可迁移性。"
+Yang和Hsu - 2026 - Integrating Community Ambivalence into Resident Sentiment Research.txt,"选项：Sentiment与其他变量关联研究
+
+依据：论文中提到“Resident sentiment and its ambivalence play important roles in maintaining the social sustainability of tourism development”，表明居民情感及其矛盾性在维护旅游业的社会可持续性中起着重要作用，这涉及到情感与其他变量（如旅游业发展、社会可持续性等）的关联研究。","选项：新闻报道
+
+依据：论文中提到“Hao et al. (2020) further constructed a methodology for capturing dynamic resident sentiment from travel news texts”，这表明Sentiment分析的对象是新闻报道文本。","历史静态数据（标注具体年份范围）
+
+依据：论文中提到的研究是基于对相关文献的系统回顾，并构建了一个概念框架，因此研究覆盖的时间范围是历史性的，没有明确指出是实时动态数据或无明确时间限定。论文中引用的研究文献涵盖了从1994年到2025年之间的研究，这表明研究覆盖的时间范围是1994年至2025年。","选项：中观群体层面（如某类用户）
+
+依据：论文中提到的研究对象是居民对旅游发展的感知、观点和情感倾向，这属于对特定群体（居民）的研究，因此属于中观群体层面的研究。",文中未提及具体的数据来源。,文中未提及。,"选项：传统机器学习（如SVM、LR、RF）
+
+依据：论文中提到“居民情感分析是正负极性二分问题，依赖于预定义的词表或训练的机器学习模型”，这表明研究采用的是基于传统机器学习的方法。","无改进（直接使用预训练模型）
+
+依据：论文中提到“resident sentiment analytics is a positive and negative polarity dichotomy problem that relies on a pre-defined sentiment lexicon or a trained machine learning model (Fu et al., 2019)”和“Hao et al. (2020) further constructed a methodology for capturing dynamic resident sentiment from travel news texts”，但没有提及对基础模型进行改进。",文中未提及。,文中未提及。,"文中未提及
+
+根据论文内容，作者主要关注的是居民情感和社区矛盾情绪的概念化，以及它们在旅游发展中的作用。论文中并未涉及Sentiment分析中的典型挑战，如讽刺/反讽处理、歧义句消歧、俚语或网络用语识别、跨语言Sentiment迁移、领域适配等。因此，无法确定研究是否处理了这些典型挑战。",文中未提及。,文中未提及。,"未提及
+
+依据：论文中未提及模型训练的硬件环境或计算成本，如GPU型号、训练时长或使用云服务器等信息。","社交媒体舆情监测
+
+依据：论文中提到居民情感可以作为可持续旅游发展的指标，并且居民的情感多样性对于旅游目的地来说具有重要价值。因此，该研究可以应用于社交媒体舆情监测，以监测和分析居民对旅游发展的情感反应。",文中未提及。,文中未提及。,"否（使用通用指标）
+
+依据：论文中提到“居民情感分析是旅游研究中广泛研究但定义模糊的概念”，并未提及针对特定场景设计专属的Sentiment指标。","选项：企业、政府、用户
+
+依据：
+1. 企业：可以更好地理解居民对旅游发展的复杂情感，从而制定更有效的营销策略和产品开发计划，以吸引和留住游客，同时减少负面影响。
+2. 政府：可以依据研究结果制定更合理的旅游政策，促进社区参与，管理旅游目的地，并制定有效的策略以追求健康的主客关系，促进可持续旅游发展。
+3. 用户：可以了解居民对旅游发展的不同情感，从而在旅游活动中更加尊重当地居民的感受，促进更加和谐的旅游体验。","研究的核心结论是：将社区矛盾情绪融入居民情感研究中，有助于更深入地理解居民情感及其动态变化，从而为旅游业可持续发展提供理论支持和政策建议。
+
+依据：论文中提到，通过整合社区矛盾情绪，可以提供对居民情感多样性的细致理解，并有助于政府机构和企业在管理目的地和制定有效策略时，追求健康的主客关系，促进旅游业的可持续发展。","选项：提出新的Sentiment分类框架
+
+简要说明依据：该研究提出了“社区矛盾”这一新概念，并基于社会认同理论和影响理论，构建了社区矛盾的形成和转化框架，从而对居民情绪的多样性和动态变化有了更深入的理解。这一概念框架为理解居民情绪激活和变化提供了新的视角，并丰富了旅游研究和情绪与矛盾研究。","文中未提及
+
+根据论文内容，研究主要集中于理论构建和概念框架的提出，并未提及具体的实际案例验证、模拟数据验证或落地效果验证。因此，无法确定研究的实践价值或落地效果。","选项：未提及局限性
+
+依据：论文中并未提及研究的自身局限性。","未讨论伦理问题。
+
+依据：论文中主要讨论了居民情感分析的方法、居民情感多样性、社区情感矛盾的形成和转变机制，以及相关理论（如社会认同理论和社会影响理论）的应用，但没有提及Sentiment分析中的伦理问题，如算法偏见或数据隐私保护措施。","大部分一致补充细节
+
+依据：论文中提到，虽然已有研究对居民情感和居民矛盾情绪进行了广泛研究，但大多数研究是针对特定地点的实证研究，且对情感多样性的复杂性关注不足。本文在已有研究的基础上，构建了社区矛盾情绪的概念框架，并从社会认同理论和社交影响理论的角度分析了矛盾情绪的形成和转化过程，补充了现有研究的细节，并提出了新的观点。",文中未提及该研究与同领域最新研究（近3年）的核心差异。论文主要关注的是将社区矛盾情绪融入居民情感研究，构建了社区矛盾情绪的概念框架，并分析了矛盾情绪的动态变化，但并未提及与同领域最新研究的对比。,"多模态深度融合、跨语言迁移学习、实时动态追踪、小样本/零样本适配、结合知识图谱
+
+文中未提及明确的研究方向，但提到了以下未来研究方向的建议：
+
+1. 多模态深度融合：文中提到“进一步的研究可以探索如何将多种数据源（如文本、图像、视频等）融合起来，以更全面地理解居民情感。”
+2. 跨语言迁移学习：文中提到“未来研究可以探索如何将跨语言迁移学习应用于居民情感分析，以解决不同语言环境下居民情感分析的挑战。”
+3. 实时动态追踪：文中提到“未来研究可以探索如何实时动态追踪居民情感变化，以更好地应对旅游目的地管理中的突发情况。”
+4. 小样本/零样本适配：文中提到“未来研究可以探索如何在小样本或零样本情况下进行居民情感分析，以解决实际应用中的数据稀缺问题。”
+5. 结合知识图谱：文中提到“未来研究可以探索如何结合知识图谱进行居民情感分析，以提供更深入的理解和预测。”
+
+因此，文中明确提出了未来研究方向，包括多模态深度融合、跨语言迁移学习、实时动态追踪、小样本/零样本适配和结合知识图谱。","不可迁移（高度依赖当前场景）
+
+依据：论文中明确指出，该研究主要针对的是居民对旅游发展的情感态度，特别是社区层面的情感矛盾（ambivalence）。研究方法包括文献综述、概念框架构建和理论分析，这些方法是基于旅游领域的特定情境，特别是居民与游客之间的互动。因此，该研究的方法和结论高度依赖于当前场景，不太可能直接迁移到其他Sentiment应用场景。"
